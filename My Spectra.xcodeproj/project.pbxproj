@@ -1,0 +1,1220 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C06778C23290F7100058517 /* AccountCancelledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C06778B23290F7100058517 /* AccountCancelledViewController.swift */; };
+		6C06778E2329100E00058517 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C06778D2329100D00058517 /* PrivacyPolicyViewController.swift */; };
+		6C0677902329120A00058517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C06778F2329120900058517 /* Main.storyboard */; };
+		6C212A05236AD510005DDA37 /* SendOtpToLinkAcntdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C212A04236AD510005DDA37 /* SendOtpToLinkAcntdata.swift */; };
+		6C212A09236AE0E6005DDA37 /* GetContactDetailsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C212A08236AE0E6005DDA37 /* GetContactDetailsData.swift */; };
+		6C212A0D236AE203005DDA37 /* TrackOrderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C212A0C236AE203005DDA37 /* TrackOrderData.swift */; };
+		6C212A0F236AE284005DDA37 /* GetOrganizationNameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C212A0E236AE284005DDA37 /* GetOrganizationNameData.swift */; };
+		6C212A11236AE2C7005DDA37 /* AddLinkAccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C212A10236AE2C7005DDA37 /* AddLinkAccountData.swift */; };
+		6C212A13236AE31B005DDA37 /* GetLinkAccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C212A12236AE31B005DDA37 /* GetLinkAccountData.swift */; };
+		6C21A359237024DD00F95A9C /* ManageContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C21A358237024DD00F95A9C /* ManageContactsViewController.swift */; };
+		6C21F1232320EDE600FBD253 /* ContactUSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C21F1222320EDE600FBD253 /* ContactUSViewController.swift */; };
+		6C21F12723211BC900FBD253 /* MRTGGraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C21F12623211BC900FBD253 /* MRTGGraphData.swift */; };
+		6C21F12B232135BC00FBD253 /* MrtgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C21F12A232135BC00FBD253 /* MrtgTableViewCell.swift */; };
+		6C23D12922F04A4E00B6B40E /* GetDayaStatusAccordingTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C23D12822F04A4E00B6B40E /* GetDayaStatusAccordingTime.swift */; };
+		6C24A4382372AFAC00B8BE09 /* ProfileImageAddLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24A4372372AFAC00B8BE09 /* ProfileImageAddLocal.swift */; };
+		6C24A43A2372B3E400B8BE09 /* StringRegexValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24A4392372B3E400B8BE09 /* StringRegexValidation.swift */; };
+		6C24A43C2372C76100B8BE09 /* UserProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24A43B2372C76100B8BE09 /* UserProfileData.swift */; };
+		6C25921922E03784000960D5 /* DeviceCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C25921822E03784000960D5 /* DeviceCheck.swift */; };
+		6C25921B22E0552C000960D5 /* InvoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C25921A22E0552C000960D5 /* InvoiceTableViewCell.swift */; };
+		6C25BF57232F9EA300F0351D /* ChangePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C25BF56232F9EA300F0351D /* ChangePlanViewController.swift */; };
+		6C25BF59232FA48E00F0351D /* ChangePlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C25BF58232FA48E00F0351D /* ChangePlanTableViewCell.swift */; };
+		6C25BF5B232FC95C00F0351D /* ChangePlanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C25BF5A232FC95C00F0351D /* ChangePlanData.swift */; };
+		6C25EFC722FABA190085E06B /* Spectra-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C25EFC622FABA190085E06B /* Spectra-Regular.otf */; };
+		6C2661C022FD37BB00EB910F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2661BF22FD37BB00EB910F /* UserData.swift */; };
+		6C2666B622F7F5C40051A4D2 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2666B522F7F5C40051A4D2 /* NotificationViewController.swift */; };
+		6C2666B822F800320051A4D2 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2666B722F800320051A4D2 /* NotificationTableViewCell.swift */; };
+		6C2710CD22DF3FDB0068DAAB /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2710CC22DF3FDB0068DAAB /* ForgotPasswordViewController.swift */; };
+		6C273CDE2330FFC60080C69A /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C273CDD2330FFC60080C69A /* NumberFormatter.swift */; };
+		6C27A0DC22DEFFB000DEC2FA /* InvoiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C27A0DB22DEFFB000DEC2FA /* InvoiceDetailViewController.swift */; };
+		6C27FA2E22E07862002DBF12 /* CANetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C27FA2D22E07862002DBF12 /* CANetworkManager.swift */; };
+		6C27FA3022E07868002DBF12 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C27FA2F22E07868002DBF12 /* Define.swift */; };
+		6C27FA3222E0A4BF002DBF12 /* RemoveStringAfterSpecificChar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C27FA3122E0A4BF002DBF12 /* RemoveStringAfterSpecificChar.swift */; };
+		6C298574230FBA9D00E6DE69 /* DataUsageGraphClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C298573230FBA9D00E6DE69 /* DataUsageGraphClass.swift */; };
+		6C298576230FBD6600E6DE69 /* DataUsageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C298575230FBD6600E6DE69 /* DataUsageData.swift */; };
+		6C29857823101F6E00E6DE69 /* CaseTYpeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C29857723101F6E00E6DE69 /* CaseTYpeTableViewCell.swift */; };
+		6C29857A2310214D00E6DE69 /* CaseTypeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2985792310214D00E6DE69 /* CaseTypeData.swift */; };
+		6C2A6C86231E2ED0006BCADE /* AccountActivationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A6C85231E2ED0006BCADE /* AccountActivationViewController.swift */; };
+		6C2A6C88231E3236006BCADE /* NoInternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A6C87231E3236006BCADE /* NoInternetViewController.swift */; };
+		6C2BB55323028E0400077D81 /* HelpCatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2BB55223028E0400077D81 /* HelpCatTableViewCell.swift */; };
+		6C2BB5552302C03600077D81 /* DataUsageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2BB5542302C03600077D81 /* DataUsageViewController.swift */; };
+		6C2BE2B322FBF89B006F51D7 /* CanIDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2BE2B222FBF89B006F51D7 /* CanIDTableViewCell.swift */; };
+		6C2BE2B522FBF8B7006F51D7 /* CanIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2BE2B422FBF8B7006F51D7 /* CanIDViewController.swift */; };
+		6C2CB89A230167970002258F /* PayNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CB899230167970002258F /* PayNowViewController.swift */; };
+		6C2CB89C23017A590002258F /* CreateSRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CB89B23017A590002258F /* CreateSRViewController.swift */; };
+		6C2EA179232A517C00D53837 /* PaymentScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EA178232A517C00D53837 /* PaymentScreenViewController.swift */; };
+		6C2F8F69233E128D007BF11C /* TopupPlanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2F8F68233E128D007BF11C /* TopupPlanData.swift */; };
+		6C2F8F6B233E13C2007BF11C /* TopupPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2F8F6A233E13C2007BF11C /* TopupPlanViewController.swift */; };
+		6C2F8F6D233E202B007BF11C /* TopupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2F8F6C233E202B007BF11C /* TopupTableViewCell.swift */; };
+		6C2F8F6F233E4997007BF11C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C2F8F6E233E4997007BF11C /* GoogleService-Info.plist */; };
+		6C300C8022F94D1F00BEB3BB /* ConnectionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C300C7F22F94D1F00BEB3BB /* ConnectionCheck.swift */; };
+		6C30C3EB233B3863000CDC2A /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C30C3EA233B3863000CDC2A /* EditProfileViewController.swift */; };
+		6C3125592333BF9900674E88 /* HelpingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3125582333BF9900674E88 /* HelpingClass.swift */; };
+		6C3159A32332104E0042F6FC /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3159A22332104E0042F6FC /* Classes.swift */; };
+		6C336CB22360836D0061A786 /* InvoicePDFContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C336CB12360836D0061A786 /* InvoicePDFContentData.swift */; };
+		6C349771230AB2F40072A965 /* InvoiceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C349770230AB2F40072A965 /* InvoiceContentViewController.swift */; };
+		6C34F023233A03FA00B8A426 /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C34F022233A03FA00B8A426 /* FaqTableViewCell.swift */; };
+		6C35105123570CAC0033581F /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C35105023570CAC0033581F /* DatabaseHandler.swift */; };
+		6C35813122F42E840035C0DB /* ClassSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C35813022F42E840035C0DB /* ClassSwitcher.swift */; };
+		6C3668102303D6BA00F96A88 /* FaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C36680F2303D6BA00F96A88 /* FaqViewController.swift */; };
+		6C3732E9234F19EC0011B7F5 /* SIPrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3732E8234F19EC0011B7F5 /* SIPrivacyPolicyViewController.swift */; };
+		6C39FE6B22DDAA0B00421BE0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C39FE6A22DDAA0B00421BE0 /* HomeViewController.swift */; };
+		6C4075CA233CDBEA0049709F /* StandingInstractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4075C9233CDBEA0049709F /* StandingInstractionViewController.swift */; };
+		6C56A86A22D75AFB0014C16F /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C56A86922D75AFB0014C16F /* OTPViewController.swift */; };
+		6C56A86F22D76AEE0014C16F /* UIButton+gradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C56A86E22D76AEE0014C16F /* UIButton+gradientColor.swift */; };
+		6C7A5725231D3EF4001F2531 /* PaymentStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A5724231D3EF4001F2531 /* PaymentStatusViewController.swift */; };
+		6C7A5727231D4856001F2531 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A5726231D4856001F2531 /* TransactionTableViewCell.swift */; };
+		6C915CE622D71C38006BFDEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C915CE522D71C38006BFDEB /* AppDelegate.swift */; };
+		6C915CE822D71C38006BFDEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C915CE722D71C38006BFDEB /* LoginViewController.swift */; };
+		6C915CF022D71C39006BFDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C915CEF22D71C39006BFDEB /* Assets.xcassets */; };
+		6C915CF322D71C39006BFDEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C915CF122D71C39006BFDEB /* LaunchScreen.storyboard */; };
+		6C915CFE22D71C3A006BFDEB /* SpectraNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C915CFD22D71C3A006BFDEB /* SpectraNetTests.swift */; };
+		6C915D0922D71C3A006BFDEB /* SpectraNetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C915D0822D71C3A006BFDEB /* SpectraNetUITests.swift */; };
+		6CD2045822D861C600C60549 /* UIView+GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD2045722D861C600C60549 /* UIView+GradientColor.swift */; };
+		6CD2045F22D8635800C60549 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD2045E22D8635800C60549 /* AlertController.swift */; };
+		6CD2047522D8A82700C60549 /* PlaceholderTextColorChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD2047422D8A82700C60549 /* PlaceholderTextColorChange.swift */; };
+		6CD4FCD6234F6539006968AD /* SITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD4FCD5234F6539006968AD /* SITableViewCell.swift */; };
+		6CEEFC5722FD3F9700779140 /* InvoiceListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEFC5622FD3F9700779140 /* InvoiceListData.swift */; };
+		6CEEFC5922FD427300779140 /* SRData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEFC5822FD427300779140 /* SRData.swift */; };
+		6CEEFC5B22FD44D200779140 /* OTPData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEFC5A22FD44D200779140 /* OTPData.swift */; };
+		6CEEFC5D22FD456D00779140 /* MyPlanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEFC5C22FD456D00779140 /* MyPlanData.swift */; };
+		6CEEFC5F22FD471600779140 /* TransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEFC5E22FD471600779140 /* TransactionData.swift */; };
+		6CEEFC6322FD6A9100779140 /* UserCurrentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEFC6222FD6A9100779140 /* UserCurrentData.swift */; };
+		81F102D322E6EFC6008CEEAF /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F102D222E6EFC6008CEEAF /* MoreTableViewCell.swift */; };
+		81F102D522E705A5008CEEAF /* CustomTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F102D422E705A5008CEEAF /* CustomTabViewController.swift */; };
+		81F102D722E70BDC008CEEAF /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F102D622E70BDC008CEEAF /* MoreViewController.swift */; };
+		81F102D922E7127B008CEEAF /* SRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F102D822E7127B008CEEAF /* SRViewController.swift */; };
+		81F102DE22E71556008CEEAF /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F102DD22E71556008CEEAF /* AccountViewController.swift */; };
+		81F4006822E88D5000F259AA /* SRTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F4006722E88D5000F259AA /* SRTableViewCell.swift */; };
+		81F4006A22E8A5F200F259AA /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F4006922E8A5F200F259AA /* PlanViewController.swift */; };
+		81F46B222317BE800067EA89 /* MRTGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F46B212317BE800067EA89 /* MRTGViewController.swift */; };
+		81F5D4A322EADC65003D9634 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5D4A222EADC65003D9634 /* HomeTableViewCell.swift */; };
+		81F5D4AB22EB393E003D9634 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5D4AA22EB393E003D9634 /* CustomCollectionViewCell.swift */; };
+		81F9D4BA22EF0912004CC955 /* ChangeDateFormate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F9D4B922EF0912004CC955 /* ChangeDateFormate.swift */; };
+		81F9D4BE22EF36DE004CC955 /* UserCountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F9D4BD22EF36DE004CC955 /* UserCountTableViewCell.swift */; };
+		A2C6EB0B1A1F4346852A5C48 /* Pods_My_Spectra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880DD3EFC47C309285C497B4 /* Pods_My_Spectra.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6C915CFA22D71C3A006BFDEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C915CDA22D71C38006BFDEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C915CE122D71C38006BFDEB;
+			remoteInfo = SpectraNet;
+		};
+		6C915D0522D71C3A006BFDEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C915CDA22D71C38006BFDEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C915CE122D71C38006BFDEB;
+			remoteInfo = SpectraNet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03355F5AB6F788A62AF067A9 /* Pods-My Spectra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Spectra.release.xcconfig"; path = "Target Support Files/Pods-My Spectra/Pods-My Spectra.release.xcconfig"; sourceTree = "<group>"; };
+		6C06778B23290F7100058517 /* AccountCancelledViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCancelledViewController.swift; sourceTree = "<group>"; };
+		6C06778D2329100D00058517 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		6C06778F2329120900058517 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6C212A04236AD510005DDA37 /* SendOtpToLinkAcntdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOtpToLinkAcntdata.swift; sourceTree = "<group>"; };
+		6C212A08236AE0E6005DDA37 /* GetContactDetailsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetContactDetailsData.swift; sourceTree = "<group>"; };
+		6C212A0C236AE203005DDA37 /* TrackOrderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackOrderData.swift; sourceTree = "<group>"; };
+		6C212A0E236AE284005DDA37 /* GetOrganizationNameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrganizationNameData.swift; sourceTree = "<group>"; };
+		6C212A10236AE2C7005DDA37 /* AddLinkAccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLinkAccountData.swift; sourceTree = "<group>"; };
+		6C212A12236AE31B005DDA37 /* GetLinkAccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLinkAccountData.swift; sourceTree = "<group>"; };
+		6C21A358237024DD00F95A9C /* ManageContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageContactsViewController.swift; sourceTree = "<group>"; };
+		6C21F1222320EDE600FBD253 /* ContactUSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUSViewController.swift; sourceTree = "<group>"; };
+		6C21F12623211BC900FBD253 /* MRTGGraphData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRTGGraphData.swift; sourceTree = "<group>"; };
+		6C21F12A232135BC00FBD253 /* MrtgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MrtgTableViewCell.swift; sourceTree = "<group>"; };
+		6C23D12822F04A4E00B6B40E /* GetDayaStatusAccordingTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDayaStatusAccordingTime.swift; sourceTree = "<group>"; };
+		6C24A4372372AFAC00B8BE09 /* ProfileImageAddLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageAddLocal.swift; sourceTree = "<group>"; };
+		6C24A4392372B3E400B8BE09 /* StringRegexValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRegexValidation.swift; sourceTree = "<group>"; };
+		6C24A43B2372C76100B8BE09 /* UserProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileData.swift; sourceTree = "<group>"; };
+		6C25921822E03784000960D5 /* DeviceCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCheck.swift; sourceTree = "<group>"; };
+		6C25921A22E0552C000960D5 /* InvoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceTableViewCell.swift; sourceTree = "<group>"; };
+		6C25BF56232F9EA300F0351D /* ChangePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePlanViewController.swift; sourceTree = "<group>"; };
+		6C25BF58232FA48E00F0351D /* ChangePlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePlanTableViewCell.swift; sourceTree = "<group>"; };
+		6C25BF5A232FC95C00F0351D /* ChangePlanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePlanData.swift; sourceTree = "<group>"; };
+		6C25EFC622FABA190085E06B /* Spectra-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spectra-Regular.otf"; sourceTree = "<group>"; };
+		6C2661BF22FD37BB00EB910F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		6C2666B522F7F5C40051A4D2 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		6C2666B722F800320051A4D2 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		6C2710CC22DF3FDB0068DAAB /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		6C273CDD2330FFC60080C69A /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
+		6C27A0DB22DEFFB000DEC2FA /* InvoiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceDetailViewController.swift; sourceTree = "<group>"; };
+		6C27FA2D22E07862002DBF12 /* CANetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CANetworkManager.swift; sourceTree = "<group>"; };
+		6C27FA2F22E07868002DBF12 /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
+		6C27FA3122E0A4BF002DBF12 /* RemoveStringAfterSpecificChar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveStringAfterSpecificChar.swift; sourceTree = "<group>"; };
+		6C298573230FBA9D00E6DE69 /* DataUsageGraphClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUsageGraphClass.swift; sourceTree = "<group>"; };
+		6C298575230FBD6600E6DE69 /* DataUsageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUsageData.swift; sourceTree = "<group>"; };
+		6C29857723101F6E00E6DE69 /* CaseTYpeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseTYpeTableViewCell.swift; sourceTree = "<group>"; };
+		6C2985792310214D00E6DE69 /* CaseTypeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseTypeData.swift; sourceTree = "<group>"; };
+		6C2A6C85231E2ED0006BCADE /* AccountActivationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountActivationViewController.swift; sourceTree = "<group>"; };
+		6C2A6C87231E3236006BCADE /* NoInternetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetViewController.swift; sourceTree = "<group>"; };
+		6C2BB55223028E0400077D81 /* HelpCatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCatTableViewCell.swift; sourceTree = "<group>"; };
+		6C2BB5542302C03600077D81 /* DataUsageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUsageViewController.swift; sourceTree = "<group>"; };
+		6C2BE2B222FBF89B006F51D7 /* CanIDTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanIDTableViewCell.swift; sourceTree = "<group>"; };
+		6C2BE2B422FBF8B7006F51D7 /* CanIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanIDViewController.swift; sourceTree = "<group>"; };
+		6C2CB899230167970002258F /* PayNowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayNowViewController.swift; sourceTree = "<group>"; };
+		6C2CB89B23017A590002258F /* CreateSRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSRViewController.swift; sourceTree = "<group>"; };
+		6C2EA178232A517C00D53837 /* PaymentScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScreenViewController.swift; sourceTree = "<group>"; };
+		6C2F8F68233E128D007BF11C /* TopupPlanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupPlanData.swift; sourceTree = "<group>"; };
+		6C2F8F6A233E13C2007BF11C /* TopupPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupPlanViewController.swift; sourceTree = "<group>"; };
+		6C2F8F6C233E202B007BF11C /* TopupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupTableViewCell.swift; sourceTree = "<group>"; };
+		6C2F8F6E233E4997007BF11C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6C300C7F22F94D1F00BEB3BB /* ConnectionCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCheck.swift; sourceTree = "<group>"; };
+		6C30C3EA233B3863000CDC2A /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		6C3125582333BF9900674E88 /* HelpingClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpingClass.swift; sourceTree = "<group>"; };
+		6C3159A22332104E0042F6FC /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
+		6C336CB12360836D0061A786 /* InvoicePDFContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicePDFContentData.swift; sourceTree = "<group>"; };
+		6C349770230AB2F40072A965 /* InvoiceContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceContentViewController.swift; sourceTree = "<group>"; };
+		6C34F022233A03FA00B8A426 /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
+		6C35105023570CAC0033581F /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
+		6C35813022F42E840035C0DB /* ClassSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSwitcher.swift; sourceTree = "<group>"; };
+		6C36680F2303D6BA00F96A88 /* FaqViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqViewController.swift; sourceTree = "<group>"; };
+		6C3732E8234F19EC0011B7F5 /* SIPrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIPrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		6C39FE6A22DDAA0B00421BE0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6C4075C9233CDBEA0049709F /* StandingInstractionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingInstractionViewController.swift; sourceTree = "<group>"; };
+		6C56A86922D75AFB0014C16F /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OTPViewController.swift; path = SpectraNet/Controller/LoginModule/OTPViewController.swift; sourceTree = SOURCE_ROOT; };
+		6C56A86E22D76AEE0014C16F /* UIButton+gradientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+gradientColor.swift"; sourceTree = "<group>"; };
+		6C7A5724231D3EF4001F2531 /* PaymentStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentStatusViewController.swift; sourceTree = "<group>"; };
+		6C7A5726231D4856001F2531 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		6C915CE222D71C38006BFDEB /* My Spectra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Spectra.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C915CE522D71C38006BFDEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6C915CE722D71C38006BFDEB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6C915CEF22D71C39006BFDEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6C915CF222D71C39006BFDEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6C915CF422D71C39006BFDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6C915CF922D71C3A006BFDEB /* My SpectraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My SpectraTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C915CFD22D71C3A006BFDEB /* SpectraNetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectraNetTests.swift; sourceTree = "<group>"; };
+		6C915CFF22D71C3A006BFDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C915D0422D71C3A006BFDEB /* My SpectraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My SpectraUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C915D0822D71C3A006BFDEB /* SpectraNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectraNetUITests.swift; sourceTree = "<group>"; };
+		6C915D0A22D71C3A006BFDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CD2045722D861C600C60549 /* UIView+GradientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+GradientColor.swift"; sourceTree = "<group>"; };
+		6CD2045E22D8635800C60549 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		6CD2046E22D887D600C60549 /* SpectraNet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpectraNet-Bridging-Header.h"; sourceTree = "<group>"; };
+		6CD2047422D8A82700C60549 /* PlaceholderTextColorChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextColorChange.swift; sourceTree = "<group>"; };
+		6CD4FCD5234F6539006968AD /* SITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SITableViewCell.swift; sourceTree = "<group>"; };
+		6CEEFC5622FD3F9700779140 /* InvoiceListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceListData.swift; sourceTree = "<group>"; };
+		6CEEFC5822FD427300779140 /* SRData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRData.swift; sourceTree = "<group>"; };
+		6CEEFC5A22FD44D200779140 /* OTPData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPData.swift; sourceTree = "<group>"; };
+		6CEEFC5C22FD456D00779140 /* MyPlanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlanData.swift; sourceTree = "<group>"; };
+		6CEEFC5E22FD471600779140 /* TransactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionData.swift; sourceTree = "<group>"; };
+		6CEEFC6222FD6A9100779140 /* UserCurrentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCurrentData.swift; sourceTree = "<group>"; };
+		81F102D222E6EFC6008CEEAF /* MoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
+		81F102D422E705A5008CEEAF /* CustomTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewController.swift; sourceTree = "<group>"; };
+		81F102D622E70BDC008CEEAF /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		81F102D822E7127B008CEEAF /* SRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRViewController.swift; sourceTree = "<group>"; };
+		81F102DD22E71556008CEEAF /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		81F4006722E88D5000F259AA /* SRTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRTableViewCell.swift; sourceTree = "<group>"; };
+		81F4006922E8A5F200F259AA /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
+		81F46B212317BE800067EA89 /* MRTGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRTGViewController.swift; sourceTree = "<group>"; };
+		81F5D4A222EADC65003D9634 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		81F5D4AA22EB393E003D9634 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		81F9D4B922EF0912004CC955 /* ChangeDateFormate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDateFormate.swift; sourceTree = "<group>"; };
+		81F9D4BD22EF36DE004CC955 /* UserCountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCountTableViewCell.swift; sourceTree = "<group>"; };
+		880DD3EFC47C309285C497B4 /* Pods_My_Spectra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Spectra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E41FACCD7412B24F1900CD54 /* Pods-My Spectra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Spectra.debug.xcconfig"; path = "Target Support Files/Pods-My Spectra/Pods-My Spectra.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C915CDF22D71C38006BFDEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2C6EB0B1A1F4346852A5C48 /* Pods_My_Spectra.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C915CF622D71C3A006BFDEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C915D0122D71C3A006BFDEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B6BBEEF34AA29B68D676BE9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E41FACCD7412B24F1900CD54 /* Pods-My Spectra.debug.xcconfig */,
+				03355F5AB6F788A62AF067A9 /* Pods-My Spectra.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6C212A14236AE3C2005DDA37 /* SpectraUpcomingPhase2Module */ = {
+			isa = PBXGroup;
+			children = (
+				6C212A04236AD510005DDA37 /* SendOtpToLinkAcntdata.swift */,
+				6C212A08236AE0E6005DDA37 /* GetContactDetailsData.swift */,
+				6C212A0C236AE203005DDA37 /* TrackOrderData.swift */,
+				6C212A0E236AE284005DDA37 /* GetOrganizationNameData.swift */,
+				6C212A10236AE2C7005DDA37 /* AddLinkAccountData.swift */,
+				6C212A12236AE31B005DDA37 /* GetLinkAccountData.swift */,
+			);
+			path = SpectraUpcomingPhase2Module;
+			sourceTree = "<group>";
+		};
+		6C25EFC522FAB9F40085E06B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6C300C7E22F94D0600BEB3BB /* Rechability */,
+				6C25EFC622FABA190085E06B /* Spectra-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6C27FA2C22E0716E002DBF12 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6C7A5726231D4856001F2531 /* TransactionTableViewCell.swift */,
+				81F102D222E6EFC6008CEEAF /* MoreTableViewCell.swift */,
+				6C25921A22E0552C000960D5 /* InvoiceTableViewCell.swift */,
+				81F4006722E88D5000F259AA /* SRTableViewCell.swift */,
+				81F5D4A222EADC65003D9634 /* HomeTableViewCell.swift */,
+				81F5D4AA22EB393E003D9634 /* CustomCollectionViewCell.swift */,
+				81F9D4BD22EF36DE004CC955 /* UserCountTableViewCell.swift */,
+				6C2666B722F800320051A4D2 /* NotificationTableViewCell.swift */,
+				6C2BE2B222FBF89B006F51D7 /* CanIDTableViewCell.swift */,
+				6C2BB55223028E0400077D81 /* HelpCatTableViewCell.swift */,
+				6C29857723101F6E00E6DE69 /* CaseTYpeTableViewCell.swift */,
+				6C21F12A232135BC00FBD253 /* MrtgTableViewCell.swift */,
+				6C25BF58232FA48E00F0351D /* ChangePlanTableViewCell.swift */,
+				6C34F022233A03FA00B8A426 /* FaqTableViewCell.swift */,
+				6C2F8F6C233E202B007BF11C /* TopupTableViewCell.swift */,
+				6CD4FCD5234F6539006968AD /* SITableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		6C300C7E22F94D0600BEB3BB /* Rechability */ = {
+			isa = PBXGroup;
+			children = (
+				6C300C7F22F94D1F00BEB3BB /* ConnectionCheck.swift */,
+			);
+			path = Rechability;
+			sourceTree = "<group>";
+		};
+		6C3125572333BF6300674E88 /* HelpingClass */ = {
+			isa = PBXGroup;
+			children = (
+				6C3125582333BF9900674E88 /* HelpingClass.swift */,
+			);
+			path = HelpingClass;
+			sourceTree = "<group>";
+		};
+		6C31599E2331FC780042F6FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C2F8F6E233E4997007BF11C /* GoogleService-Info.plist */,
+				6C25EFC522FAB9F40085E06B /* Fonts */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6C31599F233201480042F6FC /* NetworkManger */ = {
+			isa = PBXGroup;
+			children = (
+				6C27FA2D22E07862002DBF12 /* CANetworkManager.swift */,
+				6C35105023570CAC0033581F /* DatabaseHandler.swift */,
+			);
+			path = NetworkManger;
+			sourceTree = "<group>";
+		};
+		6C3159A02332024A0042F6FC /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				6C27FA2F22E07868002DBF12 /* Define.swift */,
+			);
+			path = Defines;
+			sourceTree = "<group>";
+		};
+		6C33C5E522F18DCB00BFB452 /* LoginModule */ = {
+			isa = PBXGroup;
+			children = (
+				6C915CE722D71C38006BFDEB /* LoginViewController.swift */,
+				6C56A86922D75AFB0014C16F /* OTPViewController.swift */,
+				6C2710CC22DF3FDB0068DAAB /* ForgotPasswordViewController.swift */,
+			);
+			path = LoginModule;
+			sourceTree = "<group>";
+		};
+		6C33C5E622F18E0300BFB452 /* TabBarViewModule */ = {
+			isa = PBXGroup;
+			children = (
+				81F102D422E705A5008CEEAF /* CustomTabViewController.swift */,
+				6C99AFAB232251FF005470D0 /* MenuTabController */,
+				6C99AFAF23225334005470D0 /* HomeModules */,
+				6C99AFAD23225295005470D0 /* PaymentsModules */,
+				6C99AFAE232252ED005470D0 /* SRModules */,
+				6C99AFAC23225233005470D0 /* MenuModules */,
+				6C99AFB023225365005470D0 /* CheckInternetModule */,
+			);
+			path = TabBarViewModule;
+			sourceTree = "<group>";
+		};
+		6C35813222F433ED0035C0DB /* SwitchVCWhelLogedIn */ = {
+			isa = PBXGroup;
+			children = (
+				6C35813022F42E840035C0DB /* ClassSwitcher.swift */,
+			);
+			path = SwitchVCWhelLogedIn;
+			sourceTree = "<group>";
+		};
+		6C56A86122D746730014C16F /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				6C2661BF22FD37BB00EB910F /* UserData.swift */,
+				6CEEFC6222FD6A9100779140 /* UserCurrentData.swift */,
+				6CEEFC5622FD3F9700779140 /* InvoiceListData.swift */,
+				6C336CB12360836D0061A786 /* InvoicePDFContentData.swift */,
+				6CEEFC5E22FD471600779140 /* TransactionData.swift */,
+				6CEEFC5822FD427300779140 /* SRData.swift */,
+				6CEEFC5A22FD44D200779140 /* OTPData.swift */,
+				6CEEFC5C22FD456D00779140 /* MyPlanData.swift */,
+				6C25BF5A232FC95C00F0351D /* ChangePlanData.swift */,
+				6C298575230FBD6600E6DE69 /* DataUsageData.swift */,
+				6C2985792310214D00E6DE69 /* CaseTypeData.swift */,
+				6C21F12623211BC900FBD253 /* MRTGGraphData.swift */,
+				6C2F8F68233E128D007BF11C /* TopupPlanData.swift */,
+				6C24A43B2372C76100B8BE09 /* UserProfileData.swift */,
+				6C212A14236AE3C2005DDA37 /* SpectraUpcomingPhase2Module */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		6C56A86222D7467D0014C16F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6C27FA2C22E0716E002DBF12 /* TableViewCell */,
+				6C06778F2329120900058517 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6C56A86322D746850014C16F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6C33C5E522F18DCB00BFB452 /* LoginModule */,
+				6C33C5E622F18E0300BFB452 /* TabBarViewModule */,
+				6CD2046E22D887D600C60549 /* SpectraNet-Bridging-Header.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6C56A86622D759E20014C16F /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				6C3125572333BF6300674E88 /* HelpingClass */,
+				6C56A86D22D76A8E0014C16F /* Extensions */,
+				6C3159A02332024A0042F6FC /* Defines */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		6C56A86822D75A130014C16F /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				6C915CE522D71C38006BFDEB /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		6C56A86D22D76A8E0014C16F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6CD2047422D8A82700C60549 /* PlaceholderTextColorChange.swift */,
+				6C25921822E03784000960D5 /* DeviceCheck.swift */,
+				6C27FA3122E0A4BF002DBF12 /* RemoveStringAfterSpecificChar.swift */,
+				81F9D4B922EF0912004CC955 /* ChangeDateFormate.swift */,
+				6C23D12822F04A4E00B6B40E /* GetDayaStatusAccordingTime.swift */,
+				6C298573230FBA9D00E6DE69 /* DataUsageGraphClass.swift */,
+				6C273CDD2330FFC60080C69A /* NumberFormatter.swift */,
+				6CD2045E22D8635800C60549 /* AlertController.swift */,
+				6CD2045722D861C600C60549 /* UIView+GradientColor.swift */,
+				6C3159A22332104E0042F6FC /* Classes.swift */,
+				6C24A4372372AFAC00B8BE09 /* ProfileImageAddLocal.swift */,
+				6C24A4392372B3E400B8BE09 /* StringRegexValidation.swift */,
+				6C56A86E22D76AEE0014C16F /* UIButton+gradientColor.swift */,
+				6C35813222F433ED0035C0DB /* SwitchVCWhelLogedIn */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6C915CD922D71C38006BFDEB = {
+			isa = PBXGroup;
+			children = (
+				6C915CE422D71C38006BFDEB /* SpectraNet */,
+				6C915CFC22D71C3A006BFDEB /* SpectraNetTests */,
+				6C915D0722D71C3A006BFDEB /* SpectraNetUITests */,
+				6C915CE322D71C38006BFDEB /* Products */,
+				4B6BBEEF34AA29B68D676BE9 /* Pods */,
+				6FBAEE8AEF1B2DB9FD7DCCD7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6C915CE322D71C38006BFDEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C915CE222D71C38006BFDEB /* My Spectra.app */,
+				6C915CF922D71C3A006BFDEB /* My SpectraTests.xctest */,
+				6C915D0422D71C3A006BFDEB /* My SpectraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C915CE422D71C38006BFDEB /* SpectraNet */ = {
+			isa = PBXGroup;
+			children = (
+				6C31599F233201480042F6FC /* NetworkManger */,
+				6C31599E2331FC780042F6FC /* Supporting Files */,
+				6C56A86822D75A130014C16F /* AppDelegate */,
+				6C56A86622D759E20014C16F /* Libs */,
+				6C56A86122D746730014C16F /* Modal */,
+				6C56A86222D7467D0014C16F /* View */,
+				6C56A86322D746850014C16F /* Controller */,
+				6C915CEF22D71C39006BFDEB /* Assets.xcassets */,
+				6C915CF122D71C39006BFDEB /* LaunchScreen.storyboard */,
+				6C915CF422D71C39006BFDEB /* Info.plist */,
+			);
+			path = SpectraNet;
+			sourceTree = "<group>";
+		};
+		6C915CFC22D71C3A006BFDEB /* SpectraNetTests */ = {
+			isa = PBXGroup;
+			children = (
+				6C915CFD22D71C3A006BFDEB /* SpectraNetTests.swift */,
+				6C915CFF22D71C3A006BFDEB /* Info.plist */,
+			);
+			path = SpectraNetTests;
+			sourceTree = "<group>";
+		};
+		6C915D0722D71C3A006BFDEB /* SpectraNetUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6C915D0822D71C3A006BFDEB /* SpectraNetUITests.swift */,
+				6C915D0A22D71C3A006BFDEB /* Info.plist */,
+			);
+			path = SpectraNetUITests;
+			sourceTree = "<group>";
+		};
+		6C99AFAB232251FF005470D0 /* MenuTabController */ = {
+			isa = PBXGroup;
+			children = (
+				6C39FE6A22DDAA0B00421BE0 /* HomeViewController.swift */,
+				6C27A0DB22DEFFB000DEC2FA /* InvoiceDetailViewController.swift */,
+				81F102D622E70BDC008CEEAF /* MoreViewController.swift */,
+				81F102D822E7127B008CEEAF /* SRViewController.swift */,
+			);
+			path = MenuTabController;
+			sourceTree = "<group>";
+		};
+		6C99AFAC23225233005470D0 /* MenuModules */ = {
+			isa = PBXGroup;
+			children = (
+				81F4006922E8A5F200F259AA /* PlanViewController.swift */,
+				6C25BF56232F9EA300F0351D /* ChangePlanViewController.swift */,
+				81F102DD22E71556008CEEAF /* AccountViewController.swift */,
+				6C2BE2B422FBF8B7006F51D7 /* CanIDViewController.swift */,
+				6C2BB5542302C03600077D81 /* DataUsageViewController.swift */,
+				6C36680F2303D6BA00F96A88 /* FaqViewController.swift */,
+				6C21F1222320EDE600FBD253 /* ContactUSViewController.swift */,
+				6C06778D2329100D00058517 /* PrivacyPolicyViewController.swift */,
+				6C30C3EA233B3863000CDC2A /* EditProfileViewController.swift */,
+				6C21A358237024DD00F95A9C /* ManageContactsViewController.swift */,
+				6C4075C9233CDBEA0049709F /* StandingInstractionViewController.swift */,
+				6C3732E8234F19EC0011B7F5 /* SIPrivacyPolicyViewController.swift */,
+			);
+			path = MenuModules;
+			sourceTree = "<group>";
+		};
+		6C99AFAD23225295005470D0 /* PaymentsModules */ = {
+			isa = PBXGroup;
+			children = (
+				6C349770230AB2F40072A965 /* InvoiceContentViewController.swift */,
+				6C2CB899230167970002258F /* PayNowViewController.swift */,
+				6C2EA178232A517C00D53837 /* PaymentScreenViewController.swift */,
+				6C7A5724231D3EF4001F2531 /* PaymentStatusViewController.swift */,
+			);
+			path = PaymentsModules;
+			sourceTree = "<group>";
+		};
+		6C99AFAE232252ED005470D0 /* SRModules */ = {
+			isa = PBXGroup;
+			children = (
+				6C2CB89B23017A590002258F /* CreateSRViewController.swift */,
+			);
+			path = SRModules;
+			sourceTree = "<group>";
+		};
+		6C99AFAF23225334005470D0 /* HomeModules */ = {
+			isa = PBXGroup;
+			children = (
+				6C06778B23290F7100058517 /* AccountCancelledViewController.swift */,
+				6C2A6C85231E2ED0006BCADE /* AccountActivationViewController.swift */,
+				81F46B212317BE800067EA89 /* MRTGViewController.swift */,
+				6C2666B522F7F5C40051A4D2 /* NotificationViewController.swift */,
+				6C2F8F6A233E13C2007BF11C /* TopupPlanViewController.swift */,
+			);
+			path = HomeModules;
+			sourceTree = "<group>";
+		};
+		6C99AFB023225365005470D0 /* CheckInternetModule */ = {
+			isa = PBXGroup;
+			children = (
+				6C2A6C87231E3236006BCADE /* NoInternetViewController.swift */,
+			);
+			path = CheckInternetModule;
+			sourceTree = "<group>";
+		};
+		6FBAEE8AEF1B2DB9FD7DCCD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				880DD3EFC47C309285C497B4 /* Pods_My_Spectra.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6C915CE122D71C38006BFDEB /* My Spectra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C915D0D22D71C3A006BFDEB /* Build configuration list for PBXNativeTarget "My Spectra" */;
+			buildPhases = (
+				E9882B783B3A50FAB4590C71 /* [CP] Check Pods Manifest.lock */,
+				6C915CDE22D71C38006BFDEB /* Sources */,
+				6C915CDF22D71C38006BFDEB /* Frameworks */,
+				6C915CE022D71C38006BFDEB /* Resources */,
+				81F46B1E2317B3AE0067EA89 /* ShellScript */,
+				F296C3D46F88B3ED33057ACA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "My Spectra";
+			productName = SpectraNet;
+			productReference = 6C915CE222D71C38006BFDEB /* My Spectra.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6C915CF822D71C3A006BFDEB /* My SpectraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C915D1022D71C3A006BFDEB /* Build configuration list for PBXNativeTarget "My SpectraTests" */;
+			buildPhases = (
+				6C915CF522D71C3A006BFDEB /* Sources */,
+				6C915CF622D71C3A006BFDEB /* Frameworks */,
+				6C915CF722D71C3A006BFDEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C915CFB22D71C3A006BFDEB /* PBXTargetDependency */,
+			);
+			name = "My SpectraTests";
+			productName = SpectraNetTests;
+			productReference = 6C915CF922D71C3A006BFDEB /* My SpectraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6C915D0322D71C3A006BFDEB /* My SpectraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C915D1322D71C3A006BFDEB /* Build configuration list for PBXNativeTarget "My SpectraUITests" */;
+			buildPhases = (
+				6C915D0022D71C3A006BFDEB /* Sources */,
+				6C915D0122D71C3A006BFDEB /* Frameworks */,
+				6C915D0222D71C3A006BFDEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C915D0622D71C3A006BFDEB /* PBXTargetDependency */,
+			);
+			name = "My SpectraUITests";
+			productName = SpectraNetUITests;
+			productReference = 6C915D0422D71C3A006BFDEB /* My SpectraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6C915CDA22D71C38006BFDEB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Bhoopendra;
+				TargetAttributes = {
+					6C915CE122D71C38006BFDEB = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+					};
+					6C915CF822D71C3A006BFDEB = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 6C915CE122D71C38006BFDEB;
+					};
+					6C915D0322D71C3A006BFDEB = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 6C915CE122D71C38006BFDEB;
+					};
+				};
+			};
+			buildConfigurationList = 6C915CDD22D71C38006BFDEB /* Build configuration list for PBXProject "My Spectra" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6C915CD922D71C38006BFDEB;
+			productRefGroup = 6C915CE322D71C38006BFDEB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C915CE122D71C38006BFDEB /* My Spectra */,
+				6C915CF822D71C3A006BFDEB /* My SpectraTests */,
+				6C915D0322D71C3A006BFDEB /* My SpectraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6C915CE022D71C38006BFDEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C0677902329120A00058517 /* Main.storyboard in Resources */,
+				6C915CF322D71C39006BFDEB /* LaunchScreen.storyboard in Resources */,
+				6C2F8F6F233E4997007BF11C /* GoogleService-Info.plist in Resources */,
+				6C915CF022D71C39006BFDEB /* Assets.xcassets in Resources */,
+				6C25EFC722FABA190085E06B /* Spectra-Regular.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C915CF722D71C3A006BFDEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C915D0222D71C3A006BFDEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		81F46B1E2317B3AE0067EA89 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
+		E9882B783B3A50FAB4590C71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-My Spectra-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F296C3D46F88B3ED33057ACA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Spectra/Pods-My Spectra-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Spectra/Pods-My Spectra-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My Spectra/Pods-My Spectra-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C915CDE22D71C38006BFDEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C212A11236AE2C7005DDA37 /* AddLinkAccountData.swift in Sources */,
+				6C56A86A22D75AFB0014C16F /* OTPViewController.swift in Sources */,
+				6C24A43C2372C76100B8BE09 /* UserProfileData.swift in Sources */,
+				6C3668102303D6BA00F96A88 /* FaqViewController.swift in Sources */,
+				81F102DE22E71556008CEEAF /* AccountViewController.swift in Sources */,
+				6C2CB89A230167970002258F /* PayNowViewController.swift in Sources */,
+				6C2BE2B522FBF8B7006F51D7 /* CanIDViewController.swift in Sources */,
+				6C27FA2E22E07862002DBF12 /* CANetworkManager.swift in Sources */,
+				6C3732E9234F19EC0011B7F5 /* SIPrivacyPolicyViewController.swift in Sources */,
+				81F9D4BA22EF0912004CC955 /* ChangeDateFormate.swift in Sources */,
+				6CD2047522D8A82700C60549 /* PlaceholderTextColorChange.swift in Sources */,
+				81F5D4AB22EB393E003D9634 /* CustomCollectionViewCell.swift in Sources */,
+				6C2CB89C23017A590002258F /* CreateSRViewController.swift in Sources */,
+				81F4006A22E8A5F200F259AA /* PlanViewController.swift in Sources */,
+				81F102D322E6EFC6008CEEAF /* MoreTableViewCell.swift in Sources */,
+				6C212A09236AE0E6005DDA37 /* GetContactDetailsData.swift in Sources */,
+				6C25921B22E0552C000960D5 /* InvoiceTableViewCell.swift in Sources */,
+				6C212A0F236AE284005DDA37 /* GetOrganizationNameData.swift in Sources */,
+				6C21F12723211BC900FBD253 /* MRTGGraphData.swift in Sources */,
+				6CD2045F22D8635800C60549 /* AlertController.swift in Sources */,
+				6C4075CA233CDBEA0049709F /* StandingInstractionViewController.swift in Sources */,
+				6C2661C022FD37BB00EB910F /* UserData.swift in Sources */,
+				6C21F1232320EDE600FBD253 /* ContactUSViewController.swift in Sources */,
+				6C212A05236AD510005DDA37 /* SendOtpToLinkAcntdata.swift in Sources */,
+				6C25BF5B232FC95C00F0351D /* ChangePlanData.swift in Sources */,
+				81F102D522E705A5008CEEAF /* CustomTabViewController.swift in Sources */,
+				6CEEFC6322FD6A9100779140 /* UserCurrentData.swift in Sources */,
+				6C3125592333BF9900674E88 /* HelpingClass.swift in Sources */,
+				6C25BF57232F9EA300F0351D /* ChangePlanViewController.swift in Sources */,
+				6C39FE6B22DDAA0B00421BE0 /* HomeViewController.swift in Sources */,
+				6C2666B622F7F5C40051A4D2 /* NotificationViewController.swift in Sources */,
+				6C06778E2329100E00058517 /* PrivacyPolicyViewController.swift in Sources */,
+				6C336CB22360836D0061A786 /* InvoicePDFContentData.swift in Sources */,
+				6C21F12B232135BC00FBD253 /* MrtgTableViewCell.swift in Sources */,
+				6C30C3EB233B3863000CDC2A /* EditProfileViewController.swift in Sources */,
+				6C34F023233A03FA00B8A426 /* FaqTableViewCell.swift in Sources */,
+				6C915CE822D71C38006BFDEB /* LoginViewController.swift in Sources */,
+				6CEEFC5D22FD456D00779140 /* MyPlanData.swift in Sources */,
+				6C35105123570CAC0033581F /* DatabaseHandler.swift in Sources */,
+				6C212A13236AE31B005DDA37 /* GetLinkAccountData.swift in Sources */,
+				6C298574230FBA9D00E6DE69 /* DataUsageGraphClass.swift in Sources */,
+				6C2F8F6D233E202B007BF11C /* TopupTableViewCell.swift in Sources */,
+				6C25921922E03784000960D5 /* DeviceCheck.swift in Sources */,
+				6C300C8022F94D1F00BEB3BB /* ConnectionCheck.swift in Sources */,
+				6CEEFC5922FD427300779140 /* SRData.swift in Sources */,
+				6C24A43A2372B3E400B8BE09 /* StringRegexValidation.swift in Sources */,
+				6C915CE622D71C38006BFDEB /* AppDelegate.swift in Sources */,
+				6C2A6C88231E3236006BCADE /* NoInternetViewController.swift in Sources */,
+				6C298576230FBD6600E6DE69 /* DataUsageData.swift in Sources */,
+				81F9D4BE22EF36DE004CC955 /* UserCountTableViewCell.swift in Sources */,
+				6C2BE2B322FBF89B006F51D7 /* CanIDTableViewCell.swift in Sources */,
+				6C35813122F42E840035C0DB /* ClassSwitcher.swift in Sources */,
+				6C24A4382372AFAC00B8BE09 /* ProfileImageAddLocal.swift in Sources */,
+				6CD4FCD6234F6539006968AD /* SITableViewCell.swift in Sources */,
+				6C27FA3022E07868002DBF12 /* Define.swift in Sources */,
+				6C23D12922F04A4E00B6B40E /* GetDayaStatusAccordingTime.swift in Sources */,
+				6C2F8F6B233E13C2007BF11C /* TopupPlanViewController.swift in Sources */,
+				6C21A359237024DD00F95A9C /* ManageContactsViewController.swift in Sources */,
+				81F102D722E70BDC008CEEAF /* MoreViewController.swift in Sources */,
+				6CEEFC5F22FD471600779140 /* TransactionData.swift in Sources */,
+				6C2666B822F800320051A4D2 /* NotificationTableViewCell.swift in Sources */,
+				6C2BB55323028E0400077D81 /* HelpCatTableViewCell.swift in Sources */,
+				6CD2045822D861C600C60549 /* UIView+GradientColor.swift in Sources */,
+				6C2F8F69233E128D007BF11C /* TopupPlanData.swift in Sources */,
+				6C349771230AB2F40072A965 /* InvoiceContentViewController.swift in Sources */,
+				6CEEFC5B22FD44D200779140 /* OTPData.swift in Sources */,
+				6C06778C23290F7100058517 /* AccountCancelledViewController.swift in Sources */,
+				6C2710CD22DF3FDB0068DAAB /* ForgotPasswordViewController.swift in Sources */,
+				6C29857A2310214D00E6DE69 /* CaseTypeData.swift in Sources */,
+				6C7A5727231D4856001F2531 /* TransactionTableViewCell.swift in Sources */,
+				6C7A5725231D3EF4001F2531 /* PaymentStatusViewController.swift in Sources */,
+				6C2A6C86231E2ED0006BCADE /* AccountActivationViewController.swift in Sources */,
+				81F46B222317BE800067EA89 /* MRTGViewController.swift in Sources */,
+				6C29857823101F6E00E6DE69 /* CaseTYpeTableViewCell.swift in Sources */,
+				6C273CDE2330FFC60080C69A /* NumberFormatter.swift in Sources */,
+				6C27FA3222E0A4BF002DBF12 /* RemoveStringAfterSpecificChar.swift in Sources */,
+				6C3159A32332104E0042F6FC /* Classes.swift in Sources */,
+				81F4006822E88D5000F259AA /* SRTableViewCell.swift in Sources */,
+				81F102D922E7127B008CEEAF /* SRViewController.swift in Sources */,
+				81F5D4A322EADC65003D9634 /* HomeTableViewCell.swift in Sources */,
+				6C25BF59232FA48E00F0351D /* ChangePlanTableViewCell.swift in Sources */,
+				6C212A0D236AE203005DDA37 /* TrackOrderData.swift in Sources */,
+				6C2EA179232A517C00D53837 /* PaymentScreenViewController.swift in Sources */,
+				6C56A86F22D76AEE0014C16F /* UIButton+gradientColor.swift in Sources */,
+				6CEEFC5722FD3F9700779140 /* InvoiceListData.swift in Sources */,
+				6C27A0DC22DEFFB000DEC2FA /* InvoiceDetailViewController.swift in Sources */,
+				6C2BB5552302C03600077D81 /* DataUsageViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C915CF522D71C3A006BFDEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C915CFE22D71C3A006BFDEB /* SpectraNetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C915D0022D71C3A006BFDEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C915D0922D71C3A006BFDEB /* SpectraNetUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6C915CFB22D71C3A006BFDEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C915CE122D71C38006BFDEB /* My Spectra */;
+			targetProxy = 6C915CFA22D71C3A006BFDEB /* PBXContainerItemProxy */;
+		};
+		6C915D0622D71C3A006BFDEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C915CE122D71C38006BFDEB /* My Spectra */;
+			targetProxy = 6C915D0522D71C3A006BFDEB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6C915CF122D71C39006BFDEB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C915CF222D71C39006BFDEB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6C915D0B22D71C3A006BFDEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6C915D0C22D71C3A006BFDEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6C915D0E22D71C3A006BFDEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E41FACCD7412B24F1900CD54 /* Pods-My Spectra.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4Q5R9UVSRV;
+				INFOPLIST_FILE = SpectraNet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Spectra.MySpectra;
+				PRODUCT_NAME = "My Spectra";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpectraNet/Controller/SpectraNet-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		6C915D0F22D71C3A006BFDEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03355F5AB6F788A62AF067A9 /* Pods-My Spectra.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
+				DEVELOPMENT_TEAM = 4Q5R9UVSRV;
+				INFOPLIST_FILE = SpectraNet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Spectra.MySpectra;
+				PRODUCT_NAME = "My Spectra";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpectraNet/Controller/SpectraNet-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		6C915D1122D71C3A006BFDEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SpectraNetTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Com.Affle.SpectraNet.SpectraNetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/My Spectra.temp_caseinsensitive_rename.app/My Spectra.temp_caseinsensitive_rename";
+			};
+			name = Debug;
+		};
+		6C915D1222D71C3A006BFDEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SpectraNetTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Com.Affle.SpectraNet.SpectraNetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/My Spectra.temp_caseinsensitive_rename.app/My Spectra.temp_caseinsensitive_rename";
+			};
+			name = Release;
+		};
+		6C915D1422D71C3A006BFDEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SpectraNetUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Com.Affle.SpectraNet.SpectraNetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SpectraNet;
+			};
+			name = Debug;
+		};
+		6C915D1522D71C3A006BFDEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SpectraNetUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Com.Affle.SpectraNet.SpectraNetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SpectraNet;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C915CDD22D71C38006BFDEB /* Build configuration list for PBXProject "My Spectra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C915D0B22D71C3A006BFDEB /* Debug */,
+				6C915D0C22D71C3A006BFDEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C915D0D22D71C3A006BFDEB /* Build configuration list for PBXNativeTarget "My Spectra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C915D0E22D71C3A006BFDEB /* Debug */,
+				6C915D0F22D71C3A006BFDEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C915D1022D71C3A006BFDEB /* Build configuration list for PBXNativeTarget "My SpectraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C915D1122D71C3A006BFDEB /* Debug */,
+				6C915D1222D71C3A006BFDEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C915D1322D71C3A006BFDEB /* Build configuration list for PBXNativeTarget "My SpectraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C915D1422D71C3A006BFDEB /* Debug */,
+				6C915D1522D71C3A006BFDEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6C915CDA22D71C38006BFDEB /* Project object */;
+}
