@@ -18,8 +18,6 @@ class ChangePlanTableViewCell: UITableViewCell {
     
     @IBOutlet var selctpackageBTN: UIButton!
     
-    @IBOutlet var checkBoxButton: UIButton!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

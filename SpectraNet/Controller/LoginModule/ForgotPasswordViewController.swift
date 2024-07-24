@@ -87,12 +87,10 @@ class ForgotPasswordViewController: UIViewController,UITextFieldDelegate {
             {
                 if mobileTF.text == ""
                 {
-                    self.forgotPasswordByCanIdFirbaseAnalysics()
                     showAlertC(message: AlertViewMessage.enterCanID)
                 }
                 else
                 {
-                    self.forgotPasswordByCanIdFirbaseAnalysics()
                     ServiceTypeForgotPasswrd()
                 }
             }
@@ -100,12 +98,10 @@ class ForgotPasswordViewController: UIViewController,UITextFieldDelegate {
             {
                 if mobileTF.text == ""
                 {
-                    self.forgotPasswordByUSerNameFirbaseAnalysics()
                     showAlertC(message: AlertViewMessage.enterUserName)
                 }
                 else
                 {
-                    self.forgotPasswordByUSerNameFirbaseAnalysics()
                     ServiceTypeForgotPasswrd()
                 }
             }
@@ -114,23 +110,6 @@ class ForgotPasswordViewController: UIViewController,UITextFieldDelegate {
         {
             noInternetCheckScreenWithMessage(errorMessage:"")
         }
-    }
-    
-    func forgotPasswordByCanIdFirbaseAnalysics(){
-    
-        let dictAnalysics = [AnanlysicParameters.Category:AnalyticsEventsCategory.Login,AnanlysicParameters.Action:AnalyticsEventsActions.can_id,AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent,"canID":mobileTF.text ?? ""] as [String : Any]
-        
-        //,AnanlysicParameters.EventDescription:AnanlysicEventDescprion.forgotPassword
-    
-       HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.forgot_password, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-    }
-    
-    func forgotPasswordByUSerNameFirbaseAnalysics(){
-    
-        let dictAnalysics = [AnanlysicParameters.Category:AnalyticsEventsCategory.Login,AnanlysicParameters.Action:AnalyticsEventsActions.username,AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent,"username":mobileTF.text ?? ""] as [String : Any]
-        //,AnanlysicParameters.EventDescription:AnanlysicEventDescprion.forgotPassword
-    
-       HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.forgot_password, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
     }
     
     func ServiceTypeForgotPasswrd()

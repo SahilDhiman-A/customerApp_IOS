@@ -85,25 +85,7 @@ class InvoiceDetailViewController: UIViewController,UITableViewDelegate,UITableV
         super.viewWillAppear(animated)
         hitServiceClickOnTab()
         checkInvoiceOrTrasactionScreen()
-    
-    if(AppDelegate.sharedInstance.navigateFrom == ""){
-        menuPaymentFirbaseAnalysics()
-        
     }
-        AppDelegate.sharedInstance.navigateFrom = ""
-}
-
-func menuPaymentFirbaseAnalysics(){
-
-    let dictAnalysics = [AnanlysicParameters.canID:canID,
-                         AnanlysicParameters.Category:AnalyticsEventsCategory.dashboard_menu,
-                         AnanlysicParameters.Action:AnalyticsEventsActions.menu_payments,
-                         AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-    
-    //,AnanlysicParameters.EventDescription:AnanlysicEventDescprion.loginwithUserNamePassword
-
-   HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.menu_click_payments, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-}
   
     func hitServiceClickOnTab()
     {
@@ -309,57 +291,9 @@ func menuPaymentFirbaseAnalysics(){
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.invoiceDetailsIdentifier) as? InvoiceContentViewController
             vc?.invoiceNumber = trasData.invoiceNo
             vc?.sendInvoiceNumber = trasData.displayInvNo
-           vc?.canID = canID
-        self.invoiceDetailFirbaseAnalysics(invoice_id: trasData.invoiceNo, invoice_date: trasData.invoicedt, invoice_period:String(format: "%@ - %@",setInvoiceListDateFormate(previousDateStr: trasData.startdt, withPreviousDateFormte: DateFormats.orderInvoiceDate, replaeWithFormate: DateFormats.orderDateFormat),  setInvoiceListDateFormate(previousDateStr: trasData.enddt, withPreviousDateFormte: DateFormats.orderInvoiceDate, replaeWithFormate: DateFormats.orderDateFormat)) , invoice_amount: trasData.amount, due_date: trasData.duedt)
             self.navigationController?.pushViewController(vc!, animated: false)
        }
     }
-    
-    func invoiceDetailFirbaseAnalysics(invoice_id:String,invoice_date:String,invoice_period:String,invoice_amount:String,due_date:String){
-    
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.payment_invoices,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.payment_invoices,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent,
-                             "invoice_id":invoice_id,
-                             "invoice_date":invoice_date,
-                             "invoice_period":invoice_period,
-                             "invoice_amount":invoice_amount,
-                             "due_date":due_date]
-
-       HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.view_invoice_details, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-    }
-    
-    func filterInvoiceFirbaseAnalysics(from_date:String,to_date:String){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.payment_invoices,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.payment_invoices,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent,
-                             "from_date":from_date,
-                             "to_date":to_date]
-
-       HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.apply_invoice_filter, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
-    }
-    
-    
-    func filterTransectionFirbaseAnalysics(from_date:String,to_date:String){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.Payments,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.transectionFilter,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent,
-                             "from_date":from_date,
-                             "to_date":to_date]
-
-       HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.apply_filter_trancations, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
-    }
-    
-    
-    
-    
     
     @objc func invoiceEmailButtonAction(sender: UIButton!)
     {
@@ -371,32 +305,13 @@ func menuPaymentFirbaseAnalysics(){
         {
             sendInvoiceNumber = trasData.displayInvNo
             invoiceNumber = trasData.invoiceNo
-            paybleAmount = trasData.unPaidBalance
+            paybleAmount = trasData.invoiceCharge
             tdsAmount = String(format: "%.2f", trasData.tdsAmount)
             tdsPercent = trasData.tdsSlab
-            if AppDelegate.sharedInstance.segmentType == segment.userB2C{
-            self.invoiceDetailEmailFirbaseAnalysics(invoice_id: trasData.invoiceNo, invoice_date: trasData.invoicedt, invoice_period:String(format: "%@ - %@",setInvoiceListDateFormate(previousDateStr: trasData.startdt, withPreviousDateFormte: DateFormats.orderInvoiceDate, replaeWithFormate: DateFormats.orderDateFormat),  setInvoiceListDateFormate(previousDateStr: trasData.enddt, withPreviousDateFormte: DateFormats.orderInvoiceDate, replaeWithFormate: DateFormats.orderDateFormat)) , invoice_amount: trasData.amount, due_date: trasData.duedt)
-            }
         }
         
         sendEmailCallMethod(withPaybleAmount: paybleAmount)
     }
-    
-    func invoiceDetailEmailFirbaseAnalysics(invoice_id:String,invoice_date:String,invoice_period:String,invoice_amount:String,due_date:String){
-    
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.Payments,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.Email_share,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent,
-                             "invoice_id":invoice_id,
-                             "invoice_date":invoice_date,
-                             "invoice_period":invoice_period,
-                             "invoice_amount":invoice_amount,
-                             "due_date":due_date]
-
-       HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.share_invoice_via_email, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-    }
-    
     
     func sendEmailCallMethod(withPaybleAmount: String)
     {
@@ -408,27 +323,12 @@ func menuPaymentFirbaseAnalysics(){
         }
         else
         {
-            payNowFirbaseAnalysics(outstandingAmt: withPaybleAmount)
             goPayNowScreen(canID: canID, outstandingAmt: withPaybleAmount, tdsAmt: tdsAmount, tdsPrcnt: tdsPercent,ifFromTopup: "")
         }
     }
-    
-    func payNowFirbaseAnalysics(outstandingAmt:String){
-        
-            let dictAnalysics = [AnanlysicParameters.canID:canID,
-                                 AnanlysicParameters.Category:AnalyticsEventsCategory.Payments
-                                 ,AnanlysicParameters.Action:AnalyticsEventsActions.payNowClick
-                                 ,AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent,"Amount":outstandingAmt]
-            
-            //,AnanlysicParameters.EventDescription:AnanlysicEventDescprion.loginwithUserNamePassword
-        
-           HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.pay_Now, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-    }
-    
   
     @IBAction func duePaymentBTN(_ sender: Any)
     {
-        payNowFirbaseAnalysics(outstandingAmt: lblOutstandingAmt.text ?? "0.00")
         goPayNowScreen(canID: canID, outstandingAmt: lblOutstandingAmt.text ?? "0.00", tdsAmt: "", tdsPrcnt: "",ifFromTopup: "")
     }
     
@@ -441,7 +341,6 @@ func menuPaymentFirbaseAnalysics(){
              ledgerFilterInvoiceBTN.isSelected = !ledgerFilterInvoiceBTN.isSelected
             if(ledgerFilterInvoiceBTN.isSelected == true)
             {
-                filterTransectionFirbaseAnalysics(from_date: fromDateString, to_date: toDateString)
                 self.serviceTypeLedgerData(dateFrom: fromDateString, toDate: toDateString)
             }
             else
@@ -450,7 +349,6 @@ func menuPaymentFirbaseAnalysics(){
                 ledgerLblSelectFromDate.text = DefaultString.setSeletctdate
                 toDateString = ""
                 fromDateString = ""
-                filterTransectionFirbaseAnalysics(from_date: getLastNumberOfMonthPreviousDate(numberOfMonth: -6), to_date: getCurrentDate(withFormate: DateFormats.orderCurrentDateFormatOutPut))
                 self.serviceTypeLedgerData(dateFrom: getLastNumberOfMonthPreviousDate(numberOfMonth: -6), toDate: getCurrentDate(withFormate: DateFormats.orderCurrentDateFormatOutPut))
             }
          }
@@ -500,7 +398,7 @@ func menuPaymentFirbaseAnalysics(){
     {
         if lblSelectFromDate.text == DefaultString.setSeletctdate
         {
-            debugPrint("Select From Date")
+           print("Select From Date")
         }
         else
         {
@@ -525,7 +423,7 @@ func menuPaymentFirbaseAnalysics(){
     }
     
     private func completetionalHandler(month: Int, year: Int) {
-        debugPrint( "month = ", month, " year = ", year )
+        print( "month = ", month, " year = ", year )
 
     }
   
@@ -624,8 +522,6 @@ func menuPaymentFirbaseAnalysics(){
                     try! self.realm!.write
                     {
                         if let users = self.realm?.objects(InvoiceListData.self) {
-                            
-                           
                             self.realm!.delete(users)
                         }
                     }
@@ -677,7 +573,7 @@ func menuPaymentFirbaseAnalysics(){
             {
                 let dict = ["Action":ActionKeys.getInvoiceList, "Authkey":UserAuthKEY.authKEY,"startDate":fromDateString, "canID":canID, "endDate":toDateString]
                 print_debug(object: dict)
-                filterInvoiceFirbaseAnalysics(from_date: fromDateString, to_date: toDateString)
+                
                 CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
                     print_debug(object: response)
                     if response != nil
@@ -774,8 +670,6 @@ func menuPaymentFirbaseAnalysics(){
     {
         let dict = ["Action":ActionKeys.paymentTransactionDetails, "Authkey":UserAuthKEY.authKEY,"fromDate":dateFrom, "canID":canID, "toDate":toDate]
         print_debug(object: dict)
-       
-       
         CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
             print_debug(object: response)
             if response != nil
@@ -996,7 +890,7 @@ func menuPaymentFirbaseAnalysics(){
             }
             catch
             {
-                debugPrint("error saving file:", error);
+                print("error saving file:", error);
             }
         }
         else
@@ -1021,7 +915,7 @@ func menuPaymentFirbaseAnalysics(){
     self.present(mailComposer, animated: true
     , completion: nil)
     } catch let error {
-        debugPrint("We have encountered error \(error.localizedDescription)")
+    print("We have encountered error \(error.localizedDescription)")
     }
     
     }

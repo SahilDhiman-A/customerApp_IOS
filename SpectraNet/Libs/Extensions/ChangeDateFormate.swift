@@ -14,10 +14,6 @@ extension UIViewController
     // Change Date Formate
     func setChangeDateFormate(previousDateStr: String) -> String {
         
-        if(previousDateStr == ""){
-            return ""
-        }
-        
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = DateFormats.orderDateFormat
         let showDate = inputFormatter.date(from: previousDateStr)

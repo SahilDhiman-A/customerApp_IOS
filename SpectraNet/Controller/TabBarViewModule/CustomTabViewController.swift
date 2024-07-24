@@ -41,22 +41,13 @@ class CustomTabViewController: UITabBarController {
         tabBarItems.image = deselectedImg3
         tabBarItems.selectedImage = selectedImg3
         
-        
-        let selectedImg4 = UIImage(named: "GetHelp")?.withRenderingMode(.alwaysOriginal)
-        let deselectedImg4 = UIImage(named: "GetHelp")?.withRenderingMode(.alwaysTemplate)
+        let selectedImg4 = UIImage(named: "tabMenu")?.withRenderingMode(.alwaysOriginal)
+        let deselectedImg4 = UIImage(named: "tabMenu")?.withRenderingMode(.alwaysTemplate)
         tabBarItems = self.tabBar.items![3]
         tabBarItems.image = deselectedImg4
         tabBarItems.selectedImage = selectedImg4
 
-        
-        
-        let selectedImg5 = UIImage(named: "tabMenu")?.withRenderingMode(.alwaysOriginal)
-        let deselectedImg5 = UIImage(named: "tabMenu")?.withRenderingMode(.alwaysTemplate)
-        tabBarItems = self.tabBar.items![4]
-        tabBarItems.image = deselectedImg5
-        tabBarItems.selectedImage = selectedImg5
-
-        if  AppDelegate.sharedInstance.navigateFrom==TabViewScreenName.Payment
+        if    AppDelegate.sharedInstance.navigateFrom==TabViewScreenName.Payment
          {
             self.selectedIndex = 1
         }
@@ -64,23 +55,14 @@ class CustomTabViewController: UITabBarController {
         {
             self.selectedIndex = 2
         }
-        else if (AppDelegate.sharedInstance.navigateFrom==TabViewScreenName.getHelp)
-        {
-            self.selectedIndex = 3
-        }
         else if (AppDelegate.sharedInstance.navigateFrom==TabViewScreenName.menu)
         {
-            self.selectedIndex = 4
+            self.selectedIndex = 3
         }
         else
         {
             self.selectedIndex = 0
         }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // Get the new view controller using segue.destination.
-    // Pass the selected object to the new view controller.
     }
   
 }

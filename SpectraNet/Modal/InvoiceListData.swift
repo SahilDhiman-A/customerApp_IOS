@@ -32,8 +32,7 @@ class InvoiceListData: Object, Mappable
     @objc dynamic var invoiceCharge = ""
     @objc dynamic var displayInvNo = ""
     @objc dynamic var tdsSlab = ""
-    @objc dynamic var tdsAmountString  = ""
-    @objc dynamic var tdsAmount = Double()
+    @objc dynamic var tdsAmount = Float()
     
     func mapping(map: Map) {
         
@@ -55,19 +54,9 @@ class InvoiceListData: Object, Mappable
         invoiceCharge <- map["invoiceCharge"]
         displayInvNo <- map["displayInvNo"]
         tdsSlab <- map["tdsSlab"]
-        
-        
-        if let _tdsAmount = map["tdsAmount"].currentValue as? Double {
-            tdsAmount =  Double(_tdsAmount)
+        if let _tdsAmount = map["tdsAmount"].currentValue as? Float {
+            tdsAmount =  _tdsAmount
         }
-        
-//         tdsAmountString <- map["tdsAmount"]
-//        if let _tdsAmount = tdsAmountString as? String {
-//
-//            if let value =  Float(_tdsAmount){
-//            tdsAmount =  value
-//            }
-//        }
     }
 }
 

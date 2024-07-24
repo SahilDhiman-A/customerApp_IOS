@@ -12,7 +12,7 @@ class MoreTableViewCell: UITableViewCell {
     @IBOutlet weak var lblMoreTitleName: UILabel!
     @IBOutlet weak var moreTitleImg: UIImageView!
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var lblVersionTitleName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

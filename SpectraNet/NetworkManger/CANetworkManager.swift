@@ -53,24 +53,8 @@ public class CANetworkManager {
     }()
     
     
-    var manager: SessionManager?
-
-    init() {
-        manager = CANetworkManager.getAlamofireManager()
-    }
-    
     internal func checkInternetConnection() -> Bool {
         return NetworkReachabilityManager()!.isReachable
-    }
-    
-     private class func getAlamofireManager() -> SessionManager  {
-        let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForResource = 180 // seconds
-        configuration.timeoutIntervalForRequest = 180 // seconds
-
-        let alamofireManager = Alamofire.SessionManager(configuration: configuration)
-
-        return alamofireManager
     }
     
     // MARK: - Properties
@@ -89,10 +73,8 @@ public class CANetworkManager {
      *  @param postData     parameters
      *  @param responeBlock call back in block
      */
-    internal func requestApi(serviceName: String, method: kHTTPMethod, postData: Dictionary<String, AnyObject>, completionClosure: @escaping (_ result: AnyObject?, _ error: NSError?) -> ()) -> Void
+    internal func requestApi(serviceName: String, method: kHTTPMethod, postData: Dictionary<String, AnyObject>, completionClosure: @escaping (_ result: AnyObject?, _ error: NSError?) -> ()) -> Void 
     {
-        URLCache.shared.removeAllCachedResponses()
-
         if NetworkReachabilityManager()?.isReachable == true {
             internetRefresh = 0
             progressHUD(show: true)
@@ -113,9 +95,8 @@ public class CANetworkManager {
             case .GET:
                 
                 
-                manager?.request(serviceUrl, method: .get, parameters: postData, encoding: URLEncoding.default, headers: headers).responseJSON { (response)  -> Void in
+                request(serviceUrl, method: .get, parameters: postData, encoding: URLEncoding.default, headers: headers).responseJSON { (response)  -> Void in
                     self.progressHUD(show: false)
-                    
                     switch response.result {
                     case .success(let JSON):
                         print_debug(object: "Success with JSON: \(JSON)")
@@ -147,7 +128,7 @@ public class CANetworkManager {
                 }
                 
             case .PUT:
-        manager?.request(serviceUrl, method: .put, parameters: postData, encoding: JSONEncoding.default, headers: headers).responseJSON { (response)  -> Void in
+                request(serviceUrl, method: .put, parameters: postData, encoding: JSONEncoding.default, headers: headers).responseJSON { (response)  -> Void in
                     self.progressHUD(show: false)
                     switch response.result {
                     case .success(let JSON):
@@ -175,7 +156,7 @@ public class CANetworkManager {
                 
                 
             case .Delete:
-                                manager?.request(serviceUrl, method: .delete, parameters: postData, encoding: JSONEncoding.default, headers: headers).responseJSON { (response)  -> Void in
+                request(serviceUrl, method: .delete, parameters: postData, encoding: JSONEncoding.default, headers: headers).responseJSON { (response)  -> Void in
                     
                     self.progressHUD(show: false)
                     switch response.result {
@@ -202,12 +183,10 @@ public class CANetworkManager {
                 
                 
             case .POST:
-                                manager?.request(serviceUrl, method: .post, parameters: postData, encoding: JSONEncoding.default, headers: headers).responseJSON { (response)  -> Void in
+                request(serviceUrl, method: .post, parameters: postData, encoding: JSONEncoding.default, headers: headers).responseJSON { (response)  -> Void in
                     //////self.printResponseDataForResponse(response)
                     self.progressHUD(show: false)
                     switch response.result {
-                    
-                    
                     case .success(let JSON):
                         print_debug(object: "Success with JSON before: \(JSON)")
                         //let response = self.getResponseDataDictionaryFromData(data: response.data!)
@@ -249,7 +228,6 @@ public class CANetworkManager {
     
     internal func requestApiWithoutHUD(serviceName: String, method: kHTTPMethod, postData: Dictionary<String, AnyObject>, completionClosure: @escaping (_ result: AnyObject?, _ error: NSError?) -> ()) -> Void
     {
-        URLCache.shared.removeAllCachedResponses()
         if NetworkReachabilityManager()?.isReachable == true
         {
             internetRefresh = 0
@@ -270,9 +248,7 @@ public class CANetworkManager {
             case .GET:
                 
                 
-                
-                
-                                manager?.request(serviceUrl, method: .get, parameters: postData, encoding: URLEncoding.default, headers: headers).responseJSON { (response)  -> Void in
+                request(serviceUrl, method: .get, parameters: postData, encoding: URLEncoding.default, headers: headers).responseJSON { (response)  -> Void in
                     
                     switch response.result {
                     case .success(let JSON):
@@ -305,7 +281,7 @@ public class CANetworkManager {
                 }
                 
             case .PUT:
-                                manager?.request(serviceUrl, method: .put, parameters: postData, encoding: JSONEncoding.default, headers: headers).responseJSON { (response)  -> Void in
+                request(serviceUrl, method: .put, parameters: postData, encoding: JSONEncoding.default, headers: headers).responseJSON { (response)  -> Void in
                     switch response.result {
                     case .success(let JSON):
                         print_debug(object: "Success with JSON: \(JSON)")
@@ -330,7 +306,7 @@ public class CANetworkManager {
                 
                 
             case .Delete:
-                                manager?.request(serviceUrl, method: .delete, parameters: postData, encoding: JSONEncoding.default, headers: headers).responseJSON { (response)  -> Void in
+                request(serviceUrl, method: .delete, parameters: postData, encoding: JSONEncoding.default, headers: headers).responseJSON { (response)  -> Void in
                     
                     switch response.result {
                     case .success(let JSON):
@@ -357,7 +333,7 @@ public class CANetworkManager {
                 
                 
             case .POST:
-                                manager?.request(serviceUrl, method: .post, parameters: postData, encoding: JSONEncoding.default, headers: headers).responseJSON { (response)  -> Void in
+                request(serviceUrl, method: .post, parameters: postData, encoding: JSONEncoding.default, headers: headers).responseJSON { (response)  -> Void in
                     //////self.printResponseDataForResponse(response)
                     switch response.result {
                     case .success(let JSON):
@@ -630,17 +606,63 @@ public class CANetworkManager {
         Alamofire.request(urlName).responseData { response in
             debugPrint(response)
             
-            if let image = response.result.value as? Data {
-               downloadClosure(UIImage(data: image), nil)
+            if let image = response.result.value as? UIImage {
+               downloadClosure(image, nil)
             }
         }
     }
     
     func showErrorMessage(error: NSError) {
-       
+       //   HelpingClass.sharedInstance.displayAlert(title: AlertViewTitle.title_Error, message: AlertViewMessage.pleaseTryAgain , buttonTitles: [AlertViewButtonTitle.Cancel],viewControler:UIApplication.topViewController()!)
+        
+        //        AppHelper.showALertWithTag(677, title: ConstantValues.App_Name.rawValue, message:error.localizedDescription, delegate: nil, cancelButtonTitle: nil, otherButtonTitle: AlerViewButtonText.val_OK.rawValue)
     }
     
     
+    /*
+     if let value = result[ServiceMethods.service_responseStatus.rawValue] as? Int {
+     if ( value == ResponseStatus.responseStatusfail.rawValue) {
+     if let array = result[ServiceMethods.service_errorList.rawValue]  as? [[String: AnyObject]] {
+     if array.count > 0 {
+     if  array[0]["errorCode"] as? String == "402"{
+     
+     AppHelper.sharedInstance.logoutFromApp()
+     return true
+     
+     }
+     
+     
+     
+     }
+     
+     else
+     {
+     
+     if let value = result[ServiceMethods.service_responseCode.rawValue] as? String{
+     
+     if value == ResponseCode.somthingWrong.rawValue
+     {
+     
+     AppHelper.sharedInstance.showSomeThingWrongMessage()
+     
+     return true
+     
+     }
+     }
+     
+     
+     }
+     }
+     
+     
+     
+     
+     }
+     
+     return false
+     }
+     return false
+     */
     
     //MARK:- Progress HUD
     func progressHUD(show: Bool) {
@@ -663,12 +685,11 @@ public class CANetworkManager {
     //MARK:- Internal helper Methods
     private func getHeaderWithAPIName(serviceName: String) -> [String: String] {
         
-        var headers = [ "Accept": "application/json", "Content-Type": "application/json","X-Source":"ios"]
+        var headers = [ "Accept": "application/json", "Content-Type": "application/json"]
     
-         headers["Authorization"] = "Bearer 01a62ae9623beb096ec88dca3836858c"
 //        if let value = HelpingClass.sharedInstance.userDefaultForKey(key: UserDefaultKeys.accessToken) {
 //         headers["Authorization"] = value as? String
-//            //
+//            // headers["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWMzZjE2ZTExYjExODI2NzA0ZDc2NDhlIiwiaWF0IjoxNTQ3NjM4NDk3fQ.z19MiNp3hqoQpoq8ageAFnhnDQyz9kY2LYlqdop5xks"
 //       }
  
         
@@ -678,17 +699,7 @@ public class CANetworkManager {
     
     private func getServiceUrl(string: String) -> String {
         
-        var urlString =  string.safeAddingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlPathAllowed)!
-        
-        print_debug(object: "\n\tConnecting to Host:\n\t URL : \(urlString)")
-       // if(urlString.contains("faq") || urlString.contains("notification")){
-            
-            urlString = urlString.replacingOccurrences(of: "%E2%80%8B", with: "")
-            urlString = urlString.replacingOccurrences(of: "%3F", with: "?")
-       // }
-       
-        print_debug(object: "\n\tConnecting to urlString:\n\t URL : \(urlString)")
-        
+        let urlString =  string.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
         if string.range(of:"http") != nil {
             return urlString
         } else if string.range(of:"https") != nil{
@@ -727,11 +738,4 @@ public class CANetworkManager {
     
     
     
-}
-extension String {
-    func safeAddingPercentEncoding(withAllowedCharacters allowedCharacters: CharacterSet) -> String? {
-        // using a copy to workaround magic: https://stackoverflow.com/q/44754996/1033581
-        let allowedCharacters = CharacterSet(bitmapRepresentation: allowedCharacters.bitmapRepresentation)
-        return addingPercentEncoding(withAllowedCharacters: allowedCharacters)
-    }
 }

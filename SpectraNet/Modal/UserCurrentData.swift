@@ -82,14 +82,11 @@ class UserCurrentData: Object, Mappable
     @objc dynamic var Speed = ""
     @objc dynamic var actInProgressFlag = false
     dynamic var ivrNotification = List<String>()
-    @objc dynamic var FUPResetDate = ""
     
   //  @objc dynamic var ivrNotification = NSArray()
     
     func mapping(map: Map)
     {
-        
-        FUPResetDate <- map["FUPResetDate"]
         DueDate <- map["DueDate"]
         AccountActivationdate <- map["AccountActivationdate"]
         AccountName <- map["AccountName"]
@@ -99,7 +96,6 @@ class UserCurrentData: Object, Mappable
         BillFrequency <- map["BillFrequency"]
         BillStartDate <- map["BillStartDate"]
         CANId <- map["CANId"]
-       
         CancelledDate <- map["CancelledDate"]
         ETR <- map["ETR"]
         ExETRFlag <- map["ExETRFlag"]
@@ -151,7 +147,6 @@ class UserCurrentData: Object, Mappable
 //        if let _ivrNotification = map["ivrNotification"].currentValue as? NSArray {
 //            ivrNotification =  _ivrNotification
 //        }
-        
         if let _DataConsumption = map["DataConsumption"].currentValue as? Double {
             DataConsumption =  _DataConsumption
         }

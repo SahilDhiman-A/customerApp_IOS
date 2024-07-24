@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import SwipeCellKit
-class NotificationTableViewCell: SwipeTableViewCell {
+
+class NotificationTableViewCell: UITableViewCell {
 
     @IBOutlet var viewContainer: UIView!
     @IBOutlet var titleName: UILabel!
     @IBOutlet var dicrption: UILabel!
-    @IBOutlet var selectButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

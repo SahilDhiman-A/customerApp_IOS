@@ -90,20 +90,8 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate
         {
             titleOfUserNameD.text = profileUserB2B.userNameD
         }
-        editProfileFirbaseAnalysics()
     }
     
-    
-    func editProfileFirbaseAnalysics(){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.my_account,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.edit_profile_click,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-
-        HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.edit_profile, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
-    }
     //MARK: Button Actions
     @IBAction func backBTN(_ sender: Any)
     {
@@ -525,7 +513,7 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate
                 case Server.api_statusFailed:
                     self.showAlertC(message: tanStatus)
                 default:
-                    debugPrint("no match")
+                    print("no match")
                 }
               }
           }
@@ -563,7 +551,7 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate
                 case Server.api_statusFailed:
                     self.showAlertC(message: gstStatus)
                 default:
-                    debugPrint("no match")
+                    print("no match")
                 }
               }
           }

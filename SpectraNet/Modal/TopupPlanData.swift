@@ -17,28 +17,22 @@ class TopupPlanData: Object, Mappable {
     @objc dynamic var id = ""
     @objc dynamic var name = ""
     @objc dynamic var price = ""
+    @objc dynamic var tax = ""
+    @objc dynamic var total = ""
+    @objc dynamic var data = ""
     @objc dynamic var type = ""
     @objc dynamic var status = ""
-    @objc dynamic var volume = ""
-    @objc dynamic var descriptionTopUp = ""
-    @objc dynamic var pgPrice = ""
-    @objc dynamic var value = 1
     
     func mapping(map: Map)
     {
-        id <- map["topup_id"]
-        name <- map["topup_name"]
+        id <- map["id"]
+        name <- map["name"]
         price <- map["price"]
-        descriptionTopUp <- map["description"]
+        tax <- map["tax"]
+        total <- map["total"]
+        data <- map["data"]
         type <- map["type"]
         status <- map["status"]
-        volume <- map["data_volume"]
-         value  <- map["pg_price"]
-        
-        pgPrice = String(value)
-        
-        
-       // print_debug(object: pgPrice)
     }
     
 }

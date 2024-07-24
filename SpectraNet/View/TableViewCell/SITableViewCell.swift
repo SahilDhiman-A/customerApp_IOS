@@ -18,10 +18,6 @@ class SITableViewCell: UITableViewCell {
     @IBOutlet var autoPayBTN: UIButton!
     @IBOutlet var changeSIBTN: UIButton!
     @IBOutlet var disableBTN: UIButton!
-    @IBOutlet weak var changeTypeHeight: NSLayoutConstraint!
-    @IBOutlet weak var optionView: UIView!
-    @IBOutlet weak var creditCardButton: UIButton!
-    @IBOutlet weak var netBankingButton: UIButton!
     
     
     override func awakeFromNib() {
@@ -34,29 +30,5 @@ class SITableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    func changedValue(){
-        
-        if(HelpingClass.sharedInstance.autoPayType == "1"){
-            netBankingButton.setImage(UIImage(named: "CheckboxEmpty"), for: .normal)
-            creditCardButton.setImage(UIImage(named: "checkedSmall"), for: .normal)
-        }else{
-            creditCardButton.setImage(UIImage(named: "CheckboxEmpty"), for: .normal)
-           netBankingButton.setImage(UIImage(named: "checkedSmall"), for: .normal)
-            
-        }
-        
-    }
-    @IBAction func netBankingButton(_ sender: Any)
-    {
-        HelpingClass.sharedInstance.autoPayType = "2"
-        creditCardButton.setImage(UIImage(named: "CheckboxEmpty"), for: .normal)
-       netBankingButton.setImage(UIImage(named: "checkedSmall"), for: .normal)
-    }
-    @IBAction func creditCardButton(_ sender: Any)
-    {
-        HelpingClass.sharedInstance.autoPayType = "1"
-        netBankingButton.setImage(UIImage(named: "CheckboxEmpty"), for: .normal)
-        creditCardButton.setImage(UIImage(named: "checkedSmall"), for: .normal)
-    }
+
 }

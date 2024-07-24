@@ -7,61 +7,36 @@
 //
 
 import UIKit
-import Razorpay
 
-class PaymentScreenViewController: UIViewController,RazorpayPaymentCompletionProtocolWithData {
-    
+class PaymentScreenViewController: UIViewController, UIWebViewDelegate {
+    @IBOutlet weak var webview: UIWebView!
     var paymentStr = String()
     var emailStr = String()
-    var nameStr = String()
     var mobileNoStr = String()
     var canID = String()
     var sessionTime = String()
     var tdsAmount = String()
     var postString = String()
-    var isForMultiPleAccount = false
-    var isForAutopay = false
     var dataResponse = NSDictionary()
     var checkStatus = String()
-    var autoPayType = String()
     
     var profileListData = NSDictionary()
     var paymentURLStr = String()
-    var screenFrom = String()
+    
     // SI payment success or failed views
     @IBOutlet weak var transprntView: UIView!
     @IBOutlet weak var dialogView: UIView!
     @IBOutlet weak var lblStatusMsg: UILabel!
     @IBOutlet weak var okButtonView: UIView!
-    
-    @IBOutlet var messageView: UIView!
-     @IBOutlet var messageLabel: UILabel!
-    @IBOutlet var bottombuttonLabel: UILabel!
-    
     var siPaymentStaus = String()
-    
-    var topupName = String()
-    var pckgID = String()
-    var topupType = String()
-    
-     var tdsAmountPerMonth = String()
-      var urlStatus = String()
-    var backToHome = false
-    var razorpay: RazorpayCheckout!
+
     //MARK: View controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //tdsAmount = "1"
+
         if postString != ""
         {
             loadData()
-        }
-            
-        else if(isForMultiPleAccount == true){
-            
-             loadData()
         }
         else
         {
@@ -72,310 +47,120 @@ class PaymentScreenViewController: UIViewController,RazorpayPaymentCompletionPro
     
     func loadData()
     {
-        if(isForAutopay){
-            showPaymentFormAutoPay()
-
-        }else{
-            showPaymentForm()
+        if postString != ""
+        {
+            paymentURLStr = StandinInsrcuction.standingInstructionSpectraPaymentURL
         }
+        else
+        {
+            paymentURLStr = ServiceMethods.spectraPaymentURL
+            if tdsAmount == ""
+            {
+                postString = "uid=cust_app&passcode=C%217%24uT%4099%23&payamnt=\(paymentStr)&session=\(sessionTime)&segment=Web&paytype=Normal&mobileno=\(mobileNoStr)&emailid=\(emailStr)&returnurl=\(StandinInsrcuction.returnURL)&can_id=\(canID)"
+            }
+            else
+            {
+                postString = "uid=cust_app&passcode=C%217%24uT%4099%23&payamnt=\(paymentStr)&session=\(sessionTime)&segment=Web&paytype=Normal&mobileno=\(mobileNoStr)&emailid=\(emailStr)&returnurl=\(StandinInsrcuction.returnURL)&can_id=\(canID)&tds_amount=\(tdsAmount)"
+            }
+        }
+        
+        var contentType = String()
+        contentType = "application/x-www-form-urlencoded"
+        let _data = Data(base64Encoded: postString.toBase64())
+        webview.delegate = self
+        var request = URLRequest(url: URL(string: paymentURLStr)!)
+        request.httpMethod = "POST"
+        request.setValue(contentType, forHTTPHeaderField: "Content-Type")
+        request.httpBody = _data
+        webview.reload()
+        webview.loadRequest(request)
         setCornerRadiusView(radius: Float(okButtonView.frame.height/2), color: UIColor.clear, view: okButtonView)
     }
     
-    
-    private func showPaymentFormAutoPay(){
-        
-        var dict = ["Action":ActionKeys.createOrder, "Authkey":UserAuthKEY.authKEY,"amount":paymentStr,"emailId":emailStr,"mobileNo":mobileNoStr,"canId":canID,"requestType":autoPayType,"custName":nameStr] as [String : Any]
-        if tdsAmount != ""
-        {
-            dict["amount"] = tdsAmount
-        }
-//        if(autoPayType == "2"){
-//            
-//            dict["amount"] = "0"
-//        }
-    
-        
-        CANetworkManager.sharedInstance.requestApiWithoutHUD(serviceName: ServiceMethods.serviceBaseUatValue, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { [weak self] (response, error) in
-            
-            print_debug(object: response)
-            if response != nil
-            {
-                
-                
-                if let  responseValue = response?["status"] as? String{
-                    
-                    
-                    if responseValue != Server.api_status
-                    {
-                        if let  statusMessage = response?[ "message"] as? String {
-                           self?.showAlertC(message: statusMessage)
-                            
-                        }
-                        return
-                    }
-                    
-                }
-                
-                if let  responseValue = response?["response"] as? [String:AnyObject]{
-    
-                    self?.openrazorPay(responseValue: responseValue)
-                
-                } }
-        }
-    }
-
-    
-    private func showPaymentForm(){
-        var dict = ["Action":ActionKeys.createTransaction, "Authkey":UserAuthKEY.authKEY,"pgId":"RAZORPAY","txnId":sessionTime,"amount":paymentStr,"emailId":emailStr,"mobileNo":mobileNoStr,"canId":canID,"requestType":UserAuthKEY.paymentType] as [String : Any]
-        
-       
-        if tdsAmount != ""
-        {
-            
-            dict["amount"] = tdsAmount
-        }
-        
-        CANetworkManager.sharedInstance.requestApiWithoutHUD(serviceName: ServiceMethods.serviceBaseUatValue, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { [weak self] (response, error) in
-            
-            print_debug(object: response)
-            if response != nil
-            {
-                
-                
-                if let  responseValue = response?["status"] as? String{
-                    
-                    
-                    if responseValue != Server.api_status
-                    {
-                        if let  statusMessage = response?[ "message"] as? String {
-                            self?.showAlertC(message: statusMessage)
-                            
-                        }
-                        return
-                    }
-                    
-                }
-                
-                if let  responseValue = response?["response"] as? [String:AnyObject]{
-                    
-                   
-                    
-                    self?.openrazorPay(responseValue: responseValue)
-                
-                } }
-        }
-        
-        
-    }
-    
-    func openrazorPay(responseValue:[String:AnyObject]){
-        
-        if let keyId = responseValue["keyId"] as? String, let order_id = responseValue["orderId"] as? String , let image = Bundle.main.icon{
-            razorpay = RazorpayCheckout.initWithKey(keyId, andDelegateWithData: self)
-       // razorpay = RazorpayCheckout.initWithKey(keyId, andDelegate: self)
-            var options: [String:Any] = [
-                   "key":keyId,
-                    "amount": paymentStr, //This is in currency subunits. 100 = 100 paise= INR 1.
-                    "currency": "INR",//We support more that 92 international currencies.
-                    "order_id": order_id,
-                    "image": image,
-                   "name":"Spectra",
-                "notes": [
-                    "address":"Gurgaon",
-                    "merchant_order_id":order_id
-                ],
-                    "prefill": [
-                        "contact": mobileNoStr,
-                        "email": emailStr,
-                        "name":nameStr
-                    ],
-                    "theme": [
-                        "color": "#000000",
-                        "hide_topbar":true,
-                        "backdrop_color": "#000000",
-                        
-                      ]
-                ]
-            
-            
-            if let customerId =  responseValue["customerId"] as? String {
-                
-                options["customer_id"] = customerId
-            }
-            
-            if tdsAmount != ""
-            {
-                options["amount"] = tdsAmount
-            }
-            
-            
-            if(autoPayType == "2"){
-            
-                options["amount"] = "0"
-                options["recurring"] = "1"
-                   
-            }
-            print_debug(object: "options=== \(options) ")
-            
-            if((razorpay) != nil){
-            razorpay.open(options)
-            }
-        }
-    }
-    
-    @IBAction func confirmButtonClick(_ sender: Any) {
-        if(backToHome){
-            navigateScreen(identifier: ViewIdentifier.customTabIdentifier, controller: CustomTabViewController.self)
-        }else{
-            self.navigationController?.popViewController(animated: false)
-        }
-        
-    }
-
-    
-    func serviceTypeChangePlan()
+    func webViewDidStartLoad(_ webView: UIWebView)
     {
-        let dict = ["Action":ActionKeys.changePlane, "Authkey":UserAuthKEY.authKEY, "canId":canID, "pkgName":pckgID]
-        print_debug(object: dict)
-        CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
-            
-            print_debug(object: response)
-            if response != nil
-            {
-                if let dict = response as? NSDictionary
-                {
-                    self.dataResponse = dict
-                }
-                                                  
-                self.checkStatus = ""
-                if let status = self.dataResponse.value(forKey: "status") as? String
-                {
-                    self.checkStatus = status.lowercased()
-                }
-                
-                if self.checkStatus == Server.api_status
-                {
-                    // TO DO change just like
-                    if self.checkStatus == Server.api_status
-                    {
-                        self.messageView.isHidden = false
-                        self.messageLabel.text = self.dataResponse.value(forKey: "message") as? String
-                        self.bottombuttonLabel.text = "BACK TO HOME"
-                        self.backToHome = true
-                        self.changePlanSuccessFirbaseAnalysics()
-                    }
-                    else
-                    {
-                        self.changePlanFailureFirbaseAnalysics()
-                        self.messageView.isHidden = false
-                        self.messageLabel.text = self.dataResponse.value(forKey: "message") as? String
-                        self.bottombuttonLabel.text = "BACK"
-                        self.backToHome = false
-                    }
-
-                }
-                else
-                {
-                    if let errorMsg = self.dataResponse.value(forKey: "message") as? String
-                    {
-                        
-                        self.messageView.isHidden = false
-                        self.messageLabel.text = self.dataResponse.value(forKey: "message") as? String
-                        self.bottombuttonLabel.text = "BACK"
-                        self.backToHome = false
-                       // self.showAndHideDialogView(bool: false, message: errorMsg)
-                    }
-                }
-            }
-        }
+        print_debug(object: "Start")
     }
     
-    func changePlanSuccessFirbaseAnalysics(){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.change_plan,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.change_plan_success,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-
-        HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.change_plan_success, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
-    }
-    func changePlanFailureFirbaseAnalysics(){
-        
-        var dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.change_plan,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.change_plan_failed,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent] 
-        
-        if(HelpingClass.sharedInstance.planSucessData != nil){
-            dictAnalysics = HelpingClass.sharedInstance.planSucessData
-            
-        }
-
-        HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.change_plan_failed, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
-    }
-    
-    func serviceTypeAddTopUp()
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error)
     {
-        let dict = ["Action":ActionKeys.addTopUp, "Authkey":UserAuthKEY.authKEY,"amount":tdsAmountPerMonth, "canID":canID, "topupName":topupName, "topupType":topupType]
-        print_debug(object: dict)
-        CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
-            
-            print_debug(object: response)
-            if response != nil
-            {
-                if let dict = response as? NSDictionary
-                {
-                    self.dataResponse = dict
-                }
-                
-                self.checkStatus = ""
-                if let status = self.dataResponse.value(forKey: "status") as? String
-                {
-                    self.checkStatus = status.lowercased()
-                }
-                
-                if self.checkStatus == Server.api_status
-                {
-                    if let successMsg = self.dataResponse.value(forKey: "message") as? String
-                    {
-                        
-                        
-                        let vc = UIStoryboard.init(name: "Storyboard", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.topupIdentifier) as? TopupPlanViewController
-                        vc?.canID = self.canID
-                        vc?.basePlan = self.pckgID
-                        if(self.topupType == "RC"){
-                            vc?.onetimetopUpSelect = false
-                        }else{
-                            
-                            vc?.onetimetopUpSelect = true
-                        }
-                        vc?.isTopUpAdded = true
-                        vc?.isFromPayment = true
-                        
-                       
-                        self.navigationController?.pushViewController(vc!, animated: false)
+        print_debug(object: "Error")
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView)
+    {
+        print_debug(object: "Finished")
+        let currentURL = webView.stringByEvaluatingJavaScript(from: "window.location.href")!
+        print_debug(object: "\(currentURL)")
 
-                    }
-                }
-                else
-                {
-                    if let errorMsg = self.dataResponse.value(forKey: "message") as? String
-                    {
-                        
-                        self.messageView.isHidden = false
-                        self.messageLabel.text = self.dataResponse.value(forKey: "message") as? String
-                        self.bottombuttonLabel.text = "BACK"
-                        self.backToHome = false
-                       // self.showAndHideDialogView(bool: false, message: errorMsg)
-                    }
-                }
+        
+        if currentURL.contains("https://epay.spectra.co/onlinepayment/returnUrl?passkey=")
+        {
+          //  let newURL = URL(string: currentURL)!
+            guard let newURL = URL(string: currentURL) else
+            {
+                return
+            }
+            let referrer = newURL["passkey"]
+            print_debug(object: referrer)
+
+            let decodedData = Data(base64Encoded: referrer ?? "")!
+            let decodedString = String(data: decodedData, encoding: .utf8)!
+            print_debug(object: decodedString)
+
+            var urlStatus = String()
+            if decodedString.contains("status=SUCCESS")
+            {
+                urlStatus = Payment.success_status
+            }
+            else
+            {
+                urlStatus = Payment.failure_status
+            }
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.paymentstatusIndentifier) as? PaymentStatusViewController
+            vc?.status = urlStatus
+           // vc?.ifSiPayment = ""
+            vc?.payableAmount = paymentStr
+            self.navigationController?.pushViewController(vc!, animated: false)
+        }
+        else if currentURL.contains("https://my.spectra.co/index.php/xml/sipayment?result=")
+        {
+            guard let getSiUrl = URL(string: currentURL) else
+            {
+                return
+            }
+            
+            let referrer = getSiUrl["result"]
+            
+            let decodedUrl = referrer?.removingPercentEncoding!
+            print_debug(object: decodedUrl)
+            
+            guard let decoded = decodedUrl?.convertToDictionary() else
+            {
+                return
+            }
+            guard let paymentStatus = decoded["paymentStaus"] as? Bool else
+            {
+                return
+            }
+            
+            print_debug(object: paymentStatus)
+            if paymentStatus == true
+            {
+                siPaymentStaus = Payment.success_status
+                hiddenAndShowViews(bool: false, statusMeg: StandinInsrcuction.siEnabled)
+            }
+            else
+            {
+                siPaymentStaus = Payment.failure_status
+                hiddenAndShowViews(bool: false, statusMeg: StandinInsrcuction.siEnabledFailed)
             }
         }
     }
     
-    
+    func getCurrentMillis()->Int64{
+        return  Int64(NSDate().timeIntervalSince1970 * 1000)
+    }
 
     @IBAction func backBTM(_ sender: Any)
     {
@@ -413,7 +198,7 @@ class PaymentScreenViewController: UIViewController,RazorpayPaymentCompletionPro
                     
                     if AppDelegate.sharedInstance.segmentType == segment.userB2C
                     {
-                        guard let UserB2CData = self.profileListData.value(forKey: "billTo") as? NSDictionary else
+                        guard let UserB2CData = self.profileListData.value(forKey: "shipTo") as? NSDictionary else
                         {
                             return
                         }
@@ -448,11 +233,6 @@ class PaymentScreenViewController: UIViewController,RazorpayPaymentCompletionPro
             emailStr = email
         }
         
-        if let name = dict.value(forKey: "name") as? String
-        {
-            nameStr = name
-        }
-        
         mobileNoStr = ""
         if let mobileNmbr = dict.value(forKey: "mobile") as? String
         {
@@ -480,164 +260,36 @@ class PaymentScreenViewController: UIViewController,RazorpayPaymentCompletionPro
         dialogView.isHidden = bool
         lblStatusMsg.text = statusMeg
     }
-    
-      
-    func onPaymentError(_ code: Int32, description str: String, andData response: [AnyHashable : Any]?) {
-        debugPrint("error From razor PAy: ", code)
-        debugPrint("str: ", str)
-        debugPrint("response: ", response)
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.paymentstatusIndentifier) as? PaymentStatusViewController
-                    
-                   
-                    vc?.status = Payment.failure_status
-                   // vc?.ifSiPayment = ""
-                    vc?.payableAmount = tdsAmount
-                    self.navigationController?.pushViewController(vc!, animated: false)
-        //self.presentAlert(withTitle: "Alert", message: str)
-    }
-    
-    func onPaymentSuccess(_ payment_id: String, andData response: [AnyHashable : Any]?) {
-        debugPrint("success: ", payment_id)
-        debugPrint("response: ", response ?? [])
-        if(isForAutopay){
-            
-            updatePaymentToServerAutoPAy(response: response ?? [:])
-        }else{
-            updatePaymentToServer(response: response ?? [:])
-            
-        }
-      //  self.presentAlert(withTitle: "Success", message: "Payment Succeeded")
-    }
-    
-    
-    func updatePaymentToServer(response:[AnyHashable : Any]){
-        
-        if let razorpay_payment_id = response["razorpay_payment_id"] as? String, let razorpay_order_id = response["razorpay_order_id"] as? String, let razorpay_signature = response["razorpay_signature"] as? String{
-        let dict = ["Action":ActionKeys.updatePaymentStatus, "Authkey":UserAuthKEY.authKEY,"orderId":razorpay_order_id] as [String : Any]
-            
-            CANetworkManager.sharedInstance.requestApiWithoutHUD(serviceName: ServiceMethods.serviceBaseUatValue, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { [weak self] (response, error) in
-                
-                print_debug(object: response)
-                if response != nil
-                {
-                    
-                    
-                    if let  responseValue = response?["status"] as? String{
-                        
-                        
-                        if responseValue.lowercased() != Server.api_status
-                        {
-                            if let  statusMessage = response?[ "message"] as? String {
-                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.paymentstatusIndentifier) as? PaymentStatusViewController
-                                            
-                                           
-                                            vc?.status = Payment.failure_status
-                                           // vc?.ifSiPayment = ""
-                                vc?.payableAmount = self?.tdsAmount ?? ""
-                                self?.navigationController?.pushViewController(vc!, animated: false)
-                                //self.presentAlert(withTitle: "Alert", message: str)
-                            }
-                                
-                            
-                            return
-                        }
-                        
-                    }
-                    
-                    if let  responseValue = response?["response"] as? [String:AnyObject]{
-                        
-                       
-                        if(self?.screenFrom == FromScreen.topUpScreen){
-                                    
-                                    self?.serviceTypeAddTopUp()
-                                    
-                        }else if(self?.screenFrom == FromScreen.changeTopUPScreen || self?.screenFrom == FromScreen.CompareTopUPScreen){
-                                    //to do payment successful snakbar
-                                    let snackbar = TTGSnackbar(message: "Payment Successful", duration: .middle)
-                                    snackbar.show()
-                            self?.serviceTypeChangePlan()
-                                   }else{
-                                    
-                                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.paymentstatusIndentifier) as? PaymentStatusViewController
-                                    
-                                   
-                                    
-                                     vc?.status = Payment.success_status
-                                    // vc?.ifSiPayment = ""
-                                   vc?.payableAmount = self?.tdsAmount ?? ""
-                                    self?.navigationController?.pushViewController(vc!, animated: false)
-                                    
-                                    }
-                        
-                    
-                    } }
-            }
-        }
-        
-        
-    }
-    func updatePaymentToServerAutoPAy(response:[AnyHashable : Any]){
-        if let razorpay_payment_id = response["razorpay_payment_id"] as? String, let razorpay_order_id = response["razorpay_order_id"] as? String, let razorpay_signature = response["razorpay_signature"] as? String{
-            
-            //"":"pay_H3qajjJOiYVDhT"
-            let dict = ["Action":ActionKeys.updateStatusForAutopay, "Authkey":UserAuthKEY.authKEY,"orderId":razorpay_order_id,"paymentId":razorpay_payment_id] as [String : Any]
-
-            CANetworkManager.sharedInstance.requestApiWithoutHUD(serviceName: ServiceMethods.serviceBaseUatValue, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { [weak self] (response, error) in
-
-                print_debug(object: response)
-                if response != nil
-                {
-
-
-                    if let  responseValue = response?["status"] as? String{
-
-
-                        var value = Payment.success_status
-
-                        if responseValue.lowercased() != Server.api_status
-                        {
-                            value = Payment.failure_status
-
-
-
-                        }
-
-
-                        if let  statusMessage = response?[ "message"] as? String {
-                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.paymentstatusIndentifier) as? PaymentStatusViewController
-
-
-                                        vc?.status = value
-
-                            vc?.payableAmount = self?.tdsAmount ?? ""
-                            self?.navigationController?.pushViewController(vc!, animated: false)
-                            //self.presentAlert(withTitle: "Alert", message: str)
-                        }
-
-                    }
-
-
-                    } }
-
-
-
-
-    }
-    }
 }
 
-
-
-
-
-extension Bundle {
-    public var icon: UIImage? {
-        if let icons = infoDictionary?["CFBundleIcons"] as? [String: Any],
-            let primaryIcon = icons["CFBundlePrimaryIcon"] as? [String: Any],
-            let iconFiles = primaryIcon["CFBundleIconFiles"] as? [String],
-            let lastIcon = iconFiles.last {
-            return UIImage(named: lastIcon)
+extension String
+{
+    func fromBase64() -> String?
+    {
+        guard let data = Data(base64Encoded: self) else {
+            return nil
         }
-        return nil
+
+        return String(data: data, encoding: .utf8)
+    }
+
+    func toBase64() -> String
+    {
+        return Data(self.utf8).base64EncodedString()
+    }
+}
+extension URL {
+    subscript(queryParam: String) -> String? {
+        guard let url = URLComponents(string: self.absoluteString) else { return nil }
+        if let parameters = url.queryItems {
+            return parameters.first(where: { $0.name == queryParam })?.value
+        } else if let paramPairs = url.fragment?.components(separatedBy: "?").last?.components(separatedBy: "&") {
+            for pair in paramPairs where pair.contains(queryParam) {
+                return pair.components(separatedBy: "=").last
+            }
+            return nil
+        } else {
+            return nil
+        }
     }
 }

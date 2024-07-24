@@ -11,22 +11,18 @@ import UIKit
 class TopupTableViewCell: UITableViewCell {
 
     
-       @IBOutlet var lblTopupTitle: UILabel!
-    
        @IBOutlet var lblTopupName: UILabel!
-       @IBOutlet var lblTopupVolume: UILabel!
        @IBOutlet var lblTopupPrice: UILabel!
-       @IBOutlet var lblToupExcludingTaxes: UILabel!
-     
+       @IBOutlet var lblTopupTax: UILabel!
+       @IBOutlet var lblToupTotalCharge: UILabel!
+       @IBOutlet var lblTopupData: UILabel!
+       @IBOutlet var lblToupType: UILabel!
+       @IBOutlet var lblTopupStatus: UILabel!
        @IBOutlet var roundPayBtnView: UIView!
        @IBOutlet var roundInvoiceBtnView: UIView!
 
        @IBOutlet var topupPayBTN: UIButton!
-    
-    @IBOutlet var buyLabel: UILabel!
        @IBOutlet var topupInvoiceBTN: UIButton!
-    @IBOutlet weak var buyButtonHeight: NSLayoutConstraint!
-    @IBOutlet weak var buyButtonWidth: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()

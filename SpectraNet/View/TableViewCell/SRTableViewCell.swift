@@ -15,9 +15,6 @@ class SRTableViewCell: UITableViewCell {
     @IBOutlet weak var lblSubPrblmType: UILabel!
     @IBOutlet weak var lblResolve: UILabel!
     @IBOutlet var statusImg: UIImageView!
-     @IBOutlet weak var knowMoreButton: UIButton!
-     @IBOutlet weak var knowMoreView: UIView!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

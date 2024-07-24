@@ -11,8 +11,7 @@ import UIKit
 class CanIDTableViewCell: UITableViewCell {
     @IBOutlet var lblAcount: UILabel!
     @IBOutlet var lblUserCanID: UILabel!
-    @IBOutlet weak var linkedAccountValue: UIImageView!
-    @IBOutlet weak var moreButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

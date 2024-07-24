@@ -141,7 +141,7 @@ class DatabaseHandler: NSObject {
 //                    realm.add(currentUser)
 //                }
 //            } catch {
-//                debugPrint("data saving errro = "+error.localizedDescription)
+//                print("data saving errro = "+error.localizedDescription)
 //            }
 //            try! realm.write
 //            {
@@ -149,8 +149,6 @@ class DatabaseHandler: NSObject {
 //            }
 //        }
     }
-    
-    
     
     func getAndSaveTransactionData(dict:NSArray?)
           {

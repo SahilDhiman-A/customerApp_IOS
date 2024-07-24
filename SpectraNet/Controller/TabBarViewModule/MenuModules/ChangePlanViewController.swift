@@ -18,13 +18,12 @@ class ChangePlanViewController: UIViewController,UITableViewDelegate,UITableView
 
     var dataResponse = NSDictionary()
     var checkStatus = String()
-    
+    var pckgID = String()
     var typeOfUpgrade = String()
     var paybleAmount = String()
 
     var planArray = NSArray()
     var canID = String()
-    var pckgID = String()
     @IBOutlet weak var lblErrorMsg: UILabel!
     @IBOutlet weak var roundBackView: UIView!
     @IBOutlet weak var transPrntView: UIView!
@@ -42,35 +41,15 @@ class ChangePlanViewController: UIViewController,UITableViewDelegate,UITableView
     @IBOutlet var backRoundBTNView: UIView!
     @IBOutlet var offerfailedView: UIView!
     @IBOutlet var lblfailedMeg: UILabel!
-    @IBOutlet var comparePlanButton: UIButton!
-    
-    var selectedPlan : ChangePlanData? = nil
-   
-    
-    var knowMoreObject:KnowMore?
-//    var knowMoreData = []
    
     //MARK: View controller life cycle
     override func viewDidLoad()
     {
         super.viewDidLoad()
         realm = try? Realm()
-        userResult = self.realm!.objects(UserCurrentData.self)
-        if AppDelegate.sharedInstance.segmentType == segment.userB2C{
-            serviceTypeOfferPlanList()
-        }
-        else{
-            if let userActData = userResult?[0]
-            {
-                
-                self.pckgID = userActData.Product
-                self.comparePlanButton.isHidden = true
-            serviceTypeChangePlan()
-            }
-        }
+        ServiceTypeOfferPlanList()
         noDataView.isHidden = true
         roundCornerViews()
-       // self.serviceTypeGetConsumebTopUpPlan()
      }
     
     //MARK:Corner round View
@@ -89,18 +68,11 @@ class ChangePlanViewController: UIViewController,UITableViewDelegate,UITableView
     //MARK: Table View delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-      
-            return userChangePlan?.count ?? 0
-            
-        
-        
-        
+        return userChangePlan?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        
-        
         var cell : ChangePlanTableViewCell? = (tableView.dequeueReusableCell(withIdentifier: TableViewCellName.changePlanTableViewCell) as! ChangePlanTableViewCell)
         
         if cell == nil {
@@ -113,14 +85,13 @@ class ChangePlanViewController: UIViewController,UITableViewDelegate,UITableView
         {
             cell?.lblplanName.text = changePlanData._description
             
-           // cell?.lblplanName.text = "Know more / Plan detail screen will have a button “Select Plan” to select a plan."
             if changePlanData.data == ""
             {
                 cell?.lblPlanCharge.text = " "
             }
             else
             {
-                cell?.lblPlanCharge.text = "₹ " + convertStringtoFloatViceversa(amount: changePlanData.charges)
+                cell?.lblPlanCharge.text = convertStringtoFloatViceversa(amount: changePlanData.charges)
             }
             cell?.lblSped.text = changePlanData.speed
             cell?.lblFrequency.text = changePlanData.frequency
@@ -135,7 +106,6 @@ class ChangePlanViewController: UIViewController,UITableViewDelegate,UITableView
             }
         }
         return cell!
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -153,7 +123,6 @@ class ChangePlanViewController: UIViewController,UITableViewDelegate,UITableView
         {
              pckgID = changePlanData.planid
              paybleAmount = changePlanData.charges
-            selectedPlan = changePlanData
         }
         transPrntView.isHidden = false
         planCnfrmView.isHidden = false
@@ -177,19 +146,7 @@ class ChangePlanViewController: UIViewController,UITableViewDelegate,UITableView
     
     @IBAction func changePlanBTN(_ sender: Any)
     {
-        serviceTypeProDataChargesForPlan()
-        changePlanFirbaseAnalysics()
-    }
-    
-    func changePlanFirbaseAnalysics(){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.change_plan,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.change_plan_click,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-
-        HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.change_plan_click, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
+        serviceTypeChangePlan()
     }
     
     @IBAction func backToHomeBTN(_ sender: Any)
@@ -199,56 +156,14 @@ class ChangePlanViewController: UIViewController,UITableViewDelegate,UITableView
     
     // hide failed view and success view
     @IBAction func backToOffer(_ sender: Any) {
-        
-        if AppDelegate.sharedInstance.segmentType == segment.userB2C{
         transPrntView.isHidden = true
         planCnfrmView.isHidden = true
         planSuccefullySubmittedView.isHidden = true
         offerfailedView.isHidden = true
-        }else{
-            
-            self.navigationController?.popViewController(animated: false)
-        }
     }
     
-    func serviceTypeGetConsumebTopUpPlan()
-    {
-        
-       // canID = "139525"
-        
-        let dict = ["Action":ActionKeys.consumedTopup, "Authkey":UserAuthKEY.authKEY, "canId":canID]
-        print_debug(object: dict)
-        CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
-            
-            print_debug(object: response)
-            if response != nil
-            {
-                if let dict = response as? NSDictionary
-                {
-                    self.dataResponse = dict
-                }
-                
-                self.checkStatus = ""
-                if let status = self.dataResponse.value(forKey: "status") as? String
-                {
-                    self.checkStatus = status.lowercased()
-                }
-                
-                if self.checkStatus == Server.api_status
-                {
-                    guard let responseAr = self.dataResponse.value(forKey: "response") as? NSArray else
-                    {
-                        return
-                    }
-                    
-                   
-                }
-               
-            }
-        }
-    }
     //MARK: Service Offer plan list
-    func serviceTypeOfferPlanList()
+    func ServiceTypeOfferPlanList()
     {
         let dict = ["Action":ActionKeys.getOffer, "Authkey":UserAuthKEY.authKEY, "canID":canID, "basePlan":pckgID]
         print_debug(object: dict)
@@ -301,7 +216,6 @@ class ChangePlanViewController: UIViewController,UITableViewDelegate,UITableView
                 }
                 else
                 {
-                    self.comparePlanButton.isHidden = true
                     self.taleView.isHidden = true
                     self.noDataView.isHidden = false
                     self.lblErrorMsg.text = self.dataResponse.value(forKey: "message") as? String
@@ -309,94 +223,12 @@ class ChangePlanViewController: UIViewController,UITableViewDelegate,UITableView
             }
         }
     }
-    //MARK: Service Pro Data Charges For Plan
-    
-    func serviceTypeProDataChargesForPlan()
-    {
-        //self.canID = "211292"
-        let dict = ["Action":ActionKeys.proDataChargesForPlan, "Authkey":UserAuthKEY.authKEY, "canId":canID, "planId":pckgID]
-        print_debug(object: dict)
-        CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseUatValue, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
-            
-            print_debug(object: response)
-            if response != nil
-            {
-                if let dict = response as? NSDictionary
-                {
-                    self.dataResponse = dict
-                }
-                                                  
-                self.checkStatus = ""
-                if let status = self.dataResponse.value(forKey: "status") as? String
-                {
-                    self.checkStatus = status.lowercased()
-                }
-                
-                if self.checkStatus == Server.api_status
-                {
-                    
-                    if let response =  self.dataResponse["response"] as? [String:AnyObject]{
-                        self.transPrntView.isHidden = true
-                        self.planCnfrmView.isHidden = true
-                        let vc = UIStoryboard.init(name: "Storyboard", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.ChangePlanCompareViewController) as? ChangePlanCompareViewController
-                        vc?.differenceResponce = response
-                        vc?.canID = self.canID
-                        vc?.pckgID = self.pckgID
-                        vc?.data =  self.selectedPlan?.data ?? ""
-                        vc?.spead =  self.selectedPlan?.speed ?? ""
-                        vc?.frequency = self.selectedPlan?.frequency ?? ""
-                        self.navigationController?.pushViewController(vc!, animated: false)
-                        
-                       
-                        
-                        
-                        
-//                        if let proDataCharges = response["proDataCharges"] as? Double, let pgDataCharges = response["pgDataCharges"] as? Double{
-//
-//                            if proDataCharges > 0{
-//                                self.paymentForChangePlan(outStandingAmt: "\(proDataCharges)", tdsAmount: "\(pgDataCharges)")
-//                            }else{
-//                                self.serviceTypeChangePlan()
-//
-//                            }
-//                        }
-                    }
-                    
-                }
-                else
-                {
-                    self.transPrntView.isHidden = false
-                    self.planCnfrmView.isHidden = true
-                    self.planSuccefullySubmittedView.isHidden = true
-                    self.offerfailedView.isHidden = false
-                    self.lblfailedMeg.text = self.dataResponse.value(forKey: "message") as? String
-                }
-            }
-        }
-        
-    }
-    
-    
-    func paymentForChangePlan(outStandingAmt:String,tdsAmount:String){
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.PayNowIdentifier) as? PayNowViewController
-        vc?.outStandingAmt = tdsAmount
-        vc?.tdsAmount = ""
-        vc?.tdsPercent = ""
-        vc?.canID = canID
-        vc?.pckgID = pckgID
-//       vc?.topupType = topupType
-        vc?.screenFrom = FromScreen.changeTopUPScreen
-        vc?.tdsAmountPerMonth = outStandingAmt
-        self.navigationController?.pushViewController(vc!, animated: false)
-        
-    }
-    
     //MARK: Service Change plan
     func serviceTypeChangePlan()
     {
         let dict = ["Action":ActionKeys.changePlane, "Authkey":UserAuthKEY.authKEY, "canId":canID, "pkgName":pckgID]
         print_debug(object: dict)
-        CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseUatValue, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
+        CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
             
             print_debug(object: response)
             if response != nil
@@ -430,56 +262,4 @@ class ChangePlanViewController: UIViewController,UITableViewDelegate,UITableView
             }
         }
     }
-    
-   
-    
-    @IBAction func knowMoreButtonClick(sender: UIButton!) {
-        
-        
-        //ComparePlanViewController
-        let buttonPosition = sender.convert(CGPoint.zero, to: taleView)
-        let indexPath = taleView.indexPathForRow(at:buttonPosition)
-        
-        if let changePlanData = userChangePlan?[indexPath!.row]
-        {
-            self.knowMoreViewAdd(planId: changePlanData.planid)
-        }
-        
-            
-        
-    }
-    
-    
-
-    
-    func knowMoreViewAdd(planId:String) {
-        let vc = UIStoryboard.init(name: "Storyboard", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.KnowMoreIdentifier) as? KnowMoreViewController
-        vc?.canID = canID
-        vc?.planId = planId
-        //vc?.knowMoreObject = knowMoreObject
-        self.present(vc ?? UIViewController(), animated: false, completion: nil)
-    }
-    func showSimpleAlert(TitaleName: String, withMessage: String)
-    {
-        let alert = UIAlertController(title: TitaleName, message: withMessage,preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: AlertViewButtonTitle.title_OK,style: UIAlertAction.Style.default,handler: {(_: UIAlertAction!) in
-            
-       
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    @IBAction func comparePlanButtonClick(_ sender: Any)
-    {
-        let vc = UIStoryboard.init(name: "Storyboard", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.ComparePlanViewController) as? ComparePlanViewController
-        vc?.canID = canID
-        vc?.userResult=userResult
-        vc?.userChangePlan=userChangePlan
-
-        vc?.planArray = planArray
-       
-        self.navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
-        
-    }
-    
 }

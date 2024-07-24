@@ -14,8 +14,6 @@ class PaymentStatusViewController: UIViewController {
     @IBOutlet weak var statusTitle: UILabel!
     @IBOutlet weak var statusMsg: UILabel!
     @IBOutlet weak var statusBTN: UILabel!
-     var screenFrom = String()
-    var succesMessage = ""
     var status = String()
     var payableAmount = String()
     @IBOutlet var buttonView: UIView!
@@ -42,13 +40,6 @@ class PaymentStatusViewController: UIViewController {
             statusBTN.text = Payment.paymentBtn_Faluire
             statusMsg.text = Payment.paymentFailure_Message
         }
-        
-        if(succesMessage != ""){
-            
-             self.showAlertC(message: succesMessage)
-        }
-        
-        
     }
 
     //MARK: Button Action

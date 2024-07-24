@@ -68,19 +68,8 @@ class ManageContactsViewController: UIViewController,UITableViewDelegate,UITable
         
         setCornerRadiusView(radius: Float((addEmptyCaseView.frame.height)/2), color: UIColor.cornerBGFullOpack, view: addEmptyCaseView)
        contactTableView.rowHeight = UITableView.automaticDimension
-        managecontactdFirbaseAnalysics()
-        // Do any additional setup after loading the view.
-    }
-    
-    func managecontactdFirbaseAnalysics(){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.my_account,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.manage_contact,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
 
-        HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.manage_contact, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
+        // Do any additional setup after loading the view.
     }
     
     //MARK: TableView delegate
@@ -318,38 +307,14 @@ class ManageContactsViewController: UIViewController,UITableViewDelegate,UITable
                {
                case Server.api_status:
                    self.showSimpleAlert(TitaleName: "", withMessage: gstStatus)
-                self.addConactSuccessFirbaseAnalysics()
                case Server.api_statusFailed:
                    self.showAlertC(message: gstStatus)
-                self.addConactFailFirbaseAnalysics()
                default:
-                   debugPrint("no match")
+                   print("no match")
                }
              }
          }
      }
-    
-    func addConactSuccessFirbaseAnalysics(){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.my_account_manage_contact,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.add_contact_success,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-
-        HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.add_contact_success, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
-    }
-    
-    func addConactFailFirbaseAnalysics(){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.my_account_manage_contact,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.add_contact_failed,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-
-        HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.add_contact_failed, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
-    }
      
     func updateContactDetails(firstName: String,lastName: String, jobTitle: String, email: String, mobile: String,contactID: String)
         {
@@ -379,39 +344,15 @@ class ManageContactsViewController: UIViewController,UITableViewDelegate,UITable
                   switch statusCase
                   {
                   case Server.api_status:
-                    self.editConactSuccessFirbaseAnalysics()
                       self.showSimpleAlert(TitaleName: "", withMessage: gstStatus)
                   case Server.api_statusFailed:
-                    self.editConactFailFirbaseAnalysics()
                       self.showAlertC(message: gstStatus)
                   default:
-                      debugPrint("no match")
+                      print("no match")
                   }
                 }
             }
         }
-    
-    func editConactSuccessFirbaseAnalysics(){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.my_account_manage_contact,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.edit_contact_success,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-
-        HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.edit_contact_success, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
-    }
-    
-    func editConactFailFirbaseAnalysics(){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.my_account_manage_contact,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.edit_contact_failed,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-
-        HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.edit_contact_failed, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
-    }
      
      func getContactDetails()
      {
@@ -449,16 +390,14 @@ class ManageContactsViewController: UIViewController,UITableViewDelegate,UITable
                     self.contactTableView.dataSource = self
                     self.contactTableView.reloadData()
                 
-                
                case Server.api_statusFailed:
-               
                     self.emptyDataView.isHidden = false
                     self.contactTableView.isHidden = true
                     self.transPrntView.isHidden = true
                     self.editTableView.isHidden = true
                     self.addNewBTN.isHidden = true
                default:
-                   debugPrint("no match")
+                   print("no match")
                }
              }
          }

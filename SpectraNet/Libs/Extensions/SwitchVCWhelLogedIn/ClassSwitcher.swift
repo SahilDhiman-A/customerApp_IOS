@@ -25,9 +25,6 @@ class Switcher {
         }
         else
         {
-            
-            HelpingClass.removeFromUserDefaultForKey(key: UserDefaultKeys.loginPhoneNumber as String)
-            HelpingClass.removeFromUserDefaultForKey(key: UserDefaultKeys.isLoginFrom as String)
             let navigationController = UINavigationController(rootViewController: storyBoard.instantiateViewController(withIdentifier: ViewIdentifier.loginIdentifier))
             navigationController.setNavigationBarHidden(true, animated: true)
             appDelegate.window?.rootViewController = navigationController

@@ -56,7 +56,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate
         placeholderTextColor(textfeildName: mobileNumberTF, placeHolderText: "Registered Mobile Number", withColor: UIColor.gray)
         placeholderTextColor(textfeildName: userNameTF, placeHolderText: "Username", withColor: UIColor.gray)
         placeholderTextColor(textfeildName: passwordTF, placeHolderText: "Password", withColor: UIColor.gray)
-        self.signOUTDeviceToken()
     }
   
     override func viewWillAppear(_ animated: Bool)
@@ -64,46 +63,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate
         super.viewWillAppear(animated)
     }
    
-    
-    func signOUTDeviceToken(){
-        
-        if HelpingClass.sharedInstance.deviceData["deviceToken"] != nil{
-    let dict = ["Action":ActionKeys.deviceSignOut, "Authkey":UserAuthKEY.authKEY,"deviceData":HelpingClass.sharedInstance.deviceData] as [String : Any]
-    
-    
-    CANetworkManager.sharedInstance.requestApiWithoutHUD(serviceName: ServiceMethods.serviceBaseUatValue, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { [weak self] (response, error) in
-        
-        print_debug(object: response)
-        if response != nil
-        {
-            
-            
-            if let  responseValue = response?["status"] as? String{
-                
-                
-                if responseValue != Server.api_status
-                {
-                    if let  statusMessage = response?[ "message"] as? String {
-                      //  self?.showAlertC(message: statusMessage)
-                        
-                    }
-                    return
-                }
-                
-            }
-            
-            if let  responseValue = response?["response"] as? [[String:AnyObject]]{
-                
-                
-            } }
-    }
-        
-    }
-    
-    
-    
-    
-}
     //MARK: Button Actions
     // user login by mobile number
     @IBAction func submitNmbrBTN(_ sender: Any)
@@ -196,8 +155,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate
             DispatchQueue.main.async {
                 CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
                    print_debug(object: response)
-                    
-                    self.mobileNumberFirbaseAnalysics()
                    if response != nil
                    {
                    var dataResponse = NSDictionary()
@@ -281,16 +238,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate
                }
            }
        }
-    
-    
-    //Add Firbase Analycis
-    func mobileNumberFirbaseAnalysics(){
-    
-        let dictAnalysics = [AnanlysicParameters.Category:AnalyticsEventsCategory.Login,AnanlysicParameters.Action:AnalyticsEventsActions.registeredMobileNumber,AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-        //,AnanlysicParameters.EventDescription:AnanlysicEventDescprion.registeredMobileNumber
-    
-       HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.registeredMobileNumber, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-    }
        
     // Send OTP user's number
      func serviceGenerateOTP()
@@ -300,8 +247,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate
        
         CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
            print_debug(object: response)
-            
-            //self.generateOTPFirbaseAnalysics()
            if response != nil
            {
            var dataResponse = NSDictionary()
@@ -362,9 +307,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate
           }
          }
        }
-    
-    
-
        
     // service username and password
     func serviceTypeUserLoginByPaswd()
@@ -386,7 +328,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate
             print_debug(object: dict)
             CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
                 print_debug(object: response)
-                self.loginWithUsernamePasswordFirbaseAnalysics()
                 if response != nil
                 {
                     if let dict = response as? NSDictionary
@@ -452,42 +393,18 @@ class LoginViewController: UIViewController,UITextFieldDelegate
 
                         if userData.CancellationFlag == true
                         {
-                            self.navigateScreenToStoryboardMain(identifier: ViewIdentifier.cancelledAccountIdentifier, controller: AccountCancelledViewController.self)
+                            self.navigateScreen(identifier: ViewIdentifier.cancelledAccountIdentifier, controller: AccountCancelledViewController.self)
                         }
                         else if userData.actInProgressFlag == true
                         {
-                            
-                            if   let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.trackOrderIdentifier) as? TrackOrderViewController{
-                                
-                                
-                                if arr.count > 0{
-                                
-        if let value = arr[0] as? [String:AnyObject]
-        {
-                                        
-        if let canID = value["CANId"] as? String{
-            vc.canID = canID
-            self.navigationController?.pushViewController(vc, animated: false)
-                                            
-                }
-                }
-                                
-                }
-                            
-                             
-                           // self.navigateScreen(identifier: ViewIdentifier.accountActivationIdentifier, controller: AccountActivationViewController.self)
-                        }
+                            self.navigateScreen(identifier: ViewIdentifier.accountActivationIdentifier, controller: AccountActivationViewController.self)
                         }
                         else
                         {
                             HelpingClass.saveToUserDefault(value: true as AnyObject, key: "status")
-                            
-                            HelpingClass.saveToUserDefault(value:UserDefaultKeys.canID as AnyObject, key: UserDefaultKeys.isLoginFrom)
                             Switcher.updateRootVC()
                             AppDelegate.sharedInstance.navigateFrom = ""
-                            
-                            
-                          //  self.navigateScreen(identifier: ViewIdentifier.customTabIdentifier, controller: CustomTabViewController.self)
+                            self.navigateScreen(identifier: ViewIdentifier.customTabIdentifier, controller: CustomTabViewController.self)
                         }
                     }
                     else
@@ -501,16 +418,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate
                 }
             }
          }
-    }
-    
-    
-    func loginWithUsernamePasswordFirbaseAnalysics(){
-    
-        let dictAnalysics = [AnanlysicParameters.Category:AnalyticsEventsCategory.Login,AnanlysicParameters.Action:AnalyticsEventsActions.username_password,AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-        
-        //,AnanlysicParameters.EventDescription:AnanlysicEventDescprion.loginwithUserNamePassword
-    
-       HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.login_user_pwd, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
     }
     
     @IBAction func showPswdBTN(_ sender: Any)
@@ -550,7 +457,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate
     {
         if textField==mobileNumberTF {
             
-            let maxLength = 11
+            let maxLength = 10
             let currentString: NSString = textField.text! as NSString
             let newString: NSString =
                 currentString.replacingCharacters(in: range, with: string) as NSString
@@ -562,20 +469,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate
             {
                 buttonView.isHidden = true
             }
-            
-            let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
-            let compSepByCharInSet = string.components(separatedBy: aSet)
-            let numberFiltered = compSepByCharInSet.joined(separator: "")
-            if(string != numberFiltered){
-            return false
-            }else{
-                
-                if( newString.length >= maxLength){
-                    
-                    textField.resignFirstResponder()
-                }
-            return newString.length < maxLength
-            }
+            return newString.length <= maxLength
         }
         else if (textField==userNameTF)
         {
@@ -587,10 +481,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate
             {
                 textField.resignFirstResponder()
                 passwordTF.becomeFirstResponder()
-            }
-            if( newString.length == maxLength){
-                
-                textField.resignFirstResponder()
             }
             return newString.length <= maxLength
         }

@@ -25,9 +25,7 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
     var fromScreen = String()
     var imagePicker = UIImagePickerController()
     var canID = String()
-    var parentCanID = String()
     
-    @IBOutlet weak var addNewButton: UIButton!
     @IBOutlet weak var profileImgBTN: UIButton!
     @IBOutlet weak var LBLuploadImagStatus: UILabel!
     @IBOutlet weak var mobileNumberTF: UITextField!
@@ -65,48 +63,13 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
     @IBOutlet weak var lblUserGSTTitle: UILabel!
     @IBOutlet weak var lblUserTANTitle: UILabel!
     
-    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var gstViewHeightConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var resetPasswordImageView: UIImageView!
     @IBOutlet weak var managContImg: UIImageView!
     @IBOutlet weak var manageContFrwdImg: UIImageView!
     @IBOutlet weak var manageContactView: UIView!
-    var childIds = [[String:AnyObject]]()
-    var isChildxists = false
     
-    @IBOutlet weak var B2BViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var backgroundView: UIView!
     
-    @IBOutlet weak var loginBackgroundView: UIView!
-    
-    @IBOutlet weak var resetPasswordButton: UIView!
-    @IBOutlet weak var loginButton: UIView!
-    @IBOutlet weak var loginView: UIView!
-    @IBOutlet weak var newPasswoedTF: JVFloatLabeledTextField!
-    
-    @IBOutlet weak var oldPasswordTextField: JVFloatLabeledTextField!
-    @IBOutlet weak var confirmNewPassword: JVFloatLabeledTextField!
-    
-    @IBOutlet weak var resetPasswordForwordButton: UIImageView!
     //MARK: View controller life cycle
-    @IBOutlet weak var linkedCanIDLable: UILabel!
-    
-    @IBOutlet weak var backGroundViewTop: NSLayoutConstraint!
-    
-    @IBOutlet weak var emptyView: UIView!
-    @IBOutlet weak var accountView: UIView!
-    @IBOutlet weak var accountManagerNameLabel: UITextField!
-    @IBOutlet weak var accountManagerEmailLabel: UITextField!
-    @IBOutlet weak var accountManagerPhoneNumberLabel: UITextField!
-    
-    
-  var isIDSNotLinked = false
-    
-    var isCanItLogin = false
-    
-    @IBOutlet weak var canIdViewWidthConstraint: NSLayoutConstraint!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -116,24 +79,10 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
         billingContactTF.isUserInteractionEnabled = false
         techContactTF.isUserInteractionEnabled = false
         addAcntView.isHidden = true
-      
-        transpaantView.isHidden = true
         resetPswdView.isHidden = true
-        
-        setCornerRadiusView(radius: 15, color: UIColor.clear, view: backgroundView)
-        setCornerRadiusView(radius: Float(loginButton.frame.height/2), color: UIColor.clear, view: loginButton)
-        setCornerRadiusView(radius: Float(resetPasswordButton.frame.height/2), color: UIColor.clear, view: resetPasswordButton)
-        
-        setCornerRadiusView(radius: 15, color: UIColor.clear, view: resetPswdView)
-         setCornerRadiusView(radius: 15, color: UIColor.clear, view: emptyView)
-        setCornerRadiusView(radius: 15, color: UIColor.clear, view: loginView)
-        setCornerRadiusView(radius: 15, color: UIColor.clear, view: loginView)
+        transpaantView.isHidden = true
+       
         changeImageTintColor(theImageView: managContImg, withColor: UIColor.imageIcnTintColor)
-        
-        changeImageTintColor(theImageView: resetPasswordForwordButton, withColor: UIColor.imagefrwdTintColor)
-        
-        changeImageTintColor(theImageView: resetPasswordImageView, withColor: UIColor.imageIcnTintColor)
-        
         changeImageTintColor(theImageView: manageContFrwdImg, withColor: UIColor.imagefrwdTintColor)
 
     }
@@ -141,64 +90,13 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        isIDSNotLinked = false
-        
-        
-//        if(self.fromScreen == FromScreen.deactivateScreen){
-//
-//            self.backButton.isHidden = true
-//
-//
-//        }
-        if let isloginFrom = HelpingClass.userDefaultForKey(key: UserDefaultKeys.isLoginFrom) as? String{
-            
-            if isloginFrom == UserDefaultKeys.canID{
-                self.isCanItLogin = true
-            }else{
-                
-                 self.isCanItLogin = false
-            }
-        }
-        linkedCanIDLable.isHidden = true
-        linkedCanIDLable.text = ""
-        self.backgroundView.isHidden = true
-       // manageContactView.isHidden = true
-        self.isChildxists = false
-        self.emptyView.isHidden = true
-        self.accountView.isHidden = true
-        self.addNewButton.setTitle("ADD NEW", for: .normal)
+        manageContactView.isHidden = true
         userResult = self.realm!.objects(UserCurrentData.self)
-        
-        
-        let allUsers = self.realm!.objects(UserData.self)
-        
-      
         if let userData = userResult?[0]
         {
-            
-            print_debug(object: "userResult \(userResult)")
             Lblusername.text = userData.AccountName
             canID = userData.CANId
-            parentCanID = userData.CANId
-            
-            selectedCanID.text = String(format: "CAN ID - %@", userData.CANId)
-            if let isloginFrom = HelpingClass.userDefaultForKey(key: UserDefaultKeys.isLoginFrom) as? String{
-                
-                if isloginFrom == UserDefaultKeys.canID{
-                    
-                    
-                    if(allUsers.count > 0){
-                    if let user = allUsers[0] as? UserData {
-                    
-                    parentCanID = user.CANId
-                        
-                    }
-                    }
-                    
-                }
-                
-            }
-           
+            selectedCanID.text = String(format: "CAN ID - %@", canID)
             AppDelegate.sharedInstance.segmentType = userData.Segment.lowercased()
             print_debug(object: userData.Segment)
 
@@ -206,9 +104,7 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
         if ConnectionCheck.isConnectedToNetwork() == true
         {
             // profile data service
-            getLinkAccountByCanID()
             serviceTypeGetProfile()
-            
         }
         else
         {
@@ -217,7 +113,7 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
         
         canIDView.isHidden = true
         B2BView.isHidden = true
-        addNewButton.isHidden = true
+        
         //MARK: Save image in localy and set in imageView
        setImageFromLocalDirectory(fileName: String(format: "%@image.jpg", canID), imageView: profileImage,withImageLblStatus:LBLuploadImagStatus)
         
@@ -225,95 +121,6 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
 //        editBTN.isHidden = true
 //        profileImgBTN.isUserInteractionEnabled = false
 //        uploadPictureLblHeight.constant = 0
-    }
-    
-    override func viewWillLayoutSubviews() {
-        
-        if self.view.frame.height <= 568{
-            
-            canIdViewWidthConstraint.constant = 150
-        }
-        super.viewWillLayoutSubviews()
-    }
-    
-    func getLinkAccountByCanID()
-    {
-        var dict = ["Action":ActionKeys.getLinkAcount, "Authkey":UserAuthKEY.authKEY]
-        
-        if let isloginFrom = HelpingClass.userDefaultForKey(key: UserDefaultKeys.isLoginFrom) as? String{
-            
-            if isloginFrom == UserDefaultKeys.canID{
-                dict["baseCanID"] = parentCanID
-                
-            }else{
-                
-                 if let mobileNumber = HelpingClass.userDefaultForKey(key: UserDefaultKeys.loginPhoneNumber) as? String{
-                 dict["mobileNo"] = mobileNumber
-                }
-            }
-        }
-        print_debug(object: dict)
-        CANetworkManager.sharedInstance.requestApiWithoutHUD(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { [weak self] (response, error) in
-            
-            print_debug(object: response)
-            if response != nil
-            {
-                
-                self?.isIDSNotLinked = true
-                self?.B2BViewTopConstraint.constant = 21
-                if let  responseValue = response?["status"] as? String{
-                    
-                    
-                    if responseValue != Server.api_status
-                    {
-                        if let  statusMessage = response?[ "message"] as? String {
-                          //  self?.showAlertC(message: statusMessage)
-                            
-                        }
-                        return
-                    }
-                    
-                }
-                
-                if let  responseValue = response?["response"] as? [[String:AnyObject]]{
-                    
-                    if responseValue.count > 0{
-                        
-                        if let isloginFrom = HelpingClass.userDefaultForKey(key: UserDefaultKeys.isLoginFrom) as? String{
-                              if isloginFrom == UserDefaultKeys.canID{
-                        
-                        self?.B2BViewTopConstraint.constant = 21
-                         self?.childIds = responseValue
-                          self?.isChildxists = true
-                         self?.noLikedIdSelected()
-                              }else{
-                                
-                                
-                                self?.B2BViewTopConstraint.constant = 21
-                                self?.childIds = responseValue
-                                self?.isChildxists = true
-                              self?.noLikedIdSelected()
-                                
-                            }
-                        }else{
-                             self?.noLikedIdSelected()
-                            
-                        }
-                    }else{
-                       self?.noLikedIdSelected()
-                    }
-                    
-                    
-                }
-            }
-        }
-    }
-    
-    func noLikedIdSelected(){
-        
-        self.B2BViewTopConstraint.constant = 21
-        self.isChildxists = false
-        self.addNewButton.setTitle("Add new", for: .normal)
     }
     
     override func viewDidLayoutSubviews()
@@ -327,7 +134,7 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
     {
         let dict = ["Action":ActionKeys.getProfile, "Authkey":UserAuthKEY.authKEY, "canID":canID]
         print_debug(object: dict)
-        CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseUatValue, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
+        CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
             
             print_debug(object: response)
             if response != nil
@@ -345,49 +152,16 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
                 
                 if self.checkStatus == Server.api_status
                   {
-                   self.backgroundView.isHidden = false //self.manageContactView.isHidden = false
+                    self.manageContactView.isHidden = false
                     guard let profileData = self.dataResponse.value(forKey: "response") as? NSDictionary else
                     {
                         return
                     }
-                    
-                    self.canIDView.isHidden = false
-                    self.B2BView.isHidden = false
-                    self.resetPswdView.isHidden = true
-                    self.addNewButton.isHidden = false
-                    self.accountView.isHidden = false
-                    self.scrollView.updateContentView()
-                    self.scrollView.isScrollEnabled = true
-                    
-                    self.backGroundViewTop.constant = 30
-                    
-                    self.linkedCanIDLable.isHidden = true
-                    self.B2BViewTopConstraint.constant = 21
-                    self.linkedCanIDLable.text = ""
                     self.profileListData = profileData
                     DatabaseHandler.instance().userProfileSavedData(dicto: self.profileListData)
                     self.userProfileResult = self.realm!.objects(UserProfileData.self)
                     let profileDat = self.userProfileResult?[0]
                     print_debug(object: profileDat?.GSTN)
-                    
-                    
-                    if let accountManager = profileDat?.accountManager{
-                        
-                        if let name = accountManager.name as? String{
-                            
-                            self.accountManagerNameLabel.text = name
-                        }
-                        
-                        if let email = accountManager.email as? String{
-                            
-                            self.accountManagerEmailLabel.text = email
-                        }
-                        
-                        if let mobile = accountManager.mobile as? String{
-                            
-                            self.accountManagerPhoneNumberLabel.text = mobile
-                        }
-                    }
                     
                     if AppDelegate.sharedInstance.segmentType == segment.userB2C
                     {
@@ -412,33 +186,13 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
                         }
                         self.b2BUserProfileData(billName: billto.name, billEmail: shipto.email, billMobile: billto.mobile, BillAddres: billto.address, shipMobile: shipto.mobile, shipAddress: shipto.address)
                     }
-                  
-                    
-                    
+                    self.canIDView.isHidden = false
+                    self.B2BView.isHidden = false
+                    self.scrollView.updateContentView()
+                    self.scrollView.isScrollEnabled = true
                   }
                 else
                   {
-                    self.emptyView.isHidden = false
-                     self.backgroundView.isHidden = false
-                    self.canIDView.isHidden = false
-                    self.B2BView.isHidden = true
-                      self.accountView.isHidden = true
-                    self.resetPswdView.isHidden = true
-                    self.addNewButton.isHidden = false
-                    self.scrollView.updateContentView()
-                    self.scrollView.isScrollEnabled = false
-                    
-                    if( self.canID ==  self.parentCanID){
-                        self.linkedCanIDLable.isHidden = true
-                        self.B2BViewTopConstraint.constant = 21
-                        self.backGroundViewTop.constant = -410
-                        self.linkedCanIDLable.text = ""
-                    }else{
-                         self.linkedCanIDLable.isHidden = false
-                        self.B2BViewTopConstraint.constant = 70
-                         self.backGroundViewTop.constant = -410
-                        self.linkedCanIDLable.text = String(format: "Linked CAN ID - %@",  self.canID)
-                    }
                     guard let statusMessage = self.dataResponse.value(forKey: "message") as? String else
                     {
                         return
@@ -509,26 +263,12 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
         {
              AppDelegate.sharedInstance.navigateFrom = TabViewScreenName.menu
             navigateScreen(identifier: ViewIdentifier.customTabIdentifier, controller: CustomTabViewController.self)
-        }else{
-            
-            self.navigationController?.popViewController(animated: false)
         }
     }
     
     @IBAction func uploadImgBTN(_ sender: Any)
     {
         checkPhotoLibraryPermission()
-        uploadPhotoFirbaseAnalysics()
-    }
-    func uploadPhotoFirbaseAnalysics(){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.my_account,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.upload_profile_picture,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-
-        HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.upload_profile_picture, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
     }
     
 // check photo permission
@@ -542,9 +282,7 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
         case .denied, .restricted :
            //handle denied status
             print_debug(object: "denied")
-            DispatchQueue.main.async() {
-                self.noInternetCheckScreenWithMessage(errorMessage: ErrorMessages.ifUserDiniedPermission)
-            }
+            noInternetCheckScreenWithMessage(errorMessage: ErrorMessages.ifUserDiniedPermission)
             //   checkPhotoLibraryPermission()
         case .notDetermined:
                // ask for permissions
@@ -573,36 +311,20 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
     // Open photo library
     func photoLibrary()
     {
-        DispatchQueue.main.async() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
         {
         let myPickerController = UIImagePickerController()
         myPickerController.delegate = self
         myPickerController.sourceType = .photoLibrary
         myPickerController.allowsEditing = true
-            self.present(myPickerController, animated: false, completion: nil)
-        }
+        present(myPickerController, animated: false, completion: nil)
         }
     }
     
     // Navigate List of users CANID view controller
     @IBAction func showCanIDClick(_ sender: Any)
     {
-        
-         //vc.data = self.childIds
-        
-        
-        if(self.isIDSNotLinked == true){
-        
-        if  let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.CanIDSelectedIdentifier) as? CanIDViewController{
-            vc.data = self.childIds
-           
-            self.navigationController?.pushViewController(vc, animated: false)
-            
-        }
-        }
-//        CanIDViewController
-//       navigateScreen(identifier: ViewIdentifier., controller: .self)
+       navigateScreen(identifier: ViewIdentifier.CanIDSelectedIdentifier, controller: CanIDViewController.self)
     }
     
     @IBAction func clickManageContacts(_ sender: UIButton)
@@ -676,7 +398,18 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
         }
     }
     
-    
+    func getLinkAccountByCanID()
+    {
+        let dict = ["Action":ActionKeys.getLinkAcount, "Authkey":UserAuthKEY.authKEY, "baseCanID":canID]
+        print_debug(object: dict)
+        CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
+                      
+        print_debug(object: response)
+        if response != nil
+            {
+            }
+        }
+    }
     
     func getLinkAccountByUserName()
     {
@@ -751,197 +484,6 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate, UI
         theImageView.tintColor = withColor
     }
     
-    @IBAction func addNewCanIDButtonClick(_ sender: Any) {
-        
-        
-        var linkedCanIds = [String]()
-        
-        for subdata in self.childIds{
-            
-            if let linkedCanIdValue = subdata["link_canid"] as? String{
-                linkedCanIds.append(linkedCanIdValue)
-                
-            }
-        }
-
-        if  let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.LinkCanIdIdentifier) as? LinkCanIdViewController{
-            vc.baseCanID = parentCanID
-              vc.linkedCanIDS = linkedCanIds
-            self.navigationController?.pushViewController(vc, animated: false)
-            
-        }
-
-    }
-    
-   
-    @IBAction func resetPasswordAction(_ sender: Any) {
-        
-        oldPasswordTextField.text = ""
-        newPasswoedTF.text = ""
-        confirmNewPassword.text = ""
-        transpaantView.isHidden = false
-        resetPswdView.isHidden = false
-        resetPasswordFirbaseAnalysics()
-    }
-    
-    func resetPasswordFirbaseAnalysics(){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.my_account,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.reset_password,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-
-        HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.my_account_reset_password, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
-    }
-    
-    func resetPasswordSuccessFirbaseAnalysics(){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.my_account,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.reset_password_success,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-
-        HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.reset_password_success, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
-    }
-    
-    func resetPasswordCaneclFirbaseAnalysics(){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.my_account,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.reset_password_cancel,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-
-        HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.reset_password_cancel, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
-    }
-    
-    @IBAction func cancelPasswordButtonCleck(_ sender: Any) {
-        
-        oldPasswordTextField.text = ""
-        newPasswoedTF.text = ""
-        confirmNewPassword.text = ""
-        
-        transpaantView.isHidden = true
-        resetPswdView.isHidden = true
-        resetPasswordCaneclFirbaseAnalysics()
-    }
-    
-    func validatePassword() -> Bool {
-        
-        
-        if(oldPasswordTextField.text?.count ?? 0 == 0){
-            
-             self.showAlertC(message: ErrorValidationMessages.wrongEnterPassword)
-              return false
-            
-        
-        }else if(newPasswoedTF.text?.count ?? 0 == 0){
-            self.showAlertC(message: ErrorValidationMessages.wrongEnterNewPassword)
-              return false
-        }
-        else if(!HelpingClass.sharedInstance.isValidPassword(value:newPasswoedTF.text ?? "")){
-             self.showAlertC(message: ErrorValidationMessages.wrongEnterValidPassword)
-              return false
-            
-        }
-        else if(oldPasswordTextField!.text == newPasswoedTF!.text){
-            
-            self.showAlertC(message: ErrorValidationMessages.samePassword)
-            return false
-        }
-        else if(newPasswoedTF!.text != confirmNewPassword!.text){
-            
-             self.showAlertC(message: ErrorValidationMessages.correctPassword)
-              return false
-        }
-        
-        
-        
-        return true
-        
-    }
-    
-    @IBAction func updatePasswodButtonClick(_ sender: Any) {
-        
-        if(validatePassword()){
-        
-        
-           
-            
-        if let oldPasswod = oldPasswordTextField.text,let password = newPasswoedTF.text{
-            
-            
-            
-           let  oldPasswodEncodeStr = oldPasswod.data(using: .utf8)?.base64EncodedString() as Any as! String
-            
-        
-             let passwordEncodeStr = password.data(using: .utf8)?.base64EncodedString() as Any as! String
-            
-          
-            let dict = ["Action":ActionKeys.resetpassword, "Authkey":UserAuthKEY.authKEY, "canID":self.parentCanID,"oldPassword":oldPasswodEncodeStr,"newPassword":passwordEncodeStr]
-        print_debug(object: dict)
-        CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
-            
-            print_debug(object: response)
-            self.resetPasswordSuccessFirbaseAnalysics()
-            self.transpaantView.isHidden = true
-             self.resetPswdView.isHidden = true
-               
-                if response != nil
-                {
-                    if let dict = response as? NSDictionary
-                    {
-                        self.dataResponse = dict
-                    }
-                    
-                    self.checkStatus = ""
-                    if let status = self.dataResponse.value(forKey: "status") as? String
-                    {
-                        self.checkStatus = status.lowercased()
-                    }
-                    
-                    if self.checkStatus == Server.api_status
-                    {
-                        HelpingClass.saveToUserDefault(value: false as AnyObject, key: "status")
-                        
-                        self.loginBackgroundView.isHidden = false
-                    }
-                    else
-                    {
-                        guard let statusMessage = self.dataResponse.value(forKey: "message") as? String else
-                        {
-                            return
-                        }
-                        self.showAlertC(message: statusMessage)
-                    }
-                    
-                    
-                }else
-            {
-                guard let statusMessage = self.dataResponse.value(forKey: "message") as? String else
-                {
-                    return
-                }
-                self.showAlertC(message: statusMessage)
-            }
-       
-        }
-            }
-    
-    }
-    }
-    
-    @IBAction func loginAction(_ sender: Any) {
-        
-        HelpingClass.saveToUserDefault(value: false as AnyObject, key: "status")
-        Switcher.updateRootVC()
-        
-        
-    }
-    
-    
 }
 
 // Extension used for scroll according content size
@@ -951,32 +493,3 @@ extension UIScrollView {
     }
 }
 
-extension AccountViewController:UITextFieldDelegate{
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
-    {
-        
-        let maxLength = 20
-        let currentString: NSString = textField.text! as NSString
-        let newString: NSString =
-            currentString.replacingCharacters(in: range, with: string) as NSString
-        if newString.length>20
-        {
-            textField.resignFirstResponder()
-            
-        }
-        return newString.length <= maxLength
-        
-        
-        
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
-    {
-        textField.resignFirstResponder();
-        
-        return true;
-    }
-    
-    
-}

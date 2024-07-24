@@ -45,24 +45,9 @@ extension UIColor
     // profile Screen
     static let imageIcnTintColor = UIColor(red: 216/255.0, green: 18/255.0, blue: 18/255.0, alpha: 0.6)
     static let imagefrwdTintColor = UIColor(red: 61/255.0, green: 61/255.0, blue: 61/255.0, alpha: 1)
-    
-    static let trackOrderSelectedColor = UIColor(red: 106/255.0, green: 194/255.0, blue: 89/255.0, alpha: 1)
 
 
 }
-
-extension UIView {
-    @IBInspectable var cornerRadiusView: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
-        set {
-            layer.cornerRadius = newValue
-            layer.masksToBounds = newValue > 0
-        }
-    }
-}
-
 
 extension UIView {
     

@@ -16,7 +16,7 @@ class InvoiceContentViewController: UIViewController,UIWebViewDelegate
 {
     var invoiceContent = InvoicePDFContentData()
     var userResult:Results<UserCurrentData>? = nil
-    var canID = ""
+
     var realm:Realm? = nil
     @IBOutlet weak var pdfView: PDFView!
     @IBOutlet weak var webView2: UIWebView!
@@ -107,7 +107,6 @@ class InvoiceContentViewController: UIViewController,UIWebViewDelegate
         }
     }
     
-    
     @IBAction func backButton(_ sender: Any)
     {
         self.navigationController?.popViewController(animated: false)
@@ -116,7 +115,6 @@ class InvoiceContentViewController: UIViewController,UIWebViewDelegate
     @IBAction func shareInvoice(_ sender: Any)
     {
         // loadPDFAndShare()
-        shareInvoiceDetailFirbaseAnalysics()
         let title = String(format: "%@%@",SpectraInvoiceTitle.invoiceTitle,sendInvoiceNumber )
         //let content = AppDelegate.sharedInstance.fileUrl
         
@@ -127,16 +125,6 @@ class InvoiceContentViewController: UIViewController,UIWebViewDelegate
         self.present(vc, animated: true)
     }
   
-    func shareInvoiceDetailFirbaseAnalysics(){
-        
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.Payments,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.invoiceShare,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-
-       HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.share_invoice_details, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-        
-    }
     func webViewDidFinishLoad(_ webView: UIWebView)
     {
         openPDFView()
@@ -177,7 +165,7 @@ class InvoiceContentViewController: UIViewController,UIWebViewDelegate
         }
         catch
         {
-            debugPrint("error saving file:", error);
+            print("error saving file:", error);
         }
         }
         else

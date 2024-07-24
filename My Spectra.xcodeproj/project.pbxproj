@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A27F8C525777CF400D76E0A /* run-sonar-swift.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6A27F8C425777CF400D76E0A /* run-sonar-swift.sh */; };
-		6A27F8C92578E4FE00D76E0A /* PushNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A27F8C72578E4FE00D76E0A /* PushNotificationView.xib */; };
-		6A27F8CA2578E4FE00D76E0A /* PushNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A27F8C82578E4FE00D76E0A /* PushNotificationView.swift */; };
-		6A27F8CE2578E87A00D76E0A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A27F8CD2578E87A00D76E0A /* StringExtensions.swift */; };
-		6AECB190258A3EE90051AC7E /* TTGSnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AECB18F258A3EE80051AC7E /* TTGSnackBar.swift */; };
-		6AECB1922591D93C0051AC7E /* NotificationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AECB1912591D93C0051AC7E /* NotificationModal.swift */; };
-		6AECB19425933F7B0051AC7E /* NotificationSearchModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AECB19325933F780051AC7E /* NotificationSearchModal.swift */; };
 		6C06778C23290F7100058517 /* AccountCancelledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C06778B23290F7100058517 /* AccountCancelledViewController.swift */; };
 		6C06778E2329100E00058517 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C06778D2329100D00058517 /* PrivacyPolicyViewController.swift */; };
 		6C0677902329120A00058517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C06778F2329120900058517 /* Main.storyboard */; };
@@ -62,6 +55,7 @@
 		6C2F8F69233E128D007BF11C /* TopupPlanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2F8F68233E128D007BF11C /* TopupPlanData.swift */; };
 		6C2F8F6B233E13C2007BF11C /* TopupPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2F8F6A233E13C2007BF11C /* TopupPlanViewController.swift */; };
 		6C2F8F6D233E202B007BF11C /* TopupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2F8F6C233E202B007BF11C /* TopupTableViewCell.swift */; };
+		6C2F8F6F233E4997007BF11C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C2F8F6E233E4997007BF11C /* GoogleService-Info.plist */; };
 		6C300C8022F94D1F00BEB3BB /* ConnectionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C300C7F22F94D1F00BEB3BB /* ConnectionCheck.swift */; };
 		6C30C3EB233B3863000CDC2A /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C30C3EA233B3863000CDC2A /* EditProfileViewController.swift */; };
 		6C3125592333BF9900674E88 /* HelpingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3125582333BF9900674E88 /* HelpingClass.swift */; };
@@ -71,6 +65,7 @@
 		6C34F023233A03FA00B8A426 /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C34F022233A03FA00B8A426 /* FaqTableViewCell.swift */; };
 		6C35105123570CAC0033581F /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C35105023570CAC0033581F /* DatabaseHandler.swift */; };
 		6C35813122F42E840035C0DB /* ClassSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C35813022F42E840035C0DB /* ClassSwitcher.swift */; };
+		6C3668102303D6BA00F96A88 /* FaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C36680F2303D6BA00F96A88 /* FaqViewController.swift */; };
 		6C3732E9234F19EC0011B7F5 /* SIPrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3732E8234F19EC0011B7F5 /* SIPrivacyPolicyViewController.swift */; };
 		6C39FE6B22DDAA0B00421BE0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C39FE6A22DDAA0B00421BE0 /* HomeViewController.swift */; };
 		6C4075CA233CDBEA0049709F /* StandingInstractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4075C9233CDBEA0049709F /* StandingInstractionViewController.swift */; };
@@ -82,6 +77,8 @@
 		6C915CE822D71C38006BFDEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C915CE722D71C38006BFDEB /* LoginViewController.swift */; };
 		6C915CF022D71C39006BFDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C915CEF22D71C39006BFDEB /* Assets.xcassets */; };
 		6C915CF322D71C39006BFDEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C915CF122D71C39006BFDEB /* LaunchScreen.storyboard */; };
+		6C915CFE22D71C3A006BFDEB /* SpectraNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C915CFD22D71C3A006BFDEB /* SpectraNetTests.swift */; };
+		6C915D0922D71C3A006BFDEB /* SpectraNetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C915D0822D71C3A006BFDEB /* SpectraNetUITests.swift */; };
 		6CD2045822D861C600C60549 /* UIView+GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD2045722D861C600C60549 /* UIView+GradientColor.swift */; };
 		6CD2045F22D8635800C60549 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD2045E22D8635800C60549 /* AlertController.swift */; };
 		6CD2047522D8A82700C60549 /* PlaceholderTextColorChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD2047422D8A82700C60549 /* PlaceholderTextColorChange.swift */; };
@@ -104,97 +101,28 @@
 		81F5D4AB22EB393E003D9634 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5D4AA22EB393E003D9634 /* CustomCollectionViewCell.swift */; };
 		81F9D4BA22EF0912004CC955 /* ChangeDateFormate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F9D4B922EF0912004CC955 /* ChangeDateFormate.swift */; };
 		81F9D4BE22EF36DE004CC955 /* UserCountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F9D4BD22EF36DE004CC955 /* UserCountTableViewCell.swift */; };
-		83D31939757E827FE4AE0262 /* Pods_My_Spectra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC3F4E4BE76323079B97F65 /* Pods_My_Spectra.framework */; };
-		CD0DE89625F3FCB50074E783 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD0DE89525F3FCB50074E783 /* GoogleService-Info.plist */; };
-		CD128363243608FA00ABBB6D /* NONGPONViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD128362243608FA00ABBB6D /* NONGPONViewController.swift */; };
-		CD156A3524332556001E4C44 /* TroubleshootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD156A3424332556001E4C44 /* TroubleshootViewController.swift */; };
-		CD19DC6826728395000CDDD1 /* StoryboardMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD19DC6726728395000CDDD1 /* StoryboardMain.storyboard */; };
-		CD1AC68C2519D84D00B808AE /* AutoDetectionWIFIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1AC68B2519D84D00B808AE /* AutoDetectionWIFIViewController.swift */; };
-		CD21C51423ACBE91008AC785 /* PayBillMultipleAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD21C51323ACBE91008AC785 /* PayBillMultipleAccountsViewController.swift */; };
-		CD2503C326FA3A0700F86296 /* FAQReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2503C226FA3A0700F86296 /* FAQReasonViewController.swift */; };
-		CD2503C526FA50D300F86296 /* RecentSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2503C426FA50D300F86296 /* RecentSearchViewController.swift */; };
-		CD2503C726FB070C00F86296 /* FAQHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2503C626FB070C00F86296 /* FAQHeaderTableViewCell.swift */; };
-		CD2503C926FB14EC00F86296 /* RecentSerachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2503C826FB14EC00F86296 /* RecentSerachCell.swift */; };
-		CD2503CB26FC7C0500F86296 /* LocalSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2503CA26FC7C0500F86296 /* LocalSearchTableViewCell.swift */; };
-		CD2503CD26FC9C1A00F86296 /* RecentFAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2503CC26FC9C1A00F86296 /* RecentFAQTableViewCell.swift */; };
-		CD27524F26F87AC800CB3155 /* SegmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27524E26F87AC800CB3155 /* SegmentList.swift */; };
-		CD27525126F8813200CB3155 /* FAQList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27525026F8813200CB3155 /* FAQList.swift */; };
-		CD27525326F8CBB400CB3155 /* FAQCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27525226F8CBB400CB3155 /* FAQCell.swift */; };
-		CD2F919B2521C13200A369BF /* WiFiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2F919A2521C13200A369BF /* WiFiInfo.swift */; };
-		CD2F919D2521CCAF00A369BF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2F919C2521CCAF00A369BF /* SystemConfiguration.framework */; };
-		CD2F919F2521CF8800A369BF /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2F919E2521CF8800A369BF /* NetworkExtension.framework */; };
-		CD30B38D23B95210009C1BBE /* LinkedAccoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30B38C23B95210009C1BBE /* LinkedAccoundTableViewCell.swift */; };
-		CD30B38F23B9D743009C1BBE /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30B38E23B9D743009C1BBE /* Popover.swift */; };
-		CD363DDF25B9C269000B6F80 /* GTM-KSGK46W.json in Resources */ = {isa = PBXBuildFile; fileRef = CD363DDE25B9C269000B6F80 /* GTM-KSGK46W.json */; };
-		CD3FEE3423E035030009A59E /* ConsumedTopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3FEE3323E035030009A59E /* ConsumedTopUpViewController.swift */; };
-		CD3FEEAA23E066400009A59E /* ConsumedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3FEEA923E066400009A59E /* ConsumedTableViewCell.swift */; };
-		CD43A06623AA10C30063382B /* TestInternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43A06523AA10C30063382B /* TestInternetViewController.swift */; };
-		CD4B5B7924A983B8003653A1 /* sonar-project.properties in Resources */ = {isa = PBXBuildFile; fileRef = CD4B5B7724A983B8003653A1 /* sonar-project.properties */; };
-		CD4DAA902567DB1D001227CB /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4DAA8F2567DB1D001227CB /* NotificationService.swift */; };
-		CD4DAA942567DB1D001227CB /* NotifcationImages.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CD4DAA8D2567DB1D001227CB /* NotifcationImages.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CD4DAAA22567DCC1001227CB /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4DAA8F2567DB1D001227CB /* NotificationService.swift */; };
-		CD4EDB9326FA0D2E008014F9 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4EDB9226FA0D2E008014F9 /* FAQViewController.swift */; };
-		CD4EDB9926FA15D7008014F9 /* FaqDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4EDB9826FA15D7008014F9 /* FaqDownViewController.swift */; };
-		CD551548241A0AE2005B4517 /* OutstandingBalancePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD551547241A0AE2005B4517 /* OutstandingBalancePaymentViewController.swift */; };
-		CD63E9CA246CC73600002185 /* OpenSRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63E9C9246CC73600002185 /* OpenSRViewController.swift */; };
-		CD64B50F23B1FB00001EFCE5 /* PayBillMultipleAccountsPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD64B50E23B1FB00001EFCE5 /* PayBillMultipleAccountsPaymentViewController.swift */; };
-		CD64B51223B23543001EFCE5 /* TrackOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD64B51123B23543001EFCE5 /* TrackOrderViewController.swift */; };
-		CD77DC8823B62AD200E1A8AE /* ViewLinkedAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD77DC8723B62AD200E1A8AE /* ViewLinkedAccountViewController.swift */; };
-		CD7A6E9E250F7D9000B8F9B2 /* FrequentDisconnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7A6E9D250F7D8F00B8F9B2 /* FrequentDisconnectionViewController.swift */; };
-		CD7A6EA02510A63600B8F9B2 /* FrequentlyDisconnectCasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7A6E9F2510A63600B8F9B2 /* FrequentlyDisconnectCasesViewController.swift */; };
-		CD810C4A23B5E85400E21111 /* LinkCanIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD810C4923B5E85400E21111 /* LinkCanIdViewController.swift */; };
-		CD89D96225AF229D003C30FE /* CanIdSwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD89D96125AF229D003C30FE /* CanIdSwitchViewController.swift */; };
-		CDB73F5D2576AA8500799EF3 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDB73F5C2576AA8500799EF3 /* Storyboard.storyboard */; };
-		CDB73F642576AABF00799EF3 /* ComparePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB73F602576AABE00799EF3 /* ComparePlanViewController.swift */; };
-		CDB73F652576AABF00799EF3 /* CompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB73F612576AABE00799EF3 /* CompareViewController.swift */; };
-		CDB73F662576AABF00799EF3 /* ChangePlanCompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB73F622576AABF00799EF3 /* ChangePlanCompareViewController.swift */; };
-		CDB73F672576AABF00799EF3 /* KnowMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB73F632576AABF00799EF3 /* KnowMoreViewController.swift */; };
-		CDB73F6C2576AACC00799EF3 /* NotificationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB73F6A2576AACC00799EF3 /* NotificationSearchViewController.swift */; };
-		CDB73F6D2576AACC00799EF3 /* ArchieveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB73F6B2576AACC00799EF3 /* ArchieveViewController.swift */; };
-		CDB73F742576AAE000799EF3 /* ChatUserMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB73F702576AADE00799EF3 /* ChatUserMessageCell.swift */; };
-		CDB73F752576AAE000799EF3 /* ChatBotMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB73F712576AADF00799EF3 /* ChatBotMessageCell.swift */; };
-		CDB73F762576AAE000799EF3 /* KnowMoreBottonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB73F722576AADF00799EF3 /* KnowMoreBottonTableViewCell.swift */; };
-		CDB73F772576AAE000799EF3 /* KnowMoreTopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB73F732576AADF00799EF3 /* KnowMoreTopTableViewCell.swift */; };
-		CDB73F7B2576AB0A00799EF3 /* KnowMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB73F7A2576AB0900799EF3 /* KnowMore.swift */; };
-		CDD7795325937DC7008873E0 /* NotificationDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD7795225937DC7008873E0 /* NotificationDisplayViewController.swift */; };
-		CDE3905C2672250A001818F5 /* GetHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE3905B2672250A001818F5 /* GetHelpViewController.swift */; };
-		CDFFE45A2511F8C900A64152 /* UtllizationMoreThanEightyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFFE4592511F8C900A64152 /* UtllizationMoreThanEightyViewController.swift */; };
-		CDFFE45F25139CBC00A64152 /* loader_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = CDFFE45D25139CBB00A64152 /* loader_2.gif */; };
-		CDFFE46025139CBC00A64152 /* loader_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = CDFFE45E25139CBC00A64152 /* loader_1.gif */; };
+		A2C6EB0B1A1F4346852A5C48 /* Pods_My_Spectra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880DD3EFC47C309285C497B4 /* Pods_My_Spectra.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CD4DAA922567DB1D001227CB /* PBXContainerItemProxy */ = {
+		6C915CFA22D71C3A006BFDEB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6C915CDA22D71C38006BFDEB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CD4DAA8C2567DB1D001227CB;
-			remoteInfo = NotifcationImages;
+			remoteGlobalIDString = 6C915CE122D71C38006BFDEB;
+			remoteInfo = SpectraNet;
+		};
+		6C915D0522D71C3A006BFDEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C915CDA22D71C38006BFDEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C915CE122D71C38006BFDEB;
+			remoteInfo = SpectraNet;
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		CD4DAA982567DB1D001227CB /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				CD4DAA942567DB1D001227CB /* NotifcationImages.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		6A27F8C425777CF400D76E0A /* run-sonar-swift.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "run-sonar-swift.sh"; sourceTree = "<group>"; };
-		6A27F8C72578E4FE00D76E0A /* PushNotificationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushNotificationView.xib; sourceTree = "<group>"; };
-		6A27F8C82578E4FE00D76E0A /* PushNotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationView.swift; sourceTree = "<group>"; };
-		6A27F8CD2578E87A00D76E0A /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		6AECB18F258A3EE80051AC7E /* TTGSnackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTGSnackBar.swift; sourceTree = "<group>"; };
-		6AECB1912591D93C0051AC7E /* NotificationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModal.swift; sourceTree = "<group>"; };
-		6AECB19325933F780051AC7E /* NotificationSearchModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSearchModal.swift; sourceTree = "<group>"; };
+		03355F5AB6F788A62AF067A9 /* Pods-My Spectra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Spectra.release.xcconfig"; path = "Target Support Files/Pods-My Spectra/Pods-My Spectra.release.xcconfig"; sourceTree = "<group>"; };
 		6C06778B23290F7100058517 /* AccountCancelledViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCancelledViewController.swift; sourceTree = "<group>"; };
 		6C06778D2329100D00058517 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		6C06778F2329120900058517 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -243,6 +171,7 @@
 		6C2F8F68233E128D007BF11C /* TopupPlanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupPlanData.swift; sourceTree = "<group>"; };
 		6C2F8F6A233E13C2007BF11C /* TopupPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupPlanViewController.swift; sourceTree = "<group>"; };
 		6C2F8F6C233E202B007BF11C /* TopupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupTableViewCell.swift; sourceTree = "<group>"; };
+		6C2F8F6E233E4997007BF11C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C300C7F22F94D1F00BEB3BB /* ConnectionCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCheck.swift; sourceTree = "<group>"; };
 		6C30C3EA233B3863000CDC2A /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		6C3125582333BF9900674E88 /* HelpingClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpingClass.swift; sourceTree = "<group>"; };
@@ -252,6 +181,7 @@
 		6C34F022233A03FA00B8A426 /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
 		6C35105023570CAC0033581F /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
 		6C35813022F42E840035C0DB /* ClassSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSwitcher.swift; sourceTree = "<group>"; };
+		6C36680F2303D6BA00F96A88 /* FaqViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqViewController.swift; sourceTree = "<group>"; };
 		6C3732E8234F19EC0011B7F5 /* SIPrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIPrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		6C39FE6A22DDAA0B00421BE0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6C4075C9233CDBEA0049709F /* StandingInstractionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingInstractionViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +195,12 @@
 		6C915CEF22D71C39006BFDEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C915CF222D71C39006BFDEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C915CF422D71C39006BFDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6C915CF922D71C3A006BFDEB /* My SpectraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My SpectraTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C915CFD22D71C3A006BFDEB /* SpectraNetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectraNetTests.swift; sourceTree = "<group>"; };
+		6C915CFF22D71C3A006BFDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C915D0422D71C3A006BFDEB /* My SpectraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My SpectraUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C915D0822D71C3A006BFDEB /* SpectraNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectraNetUITests.swift; sourceTree = "<group>"; };
+		6C915D0A22D71C3A006BFDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CD2045722D861C600C60549 /* UIView+GradientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+GradientColor.swift"; sourceTree = "<group>"; };
 		6CD2045E22D8635800C60549 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		6CD2046E22D887D600C60549 /* SpectraNet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpectraNet-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -288,66 +224,8 @@
 		81F5D4AA22EB393E003D9634 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		81F9D4B922EF0912004CC955 /* ChangeDateFormate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDateFormate.swift; sourceTree = "<group>"; };
 		81F9D4BD22EF36DE004CC955 /* UserCountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCountTableViewCell.swift; sourceTree = "<group>"; };
-		953E518364A2F6253C54616A /* Pods-My Spectra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Spectra.debug.xcconfig"; path = "Target Support Files/Pods-My Spectra/Pods-My Spectra.debug.xcconfig"; sourceTree = "<group>"; };
-		ACC3F4E4BE76323079B97F65 /* Pods_My_Spectra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Spectra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD0DE89525F3FCB50074E783 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CD128362243608FA00ABBB6D /* NONGPONViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NONGPONViewController.swift; sourceTree = "<group>"; };
-		CD156A3424332556001E4C44 /* TroubleshootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TroubleshootViewController.swift; sourceTree = "<group>"; };
-		CD19DC6726728395000CDDD1 /* StoryboardMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardMain.storyboard; sourceTree = "<group>"; };
-		CD1AC68B2519D84D00B808AE /* AutoDetectionWIFIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoDetectionWIFIViewController.swift; sourceTree = "<group>"; };
-		CD21C51323ACBE91008AC785 /* PayBillMultipleAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBillMultipleAccountsViewController.swift; sourceTree = "<group>"; };
-		CD2503C226FA3A0700F86296 /* FAQReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQReasonViewController.swift; sourceTree = "<group>"; };
-		CD2503C426FA50D300F86296 /* RecentSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchViewController.swift; sourceTree = "<group>"; };
-		CD2503C626FB070C00F86296 /* FAQHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		CD2503C826FB14EC00F86296 /* RecentSerachCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSerachCell.swift; sourceTree = "<group>"; };
-		CD2503CA26FC7C0500F86296 /* LocalSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchTableViewCell.swift; sourceTree = "<group>"; };
-		CD2503CC26FC9C1A00F86296 /* RecentFAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentFAQTableViewCell.swift; sourceTree = "<group>"; };
-		CD27524E26F87AC800CB3155 /* SegmentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentList.swift; sourceTree = "<group>"; };
-		CD27525026F8813200CB3155 /* FAQList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQList.swift; sourceTree = "<group>"; };
-		CD27525226F8CBB400CB3155 /* FAQCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQCell.swift; sourceTree = "<group>"; };
-		CD2F91992521BC8800A369BF /* MySpectra.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySpectra.entitlements; sourceTree = "<group>"; };
-		CD2F919A2521C13200A369BF /* WiFiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiInfo.swift; sourceTree = "<group>"; };
-		CD2F919C2521CCAF00A369BF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		CD2F919E2521CF8800A369BF /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
-		CD30B38C23B95210009C1BBE /* LinkedAccoundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedAccoundTableViewCell.swift; sourceTree = "<group>"; };
-		CD30B38E23B9D743009C1BBE /* Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
-		CD363DDE25B9C269000B6F80 /* GTM-KSGK46W.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "GTM-KSGK46W.json"; sourceTree = "<group>"; };
-		CD3FEE3323E035030009A59E /* ConsumedTopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumedTopUpViewController.swift; sourceTree = "<group>"; };
-		CD3FEEA923E066400009A59E /* ConsumedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumedTableViewCell.swift; sourceTree = "<group>"; };
-		CD43A06523AA10C30063382B /* TestInternetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInternetViewController.swift; sourceTree = "<group>"; };
-		CD4B5B7724A983B8003653A1 /* sonar-project.properties */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sonar-project.properties"; sourceTree = SOURCE_ROOT; };
-		CD4DAA8D2567DB1D001227CB /* NotifcationImages.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotifcationImages.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD4DAA8F2567DB1D001227CB /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		CD4DAA912567DB1D001227CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD4EDB9226FA0D2E008014F9 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
-		CD4EDB9826FA15D7008014F9 /* FaqDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqDownViewController.swift; sourceTree = "<group>"; };
-		CD551547241A0AE2005B4517 /* OutstandingBalancePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutstandingBalancePaymentViewController.swift; sourceTree = "<group>"; };
-		CD63E9C9246CC73600002185 /* OpenSRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSRViewController.swift; sourceTree = "<group>"; };
-		CD64B50E23B1FB00001EFCE5 /* PayBillMultipleAccountsPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBillMultipleAccountsPaymentViewController.swift; sourceTree = "<group>"; };
-		CD64B51123B23543001EFCE5 /* TrackOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackOrderViewController.swift; sourceTree = "<group>"; };
-		CD77DC8723B62AD200E1A8AE /* ViewLinkedAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLinkedAccountViewController.swift; sourceTree = "<group>"; };
-		CD7A6E9D250F7D8F00B8F9B2 /* FrequentDisconnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentDisconnectionViewController.swift; sourceTree = "<group>"; };
-		CD7A6E9F2510A63600B8F9B2 /* FrequentlyDisconnectCasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyDisconnectCasesViewController.swift; sourceTree = "<group>"; };
-		CD810C4923B5E85400E21111 /* LinkCanIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkCanIdViewController.swift; sourceTree = "<group>"; };
-		CD89D96125AF229D003C30FE /* CanIdSwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanIdSwitchViewController.swift; sourceTree = "<group>"; };
-		CDB73F5C2576AA8500799EF3 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		CDB73F602576AABE00799EF3 /* ComparePlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparePlanViewController.swift; sourceTree = "<group>"; };
-		CDB73F612576AABE00799EF3 /* CompareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompareViewController.swift; sourceTree = "<group>"; };
-		CDB73F622576AABF00799EF3 /* ChangePlanCompareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePlanCompareViewController.swift; sourceTree = "<group>"; };
-		CDB73F632576AABF00799EF3 /* KnowMoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowMoreViewController.swift; sourceTree = "<group>"; };
-		CDB73F6A2576AACC00799EF3 /* NotificationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSearchViewController.swift; sourceTree = "<group>"; };
-		CDB73F6B2576AACC00799EF3 /* ArchieveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchieveViewController.swift; sourceTree = "<group>"; };
-		CDB73F702576AADE00799EF3 /* ChatUserMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUserMessageCell.swift; sourceTree = "<group>"; };
-		CDB73F712576AADF00799EF3 /* ChatBotMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBotMessageCell.swift; sourceTree = "<group>"; };
-		CDB73F722576AADF00799EF3 /* KnowMoreBottonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowMoreBottonTableViewCell.swift; sourceTree = "<group>"; };
-		CDB73F732576AADF00799EF3 /* KnowMoreTopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowMoreTopTableViewCell.swift; sourceTree = "<group>"; };
-		CDB73F7A2576AB0900799EF3 /* KnowMore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowMore.swift; sourceTree = "<group>"; };
-		CDD7795225937DC7008873E0 /* NotificationDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDisplayViewController.swift; sourceTree = "<group>"; };
-		CDE3905B2672250A001818F5 /* GetHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHelpViewController.swift; sourceTree = "<group>"; };
-		CDFFE4592511F8C900A64152 /* UtllizationMoreThanEightyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtllizationMoreThanEightyViewController.swift; sourceTree = "<group>"; };
-		CDFFE45D25139CBB00A64152 /* loader_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader_2.gif; sourceTree = "<group>"; };
-		CDFFE45E25139CBC00A64152 /* loader_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader_1.gif; sourceTree = "<group>"; };
-		DED6F06FB637A9925CCF9B12 /* Pods-My Spectra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Spectra.release.xcconfig"; path = "Target Support Files/Pods-My Spectra/Pods-My Spectra.release.xcconfig"; sourceTree = "<group>"; };
+		880DD3EFC47C309285C497B4 /* Pods_My_Spectra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Spectra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E41FACCD7412B24F1900CD54 /* Pods-My Spectra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Spectra.debug.xcconfig"; path = "Target Support Files/Pods-My Spectra/Pods-My Spectra.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,13 +233,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD2F919D2521CCAF00A369BF /* SystemConfiguration.framework in Frameworks */,
-				CD2F919F2521CF8800A369BF /* NetworkExtension.framework in Frameworks */,
-				83D31939757E827FE4AE0262 /* Pods_My_Spectra.framework in Frameworks */,
+				A2C6EB0B1A1F4346852A5C48 /* Pods_My_Spectra.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD4DAA8A2567DB1D001227CB /* Frameworks */ = {
+		6C915CF622D71C3A006BFDEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C915D0122D71C3A006BFDEB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -374,27 +257,10 @@
 		4B6BBEEF34AA29B68D676BE9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				953E518364A2F6253C54616A /* Pods-My Spectra.debug.xcconfig */,
-				DED6F06FB637A9925CCF9B12 /* Pods-My Spectra.release.xcconfig */,
+				E41FACCD7412B24F1900CD54 /* Pods-My Spectra.debug.xcconfig */,
+				03355F5AB6F788A62AF067A9 /* Pods-My Spectra.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		6A27F8C62578E4DE00D76E0A /* PushNotificationView */ = {
-			isa = PBXGroup;
-			children = (
-				6A27F8C82578E4FE00D76E0A /* PushNotificationView.swift */,
-				6A27F8C72578E4FE00D76E0A /* PushNotificationView.xib */,
-			);
-			path = PushNotificationView;
-			sourceTree = "<group>";
-		};
-		6AECB18E258A3EC80051AC7E /* TTGSnackBar */ = {
-			isa = PBXGroup;
-			children = (
-				6AECB18F258A3EE80051AC7E /* TTGSnackBar.swift */,
-			);
-			path = TTGSnackBar;
 			sourceTree = "<group>";
 		};
 		6C212A14236AE3C2005DDA37 /* SpectraUpcomingPhase2Module */ = {
@@ -422,14 +288,6 @@
 		6C27FA2C22E0716E002DBF12 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				CD2503C826FB14EC00F86296 /* RecentSerachCell.swift */,
-				CD2503CA26FC7C0500F86296 /* LocalSearchTableViewCell.swift */,
-				CD27525226F8CBB400CB3155 /* FAQCell.swift */,
-				CD2503C626FB070C00F86296 /* FAQHeaderTableViewCell.swift */,
-				CDB73F712576AADF00799EF3 /* ChatBotMessageCell.swift */,
-				CDB73F702576AADE00799EF3 /* ChatUserMessageCell.swift */,
-				CDB73F722576AADF00799EF3 /* KnowMoreBottonTableViewCell.swift */,
-				CDB73F732576AADF00799EF3 /* KnowMoreTopTableViewCell.swift */,
 				6C7A5726231D4856001F2531 /* TransactionTableViewCell.swift */,
 				81F102D222E6EFC6008CEEAF /* MoreTableViewCell.swift */,
 				6C25921A22E0552C000960D5 /* InvoiceTableViewCell.swift */,
@@ -446,9 +304,6 @@
 				6C34F022233A03FA00B8A426 /* FaqTableViewCell.swift */,
 				6C2F8F6C233E202B007BF11C /* TopupTableViewCell.swift */,
 				6CD4FCD5234F6539006968AD /* SITableViewCell.swift */,
-				CD30B38C23B95210009C1BBE /* LinkedAccoundTableViewCell.swift */,
-				CD3FEEA923E066400009A59E /* ConsumedTableViewCell.swift */,
-				CD2503CC26FC9C1A00F86296 /* RecentFAQTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -472,10 +327,7 @@
 		6C31599E2331FC780042F6FC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CD0DE89525F3FCB50074E783 /* GoogleService-Info.plist */,
-				CD74DF9525B8116600082040 /* container */,
-				CDFFE45E25139CBC00A64152 /* loader_1.gif */,
-				CDFFE45D25139CBB00A64152 /* loader_2.gif */,
+				6C2F8F6E233E4997007BF11C /* GoogleService-Info.plist */,
 				6C25EFC522FAB9F40085E06B /* Fonts */,
 			);
 			path = "Supporting Files";
@@ -485,7 +337,6 @@
 			isa = PBXGroup;
 			children = (
 				6C27FA2D22E07862002DBF12 /* CANetworkManager.swift */,
-				CD2F919A2521C13200A369BF /* WiFiInfo.swift */,
 				6C35105023570CAC0033581F /* DatabaseHandler.swift */,
 			);
 			path = NetworkManger;
@@ -534,7 +385,6 @@
 		6C56A86122D746730014C16F /* Modal */ = {
 			isa = PBXGroup;
 			children = (
-				CDB73F7A2576AB0900799EF3 /* KnowMore.swift */,
 				6C2661BF22FD37BB00EB910F /* UserData.swift */,
 				6CEEFC6222FD6A9100779140 /* UserCurrentData.swift */,
 				6CEEFC5622FD3F9700779140 /* InvoiceListData.swift */,
@@ -550,10 +400,6 @@
 				6C2F8F68233E128D007BF11C /* TopupPlanData.swift */,
 				6C24A43B2372C76100B8BE09 /* UserProfileData.swift */,
 				6C212A14236AE3C2005DDA37 /* SpectraUpcomingPhase2Module */,
-				6AECB1912591D93C0051AC7E /* NotificationModal.swift */,
-				6AECB19325933F780051AC7E /* NotificationSearchModal.swift */,
-				CD27524E26F87AC800CB3155 /* SegmentList.swift */,
-				CD27525026F8813200CB3155 /* FAQList.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -561,11 +407,8 @@
 		6C56A86222D7467D0014C16F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6A27F8C62578E4DE00D76E0A /* PushNotificationView */,
-				CDB73F5C2576AA8500799EF3 /* Storyboard.storyboard */,
 				6C27FA2C22E0716E002DBF12 /* TableViewCell */,
 				6C06778F2329120900058517 /* Main.storyboard */,
-				CD19DC6726728395000CDDD1 /* StoryboardMain.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -573,14 +416,6 @@
 		6C56A86322D746850014C16F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CDE39058267224E3001818F5 /* Help */,
-				CD7A6E9B250F7D3800B8F9B2 /* Frequent Disconnection */,
-				CD551546241A09D2005B4517 /* InterNetNotWorking */,
-				CD3FEE3223E034E10009A59E /* TopUp */,
-				CD810C4823B5E7FF00E21111 /* LinkAccount */,
-				CD64B51023B23513001EFCE5 /* Track Order */,
-				CD21C51223ACBE46008AC785 /* PayBillMultipleAccounts */,
-				CD43A06423AA108C0063382B /* TestInternet */,
 				6C33C5E522F18DCB00BFB452 /* LoginModule */,
 				6C33C5E622F18E0300BFB452 /* TabBarViewModule */,
 				6CD2046E22D887D600C60549 /* SpectraNet-Bridging-Header.h */,
@@ -591,7 +426,6 @@
 		6C56A86622D759E20014C16F /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				6AECB18E258A3EC80051AC7E /* TTGSnackBar */,
 				6C3125572333BF6300674E88 /* HelpingClass */,
 				6C56A86D22D76A8E0014C16F /* Extensions */,
 				6C3159A02332024A0042F6FC /* Defines */,
@@ -610,7 +444,6 @@
 		6C56A86D22D76A8E0014C16F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CD30B38E23B9D743009C1BBE /* Popover.swift */,
 				6CD2047422D8A82700C60549 /* PlaceholderTextColorChange.swift */,
 				6C25921822E03784000960D5 /* DeviceCheck.swift */,
 				6C27FA3122E0A4BF002DBF12 /* RemoveStringAfterSpecificChar.swift */,
@@ -623,7 +456,6 @@
 				6C3159A22332104E0042F6FC /* Classes.swift */,
 				6C24A4372372AFAC00B8BE09 /* ProfileImageAddLocal.swift */,
 				6C24A4392372B3E400B8BE09 /* StringRegexValidation.swift */,
-				6A27F8CD2578E87A00D76E0A /* StringExtensions.swift */,
 				6C56A86E22D76AEE0014C16F /* UIButton+gradientColor.swift */,
 				6C35813222F433ED0035C0DB /* SwitchVCWhelLogedIn */,
 			);
@@ -633,9 +465,9 @@
 		6C915CD922D71C38006BFDEB = {
 			isa = PBXGroup;
 			children = (
-				CD2F91992521BC8800A369BF /* MySpectra.entitlements */,
 				6C915CE422D71C38006BFDEB /* SpectraNet */,
-				CD4DAA8E2567DB1D001227CB /* NotifcationImages */,
+				6C915CFC22D71C3A006BFDEB /* SpectraNetTests */,
+				6C915D0722D71C3A006BFDEB /* SpectraNetUITests */,
 				6C915CE322D71C38006BFDEB /* Products */,
 				4B6BBEEF34AA29B68D676BE9 /* Pods */,
 				6FBAEE8AEF1B2DB9FD7DCCD7 /* Frameworks */,
@@ -646,7 +478,8 @@
 			isa = PBXGroup;
 			children = (
 				6C915CE222D71C38006BFDEB /* My Spectra.app */,
-				CD4DAA8D2567DB1D001227CB /* NotifcationImages.appex */,
+				6C915CF922D71C3A006BFDEB /* My SpectraTests.xctest */,
+				6C915D0422D71C3A006BFDEB /* My SpectraUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -654,7 +487,6 @@
 		6C915CE422D71C38006BFDEB /* SpectraNet */ = {
 			isa = PBXGroup;
 			children = (
-				CD4B5B7524A9838C003653A1 /* Sonar Cube */,
 				6C31599F233201480042F6FC /* NetworkManger */,
 				6C31599E2331FC780042F6FC /* Supporting Files */,
 				6C56A86822D75A130014C16F /* AppDelegate */,
@@ -667,6 +499,24 @@
 				6C915CF422D71C39006BFDEB /* Info.plist */,
 			);
 			path = SpectraNet;
+			sourceTree = "<group>";
+		};
+		6C915CFC22D71C3A006BFDEB /* SpectraNetTests */ = {
+			isa = PBXGroup;
+			children = (
+				6C915CFD22D71C3A006BFDEB /* SpectraNetTests.swift */,
+				6C915CFF22D71C3A006BFDEB /* Info.plist */,
+			);
+			path = SpectraNetTests;
+			sourceTree = "<group>";
+		};
+		6C915D0722D71C3A006BFDEB /* SpectraNetUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6C915D0822D71C3A006BFDEB /* SpectraNetUITests.swift */,
+				6C915D0A22D71C3A006BFDEB /* Info.plist */,
+			);
+			path = SpectraNetUITests;
 			sourceTree = "<group>";
 		};
 		6C99AFAB232251FF005470D0 /* MenuTabController */ = {
@@ -683,15 +533,12 @@
 		6C99AFAC23225233005470D0 /* MenuModules */ = {
 			isa = PBXGroup;
 			children = (
-				CDB73F622576AABF00799EF3 /* ChangePlanCompareViewController.swift */,
-				CDB73F602576AABE00799EF3 /* ComparePlanViewController.swift */,
-				CDB73F612576AABE00799EF3 /* CompareViewController.swift */,
-				CDB73F632576AABF00799EF3 /* KnowMoreViewController.swift */,
 				81F4006922E8A5F200F259AA /* PlanViewController.swift */,
 				6C25BF56232F9EA300F0351D /* ChangePlanViewController.swift */,
 				81F102DD22E71556008CEEAF /* AccountViewController.swift */,
 				6C2BE2B422FBF8B7006F51D7 /* CanIDViewController.swift */,
 				6C2BB5542302C03600077D81 /* DataUsageViewController.swift */,
+				6C36680F2303D6BA00F96A88 /* FaqViewController.swift */,
 				6C21F1222320EDE600FBD253 /* ContactUSViewController.swift */,
 				6C06778D2329100D00058517 /* PrivacyPolicyViewController.swift */,
 				6C30C3EA233B3863000CDC2A /* EditProfileViewController.swift */,
@@ -724,15 +571,11 @@
 		6C99AFAF23225334005470D0 /* HomeModules */ = {
 			isa = PBXGroup;
 			children = (
-				CDD7795225937DC7008873E0 /* NotificationDisplayViewController.swift */,
-				CDB73F6B2576AACC00799EF3 /* ArchieveViewController.swift */,
-				CDB73F6A2576AACC00799EF3 /* NotificationSearchViewController.swift */,
 				6C06778B23290F7100058517 /* AccountCancelledViewController.swift */,
 				6C2A6C85231E2ED0006BCADE /* AccountActivationViewController.swift */,
 				81F46B212317BE800067EA89 /* MRTGViewController.swift */,
 				6C2666B522F7F5C40051A4D2 /* NotificationViewController.swift */,
-				CD89D96125AF229D003C30FE /* CanIdSwitchViewController.swift */,
-				CD2503C426FA50D300F86296 /* RecentSearchViewController.swift */,
+				6C2F8F6A233E13C2007BF11C /* TopupPlanViewController.swift */,
 			);
 			path = HomeModules;
 			sourceTree = "<group>";
@@ -748,113 +591,9 @@
 		6FBAEE8AEF1B2DB9FD7DCCD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CD2F919E2521CF8800A369BF /* NetworkExtension.framework */,
-				CD2F919C2521CCAF00A369BF /* SystemConfiguration.framework */,
-				ACC3F4E4BE76323079B97F65 /* Pods_My_Spectra.framework */,
+				880DD3EFC47C309285C497B4 /* Pods_My_Spectra.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CD21C51223ACBE46008AC785 /* PayBillMultipleAccounts */ = {
-			isa = PBXGroup;
-			children = (
-				CD21C51323ACBE91008AC785 /* PayBillMultipleAccountsViewController.swift */,
-				CD64B50E23B1FB00001EFCE5 /* PayBillMultipleAccountsPaymentViewController.swift */,
-			);
-			path = PayBillMultipleAccounts;
-			sourceTree = "<group>";
-		};
-		CD3FEE3223E034E10009A59E /* TopUp */ = {
-			isa = PBXGroup;
-			children = (
-				6C2F8F6A233E13C2007BF11C /* TopupPlanViewController.swift */,
-				CD3FEE3323E035030009A59E /* ConsumedTopUpViewController.swift */,
-			);
-			path = TopUp;
-			sourceTree = "<group>";
-		};
-		CD43A06423AA108C0063382B /* TestInternet */ = {
-			isa = PBXGroup;
-			children = (
-				CD43A06523AA10C30063382B /* TestInternetViewController.swift */,
-			);
-			path = TestInternet;
-			sourceTree = "<group>";
-		};
-		CD4B5B7524A9838C003653A1 /* Sonar Cube */ = {
-			isa = PBXGroup;
-			children = (
-				6A27F8C425777CF400D76E0A /* run-sonar-swift.sh */,
-				CD4B5B7724A983B8003653A1 /* sonar-project.properties */,
-			);
-			path = "Sonar Cube";
-			sourceTree = "<group>";
-		};
-		CD4DAA8E2567DB1D001227CB /* NotifcationImages */ = {
-			isa = PBXGroup;
-			children = (
-				CD4DAA8F2567DB1D001227CB /* NotificationService.swift */,
-				CD4DAA912567DB1D001227CB /* Info.plist */,
-			);
-			path = NotifcationImages;
-			sourceTree = "<group>";
-		};
-		CD551546241A09D2005B4517 /* InterNetNotWorking */ = {
-			isa = PBXGroup;
-			children = (
-				CD551547241A0AE2005B4517 /* OutstandingBalancePaymentViewController.swift */,
-				CD63E9C9246CC73600002185 /* OpenSRViewController.swift */,
-				CD156A3424332556001E4C44 /* TroubleshootViewController.swift */,
-				CD128362243608FA00ABBB6D /* NONGPONViewController.swift */,
-			);
-			path = InterNetNotWorking;
-			sourceTree = "<group>";
-		};
-		CD64B51023B23513001EFCE5 /* Track Order */ = {
-			isa = PBXGroup;
-			children = (
-				CD64B51123B23543001EFCE5 /* TrackOrderViewController.swift */,
-			);
-			path = "Track Order";
-			sourceTree = "<group>";
-		};
-		CD74DF9525B8116600082040 /* container */ = {
-			isa = PBXGroup;
-			children = (
-				CD363DDE25B9C269000B6F80 /* GTM-KSGK46W.json */,
-			);
-			path = container;
-			sourceTree = "<group>";
-		};
-		CD7A6E9B250F7D3800B8F9B2 /* Frequent Disconnection */ = {
-			isa = PBXGroup;
-			children = (
-				CD7A6E9D250F7D8F00B8F9B2 /* FrequentDisconnectionViewController.swift */,
-				CD7A6E9F2510A63600B8F9B2 /* FrequentlyDisconnectCasesViewController.swift */,
-				CDFFE4592511F8C900A64152 /* UtllizationMoreThanEightyViewController.swift */,
-				CD1AC68B2519D84D00B808AE /* AutoDetectionWIFIViewController.swift */,
-			);
-			path = "Frequent Disconnection";
-			sourceTree = "<group>";
-		};
-		CD810C4823B5E7FF00E21111 /* LinkAccount */ = {
-			isa = PBXGroup;
-			children = (
-				CD810C4923B5E85400E21111 /* LinkCanIdViewController.swift */,
-				CD77DC8723B62AD200E1A8AE /* ViewLinkedAccountViewController.swift */,
-			);
-			path = LinkAccount;
-			sourceTree = "<group>";
-		};
-		CDE39058267224E3001818F5 /* Help */ = {
-			isa = PBXGroup;
-			children = (
-				CDE3905B2672250A001818F5 /* GetHelpViewController.swift */,
-				CD4EDB9826FA15D7008014F9 /* FaqDownViewController.swift */,
-				CD4EDB9226FA0D2E008014F9 /* FAQViewController.swift */,
-				CD2503C226FA3A0700F86296 /* FAQReasonViewController.swift */,
-			);
-			path = Help;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -864,41 +603,57 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6C915D0D22D71C3A006BFDEB /* Build configuration list for PBXNativeTarget "My Spectra" */;
 			buildPhases = (
-				AB39EF655D44BBCBBF88B29C /* [CP] Check Pods Manifest.lock */,
+				E9882B783B3A50FAB4590C71 /* [CP] Check Pods Manifest.lock */,
 				6C915CDE22D71C38006BFDEB /* Sources */,
 				6C915CDF22D71C38006BFDEB /* Frameworks */,
 				6C915CE022D71C38006BFDEB /* Resources */,
 				81F46B1E2317B3AE0067EA89 /* ShellScript */,
-				CD4DAA982567DB1D001227CB /* Embed App Extensions */,
-				B680425AB90DE9A4E53510DC /* [CP] Embed Pods Frameworks */,
-				0FB446E4A05247F7F5254706 /* [CP] Copy Pods Resources */,
+				F296C3D46F88B3ED33057ACA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CD4DAA932567DB1D001227CB /* PBXTargetDependency */,
 			);
 			name = "My Spectra";
 			productName = SpectraNet;
 			productReference = 6C915CE222D71C38006BFDEB /* My Spectra.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CD4DAA8C2567DB1D001227CB /* NotifcationImages */ = {
+		6C915CF822D71C3A006BFDEB /* My SpectraTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD4DAA952567DB1D001227CB /* Build configuration list for PBXNativeTarget "NotifcationImages" */;
+			buildConfigurationList = 6C915D1022D71C3A006BFDEB /* Build configuration list for PBXNativeTarget "My SpectraTests" */;
 			buildPhases = (
-				CD4DAA892567DB1D001227CB /* Sources */,
-				CD4DAA8A2567DB1D001227CB /* Frameworks */,
-				CD4DAA8B2567DB1D001227CB /* Resources */,
+				6C915CF522D71C3A006BFDEB /* Sources */,
+				6C915CF622D71C3A006BFDEB /* Frameworks */,
+				6C915CF722D71C3A006BFDEB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6C915CFB22D71C3A006BFDEB /* PBXTargetDependency */,
 			);
-			name = NotifcationImages;
-			productName = NotifcationImages;
-			productReference = CD4DAA8D2567DB1D001227CB /* NotifcationImages.appex */;
-			productType = "com.apple.product-type.app-extension";
+			name = "My SpectraTests";
+			productName = SpectraNetTests;
+			productReference = 6C915CF922D71C3A006BFDEB /* My SpectraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6C915D0322D71C3A006BFDEB /* My SpectraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C915D1322D71C3A006BFDEB /* Build configuration list for PBXNativeTarget "My SpectraUITests" */;
+			buildPhases = (
+				6C915D0022D71C3A006BFDEB /* Sources */,
+				6C915D0122D71C3A006BFDEB /* Frameworks */,
+				6C915D0222D71C3A006BFDEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C915D0622D71C3A006BFDEB /* PBXTargetDependency */,
+			);
+			name = "My SpectraUITests";
+			productName = SpectraNetUITests;
+			productReference = 6C915D0422D71C3A006BFDEB /* My SpectraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -906,7 +661,7 @@
 		6C915CDA22D71C38006BFDEB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Bhoopendra;
 				TargetAttributes = {
@@ -914,8 +669,13 @@
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
 					};
-					CD4DAA8C2567DB1D001227CB = {
-						CreatedOnToolsVersion = 12.0.1;
+					6C915CF822D71C3A006BFDEB = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 6C915CE122D71C38006BFDEB;
+					};
+					6C915D0322D71C3A006BFDEB = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 6C915CE122D71C38006BFDEB;
 					};
 				};
 			};
@@ -933,7 +693,8 @@
 			projectRoot = "";
 			targets = (
 				6C915CE122D71C38006BFDEB /* My Spectra */,
-				CD4DAA8C2567DB1D001227CB /* NotifcationImages */,
+				6C915CF822D71C3A006BFDEB /* My SpectraTests */,
+				6C915D0322D71C3A006BFDEB /* My SpectraUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -943,23 +704,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDFFE45F25139CBC00A64152 /* loader_2.gif in Resources */,
 				6C0677902329120A00058517 /* Main.storyboard in Resources */,
-				CD19DC6826728395000CDDD1 /* StoryboardMain.storyboard in Resources */,
-				6A27F8C92578E4FE00D76E0A /* PushNotificationView.xib in Resources */,
 				6C915CF322D71C39006BFDEB /* LaunchScreen.storyboard in Resources */,
-				CD4B5B7924A983B8003653A1 /* sonar-project.properties in Resources */,
-				CD0DE89625F3FCB50074E783 /* GoogleService-Info.plist in Resources */,
+				6C2F8F6F233E4997007BF11C /* GoogleService-Info.plist in Resources */,
 				6C915CF022D71C39006BFDEB /* Assets.xcassets in Resources */,
 				6C25EFC722FABA190085E06B /* Spectra-Regular.otf in Resources */,
-				CDFFE46025139CBC00A64152 /* loader_1.gif in Resources */,
-				6A27F8C525777CF400D76E0A /* run-sonar-swift.sh in Resources */,
-				CD363DDF25B9C269000B6F80 /* GTM-KSGK46W.json in Resources */,
-				CDB73F5D2576AA8500799EF3 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD4DAA8B2567DB1D001227CB /* Resources */ = {
+		6C915CF722D71C3A006BFDEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C915D0222D71C3A006BFDEB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -969,26 +729,9 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0FB446E4A05247F7F5254706 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-My Spectra/Pods-My Spectra-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-My Spectra/Pods-My Spectra-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My Spectra/Pods-My Spectra-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		81F46B1E2317B3AE0067EA89 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -999,11 +742,11 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
 		};
-		AB39EF655D44BBCBBF88B29C /* [CP] Check Pods Manifest.lock */ = {
+		E9882B783B3A50FAB4590C71 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1025,7 +768,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B680425AB90DE9A4E53510DC /* [CP] Embed Pods Frameworks */ = {
+		F296C3D46F88B3ED33057ACA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1052,11 +795,8 @@
 				6C212A11236AE2C7005DDA37 /* AddLinkAccountData.swift in Sources */,
 				6C56A86A22D75AFB0014C16F /* OTPViewController.swift in Sources */,
 				6C24A43C2372C76100B8BE09 /* UserProfileData.swift in Sources */,
-				CDB73F742576AAE000799EF3 /* ChatUserMessageCell.swift in Sources */,
-				CD30B38D23B95210009C1BBE /* LinkedAccoundTableViewCell.swift in Sources */,
+				6C3668102303D6BA00F96A88 /* FaqViewController.swift in Sources */,
 				81F102DE22E71556008CEEAF /* AccountViewController.swift in Sources */,
-				6AECB19425933F7B0051AC7E /* NotificationSearchModal.swift in Sources */,
-				CDFFE45A2511F8C900A64152 /* UtllizationMoreThanEightyViewController.swift in Sources */,
 				6C2CB89A230167970002258F /* PayNowViewController.swift in Sources */,
 				6C2BE2B522FBF8B7006F51D7 /* CanIDViewController.swift in Sources */,
 				6C27FA2E22E07862002DBF12 /* CANetworkManager.swift in Sources */,
@@ -1067,35 +807,23 @@
 				6C2CB89C23017A590002258F /* CreateSRViewController.swift in Sources */,
 				81F4006A22E8A5F200F259AA /* PlanViewController.swift in Sources */,
 				81F102D322E6EFC6008CEEAF /* MoreTableViewCell.swift in Sources */,
-				CDB73F752576AAE000799EF3 /* ChatBotMessageCell.swift in Sources */,
 				6C212A09236AE0E6005DDA37 /* GetContactDetailsData.swift in Sources */,
 				6C25921B22E0552C000960D5 /* InvoiceTableViewCell.swift in Sources */,
-				6AECB190258A3EE90051AC7E /* TTGSnackBar.swift in Sources */,
 				6C212A0F236AE284005DDA37 /* GetOrganizationNameData.swift in Sources */,
 				6C21F12723211BC900FBD253 /* MRTGGraphData.swift in Sources */,
 				6CD2045F22D8635800C60549 /* AlertController.swift in Sources */,
 				6C4075CA233CDBEA0049709F /* StandingInstractionViewController.swift in Sources */,
-				CDB73F642576AABF00799EF3 /* ComparePlanViewController.swift in Sources */,
-				CD1AC68C2519D84D00B808AE /* AutoDetectionWIFIViewController.swift in Sources */,
-				CD2F919B2521C13200A369BF /* WiFiInfo.swift in Sources */,
 				6C2661C022FD37BB00EB910F /* UserData.swift in Sources */,
 				6C21F1232320EDE600FBD253 /* ContactUSViewController.swift in Sources */,
 				6C212A05236AD510005DDA37 /* SendOtpToLinkAcntdata.swift in Sources */,
-				CDB73F6C2576AACC00799EF3 /* NotificationSearchViewController.swift in Sources */,
-				CD2503C326FA3A0700F86296 /* FAQReasonViewController.swift in Sources */,
 				6C25BF5B232FC95C00F0351D /* ChangePlanData.swift in Sources */,
-				CDB73F7B2576AB0A00799EF3 /* KnowMore.swift in Sources */,
 				81F102D522E705A5008CEEAF /* CustomTabViewController.swift in Sources */,
 				6CEEFC6322FD6A9100779140 /* UserCurrentData.swift in Sources */,
 				6C3125592333BF9900674E88 /* HelpingClass.swift in Sources */,
 				6C25BF57232F9EA300F0351D /* ChangePlanViewController.swift in Sources */,
-				CD21C51423ACBE91008AC785 /* PayBillMultipleAccountsViewController.swift in Sources */,
-				CD77DC8823B62AD200E1A8AE /* ViewLinkedAccountViewController.swift in Sources */,
 				6C39FE6B22DDAA0B00421BE0 /* HomeViewController.swift in Sources */,
-				CD4EDB9326FA0D2E008014F9 /* FAQViewController.swift in Sources */,
 				6C2666B622F7F5C40051A4D2 /* NotificationViewController.swift in Sources */,
 				6C06778E2329100E00058517 /* PrivacyPolicyViewController.swift in Sources */,
-				CD4EDB9926FA15D7008014F9 /* FaqDownViewController.swift in Sources */,
 				6C336CB22360836D0061A786 /* InvoicePDFContentData.swift in Sources */,
 				6C21F12B232135BC00FBD253 /* MrtgTableViewCell.swift in Sources */,
 				6C30C3EB233B3863000CDC2A /* EditProfileViewController.swift in Sources */,
@@ -1113,96 +841,75 @@
 				6C915CE622D71C38006BFDEB /* AppDelegate.swift in Sources */,
 				6C2A6C88231E3236006BCADE /* NoInternetViewController.swift in Sources */,
 				6C298576230FBD6600E6DE69 /* DataUsageData.swift in Sources */,
-				CD2503CB26FC7C0500F86296 /* LocalSearchTableViewCell.swift in Sources */,
 				81F9D4BE22EF36DE004CC955 /* UserCountTableViewCell.swift in Sources */,
 				6C2BE2B322FBF89B006F51D7 /* CanIDTableViewCell.swift in Sources */,
 				6C35813122F42E840035C0DB /* ClassSwitcher.swift in Sources */,
 				6C24A4382372AFAC00B8BE09 /* ProfileImageAddLocal.swift in Sources */,
 				6CD4FCD6234F6539006968AD /* SITableViewCell.swift in Sources */,
-				CD43A06623AA10C30063382B /* TestInternetViewController.swift in Sources */,
 				6C27FA3022E07868002DBF12 /* Define.swift in Sources */,
-				CDB73F662576AABF00799EF3 /* ChangePlanCompareViewController.swift in Sources */,
 				6C23D12922F04A4E00B6B40E /* GetDayaStatusAccordingTime.swift in Sources */,
-				CD2503C726FB070C00F86296 /* FAQHeaderTableViewCell.swift in Sources */,
 				6C2F8F6B233E13C2007BF11C /* TopupPlanViewController.swift in Sources */,
-				CDB73F762576AAE000799EF3 /* KnowMoreBottonTableViewCell.swift in Sources */,
-				CD89D96225AF229D003C30FE /* CanIdSwitchViewController.swift in Sources */,
-				CDB73F772576AAE000799EF3 /* KnowMoreTopTableViewCell.swift in Sources */,
-				6A27F8CE2578E87A00D76E0A /* StringExtensions.swift in Sources */,
 				6C21A359237024DD00F95A9C /* ManageContactsViewController.swift in Sources */,
-				CD30B38F23B9D743009C1BBE /* Popover.swift in Sources */,
 				81F102D722E70BDC008CEEAF /* MoreViewController.swift in Sources */,
 				6CEEFC5F22FD471600779140 /* TransactionData.swift in Sources */,
 				6C2666B822F800320051A4D2 /* NotificationTableViewCell.swift in Sources */,
-				6AECB1922591D93C0051AC7E /* NotificationModal.swift in Sources */,
-				CDB73F6D2576AACC00799EF3 /* ArchieveViewController.swift in Sources */,
 				6C2BB55323028E0400077D81 /* HelpCatTableViewCell.swift in Sources */,
-				CDE3905C2672250A001818F5 /* GetHelpViewController.swift in Sources */,
 				6CD2045822D861C600C60549 /* UIView+GradientColor.swift in Sources */,
 				6C2F8F69233E128D007BF11C /* TopupPlanData.swift in Sources */,
 				6C349771230AB2F40072A965 /* InvoiceContentViewController.swift in Sources */,
 				6CEEFC5B22FD44D200779140 /* OTPData.swift in Sources */,
 				6C06778C23290F7100058517 /* AccountCancelledViewController.swift in Sources */,
 				6C2710CD22DF3FDB0068DAAB /* ForgotPasswordViewController.swift in Sources */,
-				CD7A6E9E250F7D9000B8F9B2 /* FrequentDisconnectionViewController.swift in Sources */,
-				CD27525126F8813200CB3155 /* FAQList.swift in Sources */,
 				6C29857A2310214D00E6DE69 /* CaseTypeData.swift in Sources */,
-				CD27525326F8CBB400CB3155 /* FAQCell.swift in Sources */,
-				CD128363243608FA00ABBB6D /* NONGPONViewController.swift in Sources */,
 				6C7A5727231D4856001F2531 /* TransactionTableViewCell.swift in Sources */,
 				6C7A5725231D3EF4001F2531 /* PaymentStatusViewController.swift in Sources */,
 				6C2A6C86231E2ED0006BCADE /* AccountActivationViewController.swift in Sources */,
-				CD3FEEAA23E066400009A59E /* ConsumedTableViewCell.swift in Sources */,
-				CDB73F672576AABF00799EF3 /* KnowMoreViewController.swift in Sources */,
 				81F46B222317BE800067EA89 /* MRTGViewController.swift in Sources */,
-				CDD7795325937DC7008873E0 /* NotificationDisplayViewController.swift in Sources */,
 				6C29857823101F6E00E6DE69 /* CaseTYpeTableViewCell.swift in Sources */,
-				CD2503C526FA50D300F86296 /* RecentSearchViewController.swift in Sources */,
-				CD810C4A23B5E85400E21111 /* LinkCanIdViewController.swift in Sources */,
 				6C273CDE2330FFC60080C69A /* NumberFormatter.swift in Sources */,
-				CD4DAAA22567DCC1001227CB /* NotificationService.swift in Sources */,
 				6C27FA3222E0A4BF002DBF12 /* RemoveStringAfterSpecificChar.swift in Sources */,
 				6C3159A32332104E0042F6FC /* Classes.swift in Sources */,
-				CD63E9CA246CC73600002185 /* OpenSRViewController.swift in Sources */,
-				6A27F8CA2578E4FE00D76E0A /* PushNotificationView.swift in Sources */,
-				CD27524F26F87AC800CB3155 /* SegmentList.swift in Sources */,
-				CDB73F652576AABF00799EF3 /* CompareViewController.swift in Sources */,
-				CD3FEE3423E035030009A59E /* ConsumedTopUpViewController.swift in Sources */,
-				CD2503C926FB14EC00F86296 /* RecentSerachCell.swift in Sources */,
 				81F4006822E88D5000F259AA /* SRTableViewCell.swift in Sources */,
 				81F102D922E7127B008CEEAF /* SRViewController.swift in Sources */,
-				CD156A3524332556001E4C44 /* TroubleshootViewController.swift in Sources */,
-				CD2503CD26FC9C1A00F86296 /* RecentFAQTableViewCell.swift in Sources */,
-				CD64B50F23B1FB00001EFCE5 /* PayBillMultipleAccountsPaymentViewController.swift in Sources */,
 				81F5D4A322EADC65003D9634 /* HomeTableViewCell.swift in Sources */,
-				CD551548241A0AE2005B4517 /* OutstandingBalancePaymentViewController.swift in Sources */,
 				6C25BF59232FA48E00F0351D /* ChangePlanTableViewCell.swift in Sources */,
 				6C212A0D236AE203005DDA37 /* TrackOrderData.swift in Sources */,
 				6C2EA179232A517C00D53837 /* PaymentScreenViewController.swift in Sources */,
-				CD64B51223B23543001EFCE5 /* TrackOrderViewController.swift in Sources */,
 				6C56A86F22D76AEE0014C16F /* UIButton+gradientColor.swift in Sources */,
 				6CEEFC5722FD3F9700779140 /* InvoiceListData.swift in Sources */,
 				6C27A0DC22DEFFB000DEC2FA /* InvoiceDetailViewController.swift in Sources */,
 				6C2BB5552302C03600077D81 /* DataUsageViewController.swift in Sources */,
-				CD7A6EA02510A63600B8F9B2 /* FrequentlyDisconnectCasesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD4DAA892567DB1D001227CB /* Sources */ = {
+		6C915CF522D71C3A006BFDEB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD4DAA902567DB1D001227CB /* NotificationService.swift in Sources */,
+				6C915CFE22D71C3A006BFDEB /* SpectraNetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C915D0022D71C3A006BFDEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C915D0922D71C3A006BFDEB /* SpectraNetUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CD4DAA932567DB1D001227CB /* PBXTargetDependency */ = {
+		6C915CFB22D71C3A006BFDEB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CD4DAA8C2567DB1D001227CB /* NotifcationImages */;
-			targetProxy = CD4DAA922567DB1D001227CB /* PBXContainerItemProxy */;
+			target = 6C915CE122D71C38006BFDEB /* My Spectra */;
+			targetProxy = 6C915CFA22D71C3A006BFDEB /* PBXContainerItemProxy */;
+		};
+		6C915D0622D71C3A006BFDEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C915CE122D71C38006BFDEB /* My Spectra */;
+			targetProxy = 6C915D0522D71C3A006BFDEB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1336,26 +1043,22 @@
 		};
 		6C915D0E22D71C3A006BFDEB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 953E518364A2F6253C54616A /* Pods-My Spectra.debug.xcconfig */;
+			baseConfigurationReference = E41FACCD7412B24F1900CD54 /* Pods-My Spectra.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = MySpectra.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 4Q5R9UVSRV;
-				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SpectraNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.5;
-				ONLY_ACTIVE_ARCH = YES;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Spectra.MySpectra;
 				PRODUCT_NAME = "My Spectra";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1368,78 +1071,107 @@
 		};
 		6C915D0F22D71C3A006BFDEB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DED6F06FB637A9925CCF9B12 /* Pods-My Spectra.release.xcconfig */;
+			baseConfigurationReference = 03355F5AB6F788A62AF067A9 /* Pods-My Spectra.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = MySpectra.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 4Q5R9UVSRV;
-				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SpectraNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.5;
-				ONLY_ACTIVE_ARCH = YES;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Spectra.MySpectra;
 				PRODUCT_NAME = "My Spectra";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "SpectraNet/Controller/SpectraNet-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
-		CD4DAA962567DB1D001227CB /* Debug */ = {
+		6C915D1122D71C3A006BFDEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
-				DEVELOPMENT_TEAM = 4Q5R9UVSRV;
-				INFOPLIST_FILE = NotifcationImages/Info.plist;
+				INFOPLIST_FILE = SpectraNetTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
+					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Spectra.MySpectra.NotifcationImages;
+				PRODUCT_BUNDLE_IDENTIFIER = Com.Affle.SpectraNet.SpectraNetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/My Spectra.temp_caseinsensitive_rename.app/My Spectra.temp_caseinsensitive_rename";
 			};
 			name = Debug;
 		};
-		CD4DAA972567DB1D001227CB /* Release */ = {
+		6C915D1222D71C3A006BFDEB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
-				DEVELOPMENT_TEAM = 4Q5R9UVSRV;
-				INFOPLIST_FILE = NotifcationImages/Info.plist;
+				INFOPLIST_FILE = SpectraNetTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
+					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Spectra.MySpectra.NotifcationImages;
+				PRODUCT_BUNDLE_IDENTIFIER = Com.Affle.SpectraNet.SpectraNetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/My Spectra.temp_caseinsensitive_rename.app/My Spectra.temp_caseinsensitive_rename";
+			};
+			name = Release;
+		};
+		6C915D1422D71C3A006BFDEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SpectraNetUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Com.Affle.SpectraNet.SpectraNetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SpectraNet;
+			};
+			name = Debug;
+		};
+		6C915D1522D71C3A006BFDEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SpectraNetUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Com.Affle.SpectraNet.SpectraNetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SpectraNet;
 			};
 			name = Release;
 		};
@@ -1464,11 +1196,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD4DAA952567DB1D001227CB /* Build configuration list for PBXNativeTarget "NotifcationImages" */ = {
+		6C915D1022D71C3A006BFDEB /* Build configuration list for PBXNativeTarget "My SpectraTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD4DAA962567DB1D001227CB /* Debug */,
-				CD4DAA972567DB1D001227CB /* Release */,
+				6C915D1122D71C3A006BFDEB /* Debug */,
+				6C915D1222D71C3A006BFDEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C915D1322D71C3A006BFDEB /* Build configuration list for PBXNativeTarget "My SpectraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C915D1422D71C3A006BFDEB /* Debug */,
+				6C915D1522D71C3A006BFDEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

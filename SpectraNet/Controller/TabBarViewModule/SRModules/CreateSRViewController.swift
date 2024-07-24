@@ -10,14 +10,10 @@ import UIKit
 import ObjectMapper
 import RealmSwift
 
-
 class CreateSRViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var realm:Realm? = nil
     var userResult:Results<UserCurrentData>? = nil
-    @IBOutlet weak var descriptionBottomLine: UILabel!
-    @IBOutlet weak var submitViewTop: NSLayoutConstraint!
-    @IBOutlet weak var descriptionTop: NSLayoutConstraint!
     @IBOutlet weak var lblNetStatus: UILabel!
     @IBOutlet weak var submitView: UIView!
     @IBOutlet weak var descr: JVFloatLabeledTextView!
@@ -28,9 +24,6 @@ class CreateSRViewController: UIViewController,UITableViewDelegate,UITableViewDa
     @IBOutlet weak var issuetypeLabel: UILabel!
     @IBOutlet weak var srCaseTypeBTN: UIButton!
     @IBOutlet weak var backBTNTitle: UILabel!
-    
-    
-    
     
     var canID = String()
     var caseArr = NSArray()
@@ -46,7 +39,7 @@ class CreateSRViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+
         realm = try? Realm()
         setCornerRadiusView(radius: Float(submitView.frame.height/2), color: UIColor.cornerBGFullOpack, view: submitView)
         setCornerRadiusView(radius: Float(backToSRView.frame.height/2), color: UIColor.cornerBGFullOpack, view: backToSRView)
@@ -155,37 +148,6 @@ class CreateSRViewController: UIViewController,UITableViewDelegate,UITableViewDa
     //MARK: Service Create SR
     func serviceCreateSR()
     {
-        
-        
-        if(caseTypeID == "1"){
-            
-                  
-            let vc = UIStoryboard.init(name: "Storyboard", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.TroubleshootViewControllerIdentifier) as? TroubleshootViewController
-            vc?.canID = self.canID
-            self.navigationController?.pushViewController(vc!, animated: false)
-            
-            
-            return
-        }
-      else if(caseTypeID == "2"){
-            
-            let vc = UIStoryboard.init(name: "Storyboard", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.FrequentDisconnectionViewController) as? FrequentDisconnectionViewController
-            vc?.canID = self.canID
-             vc?.voc = "3"
-            self.navigationController?.pushViewController(vc!, animated: false)
-            
-            return
-        }
-        
-        else if(caseTypeID == "3"){
-            let vc = UIStoryboard.init(name: "Storyboard", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.FrequentDisconnectionViewController) as? FrequentDisconnectionViewController
-                       vc?.canID = self.canID
-                       vc?.voc = "2"
-                       self.navigationController?.pushViewController(vc!, animated: false)
-
-                       return
-
-        }
         descr.resignFirstResponder()
         let dict = ["Action":ActionKeys.createSR, "Authkey":UserAuthKEY.authKEY,"caseType":caseTypeID, "canID":canID, "comment":descr.text as Any] as [String : Any]
         
@@ -217,7 +179,6 @@ class CreateSRViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     else
                     {
                          self.createdSRNmbrLBL.text = String(format: "%@ %@.",SRCreatedStatus.srRequestSuccessfullySubmit, dataResponse.value(forKey: "response") as! CVarArg)
-                        self.searchRequestFirbaseAnalysics(sr_number: dataResponse.value(forKey: "response") as! String, request_type: self.caseTypeID, descreption: self.descr.text)
                     }
                 }
                 else
@@ -227,19 +188,6 @@ class CreateSRViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 }
             }
         }
-    }
-    
-    func searchRequestFirbaseAnalysics(sr_number:String,request_type:String,descreption:String){
-    
-        let dictAnalysics = [AnanlysicParameters.canID:canID,
-                             AnanlysicParameters.Category:AnalyticsEventsCategory.service_request,
-                             AnanlysicParameters.Action:AnalyticsEventsActions.raise_new_service_request_Submit,
-                             AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent,
-                             "sr_number":sr_number,
-                             "request_type":request_type,
-                             "descreption":descreption]
-
-        HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.raise_new_service_request_Submit, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
     }
 
     //MARK: Service Get CaseType
@@ -321,17 +269,6 @@ class CreateSRViewController: UIViewController,UITableViewDelegate,UITableViewDa
         caseTypeID = ""
         if let caseID = ((caseArr[indexPath.row] as AnyObject) .value(forKey: "case_id") as? String) {
             caseTypeID = caseID
-        }
-        if caseTypeID == "1" || caseTypeID == "2" || caseTypeID == "3" {
-            descr.isHidden = true
-            descriptionTop.constant = 0
-            descriptionBottomLine.isHidden = true
-            submitViewTop.constant = 10
-        } else {
-            descr.isHidden = false
-            descriptionTop.constant = 50
-            descriptionBottomLine.isHidden = false
-            submitViewTop.constant = 59
         }
     }
 }

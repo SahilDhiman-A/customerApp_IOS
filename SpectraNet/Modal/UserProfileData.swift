@@ -20,8 +20,7 @@ class UserProfileData:Object, Mappable {
     @objc dynamic var installationB = ""
     @objc dynamic var BillingTo:BillingTo? = nil
     @objc dynamic var billTo:billTo? = nil
-    @objc dynamic var shipTo:shipTo? = nil
-    @objc dynamic var accountManager:accountManager? = nil
+    @objc dynamic var shipTo:shipTo? = nil 
 
     
     func mapping(map: Map)
@@ -39,7 +38,6 @@ class UserProfileData:Object, Mappable {
         
         billTo <- map["billTo"]
         shipTo <- map["shipTo"]
-        accountManager <- map["accountManager"]
     }
     
 }
@@ -100,24 +98,6 @@ class shipTo: Object, Mappable {
     {
         address <- map["address"]
         contactId <- map["contactId"]
-        email <- map["email"]
-        name <- map["name"]
-        mobile <- map["mobile"]
-    }
-}
-class accountManager: Object, Mappable {
-    required convenience init?(map: Map) {
-           self.init()
-       }
-    
-   @objc dynamic var address = ""
-   @objc dynamic var email = ""
-   @objc dynamic var name = ""
-   @objc dynamic var mobile = ""
-    
-    func mapping(map: Map)
-    {
-        address <- map["address"]
         email <- map["email"]
         name <- map["name"]
         mobile <- map["mobile"]

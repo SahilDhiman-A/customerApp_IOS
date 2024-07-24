@@ -29,7 +29,7 @@ func saveImageInLocalDirectory(withUsercanID: String,userImage: UIImage)
               try data.write(to: fileURL)
               print_debug(object: "file saved")
           } catch {
-            debugPrint("error saving file:", error)
+              print("error saving file:", error)
           }
       }
   }
@@ -43,7 +43,7 @@ func saveImageInLocalDirectory(withUsercanID: String,userImage: UIImage)
          try filemanager.removeItem(atPath: destinationPath)
           print_debug(object: "Local path removed successfully")
      } catch let error as NSError {
-        debugPrint("------Error",error.debugDescription)
+         print("------Error",error.debugDescription)
      }
      }
   

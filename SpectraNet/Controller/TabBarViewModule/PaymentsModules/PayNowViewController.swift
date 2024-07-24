@@ -11,7 +11,6 @@ import UIKit
 class PayNowViewController: UIViewController,UITextFieldDelegate {
     
    
-    @IBOutlet weak var payAmountPlaceHoderLabel: UILabel!
     @IBOutlet weak var ourstandingAmtD: UILabel!
     @IBOutlet weak var lblOutstandinAmount: UILabel!
     @IBOutlet weak var outStandingTF: UITextField!
@@ -33,35 +32,21 @@ class PayNowViewController: UIViewController,UITextFieldDelegate {
     var tdsPercent = String()
     var screenFrom = String()
     
-    var mobileNoStr = ""
-    var emailStr = ""
-    var isForMultiPleAccount = false
-    
-    var topupName = String()
-    var topupType = String()
-    var  pckgID  = String()
-     var tdsAmountPerMonth = String()
-    
     //MARK: View controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         lblTdsPercent.text = String(format: "( upto %@ of billed amount )", tdsPercent)
         outStandingAmt =  convertStringtoFloatViceversa(amount: outStandingAmt)
         if screenFrom==FromScreen.topUpScreen
         {
             outStandingTF.isUserInteractionEnabled = false
-            ourstandingAmtD.text = "Payable Amount"
-            payAmountPlaceHoderLabel.text = "Amount to pay – (Top-up Rental + 18% Taxes)"
         }
         
         if outStandingAmt == ""
         {
             lblOutstandinAmount.text = "0"
             outStandingTF.text = "0"
-           
         }
         else
         {
@@ -91,7 +76,7 @@ class PayNowViewController: UIViewController,UITextFieldDelegate {
     {
         super.viewWillAppear(animated)
         setCornerRadiusView(radius: Float(proceedBTNView.frame.height/2), color: UIColor.cornerBGFullOpack, view: proceedBTNView)
-        let currentTime = HelpingClass.sharedInstance.getCurrentMillis()
+        let currentTime = getCurrentMillis()
         sessionTime = canID + String(describing: currentTime)
         paymentStr = outStandingAmt
     }
@@ -104,28 +89,8 @@ class PayNowViewController: UIViewController,UITextFieldDelegate {
             paymentStr = outStandingTF.text ?? ""
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.paymentScreenIdentifier) as? PaymentScreenViewController
             vc?.paymentStr = outStandingTF.text ?? ""
-            vc?.tdsAmount = outStandingTF.text ?? ""
             vc?.sessionTime = sessionTime
             vc?.canID = canID
-            if(isForMultiPleAccount == true){
-            vc?.mobileNoStr = self.mobileNoStr
-            vc?.emailStr = self.emailStr
-            vc?.isForMultiPleAccount = true
-            }
-            
-            if(screenFrom == FromScreen.topUpScreen){
-                
-                vc?.topupName = topupName
-                vc?.topupType = topupType
-                vc?.screenFrom = screenFrom
-                
-                vc?.tdsAmountPerMonth = tdsAmountPerMonth
-            }else if(screenFrom == FromScreen.changeTopUPScreen || screenFrom == FromScreen.CompareTopUPScreen){
-                vc?.screenFrom = screenFrom
-                vc?.tdsAmountPerMonth = tdsAmountPerMonth
-                vc?.pckgID = pckgID
-            }
-            
             vc?.tdsAmount = tdsAmountTF.text ?? ""
             self.navigationController?.pushViewController(vc!, animated: false)
         }
@@ -145,22 +110,6 @@ class PayNowViewController: UIViewController,UITextFieldDelegate {
                 {
                     tdsAmountTF.text = "0"
                 }
-                if(isForMultiPleAccount == true){
-                    vc?.mobileNoStr = self.mobileNoStr
-                    vc?.emailStr = self.emailStr
-                    vc?.isForMultiPleAccount = true
-                }
-                if(screenFrom == FromScreen.topUpScreen){
-                    vc?.topupName = topupName
-                    vc?.topupType = topupType
-                    vc?.screenFrom = screenFrom
-                    vc?.tdsAmountPerMonth = tdsAmountPerMonth
-                    
-                }else if(screenFrom == FromScreen.changeTopUPScreen || screenFrom == FromScreen.CompareTopUPScreen){
-                    vc?.screenFrom = screenFrom
-                    vc?.tdsAmountPerMonth = tdsAmountPerMonth
-                    vc?.pckgID = pckgID
-                }
                 vc?.tdsAmount = tdsAmountTF.text ?? ""
                 self.navigationController?.pushViewController(vc!, animated: false)
             }
@@ -179,7 +128,10 @@ class PayNowViewController: UIViewController,UITextFieldDelegate {
     }
     
     //MARK: Get unic Time
-    
+    func getCurrentMillis()->Int64
+    {
+        return  Int64(NSDate().timeIntervalSince1970 * 1000)
+    }
    
     //MARK: TextField delegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

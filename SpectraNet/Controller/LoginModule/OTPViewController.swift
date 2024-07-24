@@ -14,7 +14,7 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
    
     var realm: Realm? = nil
     var userdata:Results<UserData>? = nil
-    var currentUserData:Results<UserCurrentData>? = nil
+    
     var dataResponse = NSDictionary()
     var checkStatus = String()
     var canID = String()
@@ -38,10 +38,6 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
     var userMobileNmbr = String()
     var userMobileOTP = String()
     var userOtpDetailDict = NSDictionary()
-    var baseCanID = ""
-    var linkCanID = ""
-    
-    var isFromCanId = false
     
    //MARK: View controller life cycle
     override func viewDidLoad() {
@@ -88,17 +84,8 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
         bottomLineTextfield(textfield: otpDigit3TF)
         bottomLineTextfield(textfield: otpDigit4TF)
         hideOrShowView(bool: true,withUpdatmassage: "")
-        
-       
     }
     
-   
-    
-    
-    
-    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
-        // handling code
-    }
     func animationView()
     {
         UIView.animate(withDuration: 0.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
@@ -132,12 +119,6 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
         
         let characters = Array(updatedText)
         
-        let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
-                   let compSepByCharInSet = string.components(separatedBy: aSet)
-                   let numberFiltered = compSepByCharInSet.joined(separator: "")
-                   if(string != numberFiltered){
-                   return false
-                   }
         
         if(characters.count > 4){
             
@@ -166,9 +147,6 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
              otpDigit2TF.text = String(characters[1])
              otpDigit3TF.text = String(characters[2])
              otpDigit4TF.text = String(characters[3])
-            
-            self.view.endEditing(true)
-            
         default:
              otpDigit1TF.text = ""
              otpDigit2TF.text = ""
@@ -210,41 +188,26 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
 
             if userMobileOTP==otpString
             {
-                
+              
                 if ifUpdateScreen==""
                  {
-                    validationOTPFirbaseAnalysics()
                       userdata = self.realm!.objects(UserData.self)
                       if let userActData = userdata?[0]
                         {
                             if userActData.CancellationFlag == true
                         {
-                            self.navigateScreenToStoryboardMain(identifier: ViewIdentifier.cancelledAccountIdentifier, controller: AccountCancelledViewController.self)
+                            self.navigateScreen(identifier: ViewIdentifier.cancelledAccountIdentifier, controller: AccountCancelledViewController.self)
                         }
                         else if userActData.actInProgressFlag == true
                         {
-                            if   let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.trackOrderIdentifier) as? TrackOrderViewController{
-                                
-                                
-                                
-                                
-                                
-                                
-                                if let canID = userActData.CANId as? String{
-                                    vc.canID = canID
-                                    self.navigationController?.pushViewController(vc, animated: false)
-                                    
-                                }
-                            }
+                            self.navigateScreen(identifier: ViewIdentifier.accountActivationIdentifier, controller: AccountActivationViewController.self)
                         }
                         else
                          {
                             HelpingClass.saveToUserDefault(value: true as AnyObject, key: "status")
-                            
-                            HelpingClass.saveToUserDefault(value:userMobileNmbr as AnyObject, key: UserDefaultKeys.loginPhoneNumber)
-                            HelpingClass.saveToUserDefault(value:UserDefaultKeys.mobileNumber as AnyObject, key: UserDefaultKeys.isLoginFrom)
                             Switcher.updateRootVC()
-                            
+                            AppDelegate.sharedInstance.navigateFrom = ""
+                            navigateScreen(identifier: ViewIdentifier.customTabIdentifier, controller: CustomTabViewController.self)
                          }
                     }
                 }
@@ -256,10 +219,6 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
                  {
                     serviceTypeChangeEmailID()
                  }
-                else if ifUpdateScreen == UpdateType.LinkCanId
-                {
-                    addLinkAccount()
-                }
                 else
                 {
                     print_debug(object: "NO API")
@@ -271,149 +230,6 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
             }
         }
     }
-    
-    
-    func addLinkAccount()
-    {
-        var dict = ["Action":ActionKeys.addLinkAccount, "Authkey":UserAuthKEY.authKEY,"linkCanID":linkCanID]
-        
-        if let isloginFrom = HelpingClass.userDefaultForKey(key: UserDefaultKeys.isLoginFrom) as? String{
-            
-            if isloginFrom == UserDefaultKeys.canID{
-                dict["baseCanID"] = baseCanID
-                
-                self.isFromCanId = true
-                
-            }else{
-                
-                if let mobileNumber = HelpingClass.userDefaultForKey(key: UserDefaultKeys.loginPhoneNumber) as? String{
-                    dict["mobileNo"] = mobileNumber
-                     self.isFromCanId = false
-                }
-            }
-        }
-        print_debug(object: dict)
-        CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
-            
-            print_debug(object: response)
-            if response != nil
-            {
-                
-                if let dict = response as? NSDictionary
-                {
-                    self.dataResponse = dict
-                }
-                
-                self.checkStatus = ""
-                if let status = self.dataResponse.value(forKey: "status") as? String
-                {
-                    self.checkStatus = status.lowercased()
-                }
-                
-                if self.checkStatus == Server.api_status
-                {
-                    
-                        self.addNewCanIDFirbaseAnalysics()
-                        self.addLinkedAccountToUser()
-                        
-              
-                }else
-                {
-                    guard let statusMessage = self.dataResponse.value(forKey: "message") as? String else
-                    {
-                        return
-                    }
-                    self.showAlertC(message: statusMessage)
-                }
-            }
-        }
-    }
-    
-    
-    
-    
-    func  addLinkedAccountToUser(){
-        
-        let dict = ["Action":ActionKeys.userAccountData, "Authkey":UserAuthKEY.authKEY, "canID":linkCanID]
-        print_debug(object: dict)
-        
-        CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
-           
-            print_debug(object: response)
-            if response != nil
-            {
-                if let dict = response as? NSDictionary
-                {
-                    self.dataResponse = dict
-                }
-                
-                self.checkStatus = ""
-                if let status = self.dataResponse.value(forKey: "status") as? String
-                {
-                    self.checkStatus = status.lowercased()
-                }
-                
-                if self.checkStatus == Server.api_status
-                    
-                {
-                    
-                    try! self.realm!.write
-                    {
-                        if let users = self.realm?.objects(UserCurrentData.self) {
-    
-                            self.realm!.delete(users)
-                        }
-                    }
-                    
-                    guard let responseArr = self.dataResponse.value(forKey: "response") as? NSArray else
-                    {
-                        return
-                    }
-                    
-                    
-                    
-                    for entry in responseArr{
-                        
-                        if let currentUser = Mapper<UserCurrentData>().map(JSONObject: entry) {
-                            
-                          
-                            print_debug(object: "currentUser \(currentUser)")
-                            try! self.realm!.write
-                            {
-                                self.realm!.add(currentUser)
-                                
-                                  Switcher.updateRootVC()
-                            }
-                        }
-                    }
-                
-                    
-                    
-                }else{
-                    
-                    guard let errorMsg = self.dataResponse.value(forKey: "message") as? String else
-                    {
-                        return
-                    }
-                    self.showAlertC(message: errorMsg)
-                    
-                }
-                
-            }
-        }
-    }
-    
-    func addNewCanIDFirbaseAnalysics(){
-           
-               let dictAnalysics = [AnanlysicParameters.canID:canID,
-                                    AnanlysicParameters.Category:AnalyticsEventsCategory.all_Menu_MyAccount
-                                    ,AnanlysicParameters.Action:AnalyticsEventsActions.newCanIDAdded
-                                    ,AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-               
-               //,AnanlysicParameters.EventDescription:AnanlysicEventDescprion.loginwithUserNamePassword
-           
-              HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.add_new_CanID, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-       }
     
     
     @IBAction func resendBTN(_ sender: Any) {
@@ -431,10 +247,6 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
                 {
                     serviceTypeResendOTPForEmailID()
                 }
-            else if ifUpdateScreen == UpdateType.LinkCanId
-            {
-                resendOTPtoLinkAccount()
-            }
             else
             {
                 print_debug(object: "Not API")
@@ -453,8 +265,6 @@ func serviceTypeLoginResendOTP()
         CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
         
             print_debug(object: response)
-           // resendOTPFirbaseAnalysics()
-            self.resendOTPFirbaseAnalysics()
             if response != nil
             {
                 if let dict = response as? NSDictionary
@@ -485,73 +295,6 @@ func serviceTypeLoginResendOTP()
                 }
         }
     }
-    
-    func validationOTPFirbaseAnalysics(){
-        
-        let dictAnalysics = [AnanlysicParameters.Category:AnalyticsEventsCategory.Login,AnanlysicParameters.Action:AnalyticsEventsActions.otp_validation,AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-    
-        //,AnanlysicParameters.EventDescription:AnanlysicEventDescprion.OTPValidation
-       HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.otp_validation, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-    
-        
-    }
-    
-    func resendOTPFirbaseAnalysics(){
-    
-        let dictAnalysics = [AnanlysicParameters.Category:AnalyticsEventsCategory.Login,AnanlysicParameters.Action:AnalyticsEventsActions.otp_resend,AnanlysicParameters.EventType:AnanlysicParameters.ClickEvent]
-        
-        //,AnanlysicParameters.EventDescription:AnanlysicEventDescprion.OTPResend,
-    
-       HelpingClass.sharedInstance.addFirebaseAnalysis(eventName: AnalyticsEventsName.otp_resend, parameters: dictAnalysics as? [String:AnyObject] ?? [String:AnyObject]() )
-    }
-    func resendOTPtoLinkAccount()
-    {
-        let dict = ["Action":ActionKeys.resendOTPtoLinkAcount, "Authkey":UserAuthKEY.authKEY, "mobileNo":userMobileNmbr,"OTP":userMobileOTP]
-        print_debug(object: dict)
-        CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
-            
-            print_debug(object: response)
-            if response != nil
-            {
-                if let dict = response as? NSDictionary
-                {
-                    self.dataResponse = dict
-                }
-                
-                self.checkStatus = ""
-                if let status = self.dataResponse.value(forKey: "status") as? String
-                {
-                    self.checkStatus = status.lowercased()
-                }
-                
-                
-                if self.checkStatus == Server.api_status
-                {
-                    guard let errorMsg = self.dataResponse.value(forKey: "message") as? String else
-                    {
-                        return
-                    }
-                    self.showAlertC(message: errorMsg)
-                    
-                    let userResponse: Any = self.dataResponse.value(forKey: "response") as Any
-                    self.userMobileNmbr = ""
-                    if let userMobile = (userResponse as AnyObject).value(forKey: "mobileNo") as? String
-                    {
-                        self.userMobileNmbr = userMobile
-                    }
-                }
-                else
-                {
-                    guard let errorMsg = self.dataResponse.value(forKey: "message") as? String else
-                    {
-                        return
-                    }
-                    self.showAlertC(message: errorMsg)
-                }
-            }
-        }
-    }
-    
     
  func serviceTypeResendOTPForMobileNumber()
     {

@@ -19,11 +19,9 @@ class StandingInstractionViewController: UIViewController,UITableViewDelegate,UI
     
     @IBOutlet weak var lblAutoPayStstus: UILabel!
     @IBOutlet weak var lblAutoPaydefaultTitle: UILabel!
-   
     // SI using table view cell
     @IBOutlet weak var siTableView: UITableView!
     @IBOutlet weak var transparantView: UIView!
-    
     @IBOutlet weak var dialogeView: UIView!
     @IBOutlet weak var roundOkButonView: UIView!
     @IBOutlet weak var lblDisableStatus: UILabel!
@@ -32,8 +30,6 @@ class StandingInstractionViewController: UIViewController,UITableViewDelegate,UI
     var requestType = String()
     var canID = String()
     var paymentStaus = String()
-    
-    
     
     //MARK: View controller life cycle
     override func viewDidLoad()
@@ -67,7 +63,7 @@ class StandingInstractionViewController: UIViewController,UITableViewDelegate,UI
             AppDelegate.sharedInstance.siTermCondtionAccept = StandinInsrcuction.termConditionUnselected
         }
        print_debug(object: AppDelegate.sharedInstance.siTermCondtionAccept)
-        HelpingClass.sharedInstance.autoPayType = "1"
+           
         serviceTypeSIStatus()
         hiddenAndShowViews(bool: true, statusMeg: "")
         setCornerRadiusView(radius: Float(roundOkButonView.frame.height/2), color: UIColor.clear, view: roundOkButonView)
@@ -85,20 +81,8 @@ class StandingInstractionViewController: UIViewController,UITableViewDelegate,UI
     }
   
     func postParamInPyamentScreen(withRequestType: String) {
-//        postString = "secretKey=\(StandinInsrcuction.secretKey)&canID=\(canID)&billAmount=\(StandinInsrcuction.siPaybleAmount)&returnUrl=\(StandinInsrcuction.siReturnURL)&requetType=\(requestType)"
-        
-        let currentTime = HelpingClass.sharedInstance.getCurrentMillis()
-        let  sessionTime = canID + String(describing: currentTime)
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.paymentScreenIdentifier) as? PaymentScreenViewController
-        vc?.tdsAmount = StandinInsrcuction.siPaybleAmount
-        vc?.paymentStr = StandinInsrcuction.siPaybleAmount
-        vc?.sessionTime = sessionTime
-        vc?.canID = canID
-        vc?.autoPayType = HelpingClass.sharedInstance.autoPayType
-//        vc?.mobileNoStr = mobilenumber
-//        vc?.emailStr = emailAddress
-        vc?.isForAutopay = true
-        self.navigationController?.pushViewController(vc!, animated: false)
+        postString = "secretKey=\(StandinInsrcuction.secretKey)&canID=\(canID)&billAmount=\(StandinInsrcuction.siPaybleAmount)&returnUrl=\(StandinInsrcuction.siReturnURL)&requetType=\(requestType)"
+        goPyamentScreen(postStr: postString)
     }
    
     // back previuos screen
@@ -170,7 +154,6 @@ class StandingInstractionViewController: UIViewController,UITableViewDelegate,UI
   
     func autoFlagHide(withBool: Bool)
     {
-        
         lblAutoPaydefaultTitle.isHidden = true
         lblAutoPayStstus.isHidden = true
     }
@@ -204,12 +187,9 @@ class StandingInstractionViewController: UIViewController,UITableViewDelegate,UI
                     cell?.changeAutoPayView.isHidden = true
                     cell?.termSelectUnselectBTN.isHidden = true
                     cell?.lblHyperLinkedTerm.isHidden = true
-                //cell?.changeTypeHeight.constant = 0
                 }
                 else if AppDelegate.sharedInstance.paySIStatus == StandinInsrcuction.siDisable
                 {
-                    cell?.changedValue()
-                   // cell?.changeTypeHeight.constant = 100
                     cell?.changeSIView.isHidden = true
                     cell?.changeDisabalView.isHidden = true
                     cell?.changeAutoPayView.isHidden = false
@@ -273,19 +253,17 @@ class StandingInstractionViewController: UIViewController,UITableViewDelegate,UI
          }
          else
          {
+             AppDelegate.sharedInstance.paySIStatus = StandinInsrcuction.siEnable
             requestType = StandinInsrcuction.siEnableRequestType
             postParamInPyamentScreen(withRequestType: requestType)
-            
          }
      }
     
     func serviceTypeDisabelSI() {
 
-        
-       
-        let dict = ["Action":ActionKeys.disableOrder, "canId":canID, "Authkey":UserAuthKEY.authKEY]
+        let dict = ["secretKey":StandinInsrcuction.secretKey, "billAmount":StandinInsrcuction.siPaybleAmount, "canID":canID, "returnUrl":StandinInsrcuction.returnURL, "requetType":StandinInsrcuction.siDisablRequestType]
 
-        CANetworkManager.sharedInstance.requestApi(serviceName: ServiceMethods.serviceBaseUatValue, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
+        CANetworkManager.sharedInstance.requestApi(serviceName: StandinInsrcuction.siDisableURL, method: kHTTPMethod.POST, postData: dict as Dictionary<String, AnyObject>) { (response, error) in
 
         print_debug(object: response)
         if response != nil
@@ -301,11 +279,12 @@ class StandingInstractionViewController: UIViewController,UITableViewDelegate,UI
             }
             if status.lowercased() == Server.api_status
             {
-                HelpingClass.sharedInstance.autoPayType = "1"
-//                self.netBankingButton.setImage(UIImage(named: "CheckboxEmpty"), for: .normal)
-//                self.creditCardButton.setImage(UIImage(named: "checkedSmall"), for: .normal)
-                
-                AppDelegate.sharedInstance.paySIStatus = StandinInsrcuction.siDisable
+                let dict = responseDict.value(forKey: "response") as AnyObject
+                guard let siStatus = dict.value(forKey: "StandardInstrunction") as? String else
+                {
+                    return
+                }
+                AppDelegate.sharedInstance.paySIStatus = siStatus
                 self.hiddenAndShowViews(bool: false, statusMeg: StandinInsrcuction.siDisabled)
             }
             else
@@ -322,10 +301,8 @@ class StandingInstractionViewController: UIViewController,UITableViewDelegate,UI
          transparantView.isHidden = bool
          dialogeView.isHidden = bool
          lblDisableStatus.text = statusMeg
-        siTableView.reloadData()
      }
      
-   
     @IBAction func userDisabledButton(_ sender: Any)
     {
         

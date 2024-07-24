@@ -1,9 +1,9 @@
 //
-// NoInternetViewController.swift
-// SpectraNet
+//  NoInternetViewController.swift
+//  SpectraNet
 //
-// Created by Bhoopendra on 9/3/19.
-// Copyright © 2019 Bhoopendra. All rights reserved.
+//  Created by Bhoopendra on 9/3/19.
+//  Copyright © 2019 Bhoopendra. All rights reserved.
 //
 
 import UIKit

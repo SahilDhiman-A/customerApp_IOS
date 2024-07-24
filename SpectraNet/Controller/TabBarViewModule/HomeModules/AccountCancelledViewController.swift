@@ -11,7 +11,6 @@ import UIKit
 class AccountCancelledViewController: UIViewController {
     @IBOutlet weak  var buttonView: UIView!
     
-    @IBOutlet weak var logoutButtonHeight: NSLayoutConstraint!
     //MARK: View controller life cycle
     override func viewDidLoad()
     {
@@ -28,30 +27,5 @@ class AccountCancelledViewController: UIViewController {
         vc?.accountCancceled = "cancelled"
         vc!.srActivationStatus = SRCreatedStatus.cancelledAcntToReactivate
         self.navigationController?.pushViewController(vc!, animated: false)
-    }
-    
-    @IBAction func logoutAction(_ sender: Any) {
-        
-       
-        HelpingClass.saveToUserDefault(value: false as AnyObject, key: "status")
-        Switcher.updateRootVC()
-    }
-    
-    override func viewWillLayoutSubviews() {
-        
-        if self.view.frame.height <= 568{
-            
-            logoutButtonHeight.constant = 45
-        }
-        
-        super.viewWillLayoutSubviews()
-        
-    }
-    
-    @IBAction func myAccountClick(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ViewIdentifier.AccountIdentifier) as? AccountViewController
-        vc?.fromScreen = FromScreen.deactivateScreen
-        self.navigationController?.pushViewController(vc!, animated: false)
-        
     }
 }

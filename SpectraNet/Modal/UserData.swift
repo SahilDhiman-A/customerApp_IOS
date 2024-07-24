@@ -81,9 +81,8 @@ class UserData: Object, Mappable
     @objc dynamic var BarringFlag = false
     @objc dynamic var actInProgressFlag = false
     dynamic var ivrNotification = List<String>()
-    @objc dynamic var FUPResetDate = ""
+    
     func mapping(map: Map) {
-        FUPResetDate <- map["FUPResetDate"]
         DueDate <- map["DueDate"]
         AccountActivationdate <- map["AccountActivationdate"]
         AccountName <- map["AccountName"]
