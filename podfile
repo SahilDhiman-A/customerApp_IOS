@@ -1,0 +1,29 @@
+use_frameworks!
+target 'My Spectra' do
+  pod 'JVFloatLabeledTextField', '~> 1.2'
+  pod 'Alamofire', '~> 4.7'
+  pod 'SVProgressHUD', '~> 2.2'
+  pod 'ObjectMapper', '~> 3.5'
+  pod 'RealmSwift', '~> 3.17'
+  pod 'SwiftGifOrigin', '~> 1.7.0'
+  pod 'Charts'
+  pod 'Crashlytics', '~> 3.13'
+  pod 'Fabric', '~> 1.10'
+  pod 'Firebase'
+  pod 'IQKeyboardManagerSwift', '~> 6.5'
+  pod 'ABGaugeViewKit'
+  pod 'FirebaseAnalytics'
+  pod 'SwipeCellKit'
+  pod 'GoogleTagManager'
+  pod 'razorpay-pod', '~> 1.1.12'
+  # Add the pod for Firebase Cloud Messaging
+  pod 'Firebase/Messaging'
+  pod 'Siren'
+  #  pod 'PDFNet', podspec: 'https://www.pdftron.com/downloads/ios/cocoapods/pdfnet-no-tools/7.0.0.71974.podspec'
+  post_install do |installer|
+    installer.pods_project.build_configurations.each do |config|
+      config.build_settings["EXCLUDED_ARCHS[sdk=IPHONEOS_DEPLOYMENT_TARGET*]"] = "arm64"
+    end
+  end
+  
+end
